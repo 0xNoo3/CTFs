@@ -8,7 +8,9 @@
 
 ## 🔍 Challenge Description  
 
-> The description as given in the CTF platform.
+> Author: @Kkevsterrr
+
+> What's a base amongst friends though, really?
 
 ---
 
@@ -26,18 +28,28 @@
 
 ## 📝 Approach  
 1. When we run the binary it asks for a password.
+
 ![alt text](image.png)
 
 2. Soo first i thought it would be solved by some constraints solver / symbolic excution, But when you analyze the source code its never ending code and yea there arnt any constrants (As per my knowledge)
 
 3. So we search "Invalid" string xrefs
+
+
 ![alt text](image-1.png)
 
 4. we need to jump to the Congrats xrefs
+
+
 ![alt text](image-2.png)
+
+
 I renamed it for my convention, now decompile
 
 the congrats string was printing inside an if() block.
+
+
+
 ![alt text](image-3.png)
 
 
@@ -52,16 +64,31 @@ but the major confusion which i got into that there is no connection of any valu
 in a sub_8B40() which is influencing the if condition. it turns out it is done my the compiler it self, many members of structs when decompiled become different variables placed on stack frame, but they are contigous in stack frame!
 ```
 As you can see here
+
+
 ![alt text](image-4.png)
 
 So one part of the key maybe (i am guessing) is 
+
+
 ![alt text](image-5.png)
+
+
 It is a global variable 
+
+
+
 ![alt text](image-6.png)
 
 But it alone doesnt give the flag so we analyzed sub_8B40() because the first parameter is being passed as a reference.
 I can see another global variable in that function
+
+
+
 ![alt text](image-7.png)
+
+
+
 ![alt text](image-8.png)
 
 So now we already have the formula to calulate flag in the if() so we just write a simple script

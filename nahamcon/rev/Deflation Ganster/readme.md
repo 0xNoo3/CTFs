@@ -1,4 +1,4 @@
-# CrackMe Challenge Writeup
+# Defalation Gangster Writeup
 
 **Category:** Reverse Engineering  
 **CTF Name:** NahamCon CTF 2025  

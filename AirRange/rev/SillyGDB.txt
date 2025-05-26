@@ -1,0 +1,335 @@
+gef➤  x/70i $pc
+=> 0x5555555553ca:      push   rbp
+   0x5555555553cb:      mov    rbp,rsp
+   0x5555555553ce:      push   rbx
+   0x5555555553cf:      sub    rsp,0x58
+   0x5555555553d3:      mov    eax,0x0
+   0x5555555553d8:      call   0x5555555551b9
+   0x5555555553dd:      mov    eax,0x0
+   0x5555555553e2:      call   0x555555555207
+   0x5555555553e7:      mov    eax,0x0
+   0x5555555553ec:      call   0x55555555521d
+   0x5555555553f1:      mov    eax,0x0
+   0x5555555553f6:      call   0x55555555527f
+   0x5555555553fb:      movabs rax,0x3f07101e2c020915
+   0x555555555405:      movabs rdx,0x23373a074c30213c
+   0x55555555540f:      mov    QWORD PTR [rbp-0x30],rax
+   0x555555555413:      mov    QWORD PTR [rbp-0x28],rdx
+   0x555555555417:      movabs rax,0x1146265623373a07
+   0x555555555421:      movabs rdx,0x361b550b26313957
+   0x55555555542b:      mov    QWORD PTR [rbp-0x24],rax
+   0x55555555542f:      mov    QWORD PTR [rbp-0x1c],rdx
+   0x555555555433:      lea    rax,[rbp-0x37]
+   0x555555555437:      mov    rdi,rax
+   0x55555555543a:      call   0x5555555552d8
+   0x55555555543f:      lea    rcx,[rbp-0x60]
+   0x555555555443:      lea    rdx,[rbp-0x37]
+   0x555555555447:      lea    rax,[rbp-0x30]
+   0x55555555544b:      mov    esi,0x1c
+   0x555555555450:      mov    rdi,rax
+   0x555555555453:      call   0x55555555532a
+   0x555555555458:      lea    rax,[rip+0xc01]        # 0x555555556060
+   0x55555555545f:      mov    rdi,rax
+   0x555555555462:      call   0x555555555040 <puts@plt>
+   0x555555555467:      call   0x5555555550b0 <rand@plt>
+   0x55555555546c:      movsxd rdx,eax
+   0x55555555546f:      imul   rdx,rdx,0x51eb851f
+   0x555555555476:      shr    rdx,0x20
+   0x55555555547a:      mov    ecx,edx
+   0x55555555547c:      sar    ecx,0x5
+   0x55555555547f:      cdq
+   0x555555555480:      mov    ebx,ecx
+   0x555555555482:      sub    ebx,edx
+   0x555555555484:      imul   edx,ebx,0x64
+   0x555555555487:      sub    eax,edx
+   0x555555555489:      mov    ebx,eax
+   0x55555555548b:      call   0x5555555550b0 <rand@plt>
+   0x555555555490:      mov    edx,eax
+   0x555555555492:      movsxd rax,edx
+   0x555555555495:      imul   rax,rax,0x51eb851f
+   0x55555555549c:      shr    rax,0x20
+   0x5555555554a0:      sar    eax,0x5
+   0x5555555554a3:      mov    ecx,edx
+   0x5555555554a5:      sar    ecx,0x1f
+   0x5555555554a8:      sub    eax,ecx
+   0x5555555554aa:      imul   ecx,eax,0x64
+   0x5555555554ad:      mov    eax,edx
+   0x5555555554af:      sub    eax,ecx
+   0x5555555554b1:      mov    esi,ebx
+   0x5555555554b3:      mov    edi,eax
+   0x5555555554b5:      call   0x5555555551e0
+   0x5555555554ba:      mov    DWORD PTR [rbp-0x14],eax
+   0x5555555554bd:      mov    eax,DWORD PTR [rbp-0x14]
+   0x5555555554c0:      mov    esi,eax
+   0x5555555554c2:      lea    rax,[rip+0xbd2]        # 0x55555555609b
+   0x5555555554c9:      mov    rdi,rax
+   0x5555555554cc:      mov    eax,0x0
+   0x5555555554d1:      call   0x555555555060 <printf@plt>
+   0x5555555554d6:      mov    eax,0x0
+   0x5555555554db:      mov    rbx,QWORD PTR [rbp-0x8]
+   0x5555555554df:      leave
+   0x5555555554e0:      ret
+
+
+gef➤  x/40i 0x5555555551b9
+   0x5555555551b9:      push   rbp
+   0x5555555551ba:      mov    rbp,rsp
+   0x5555555551bd:      mov    edi,0x0
+   0x5555555551c2:      call   0x555555555090 <time@plt>
+   0x5555555551c7:      mov    edi,eax
+   0x5555555551c9:      call   0x555555555080 <srand@plt>
+   0x5555555551ce:      lea    rax,[rip+0xe33]        # 0x555555556008
+   0x5555555551d5:      mov    rdi,rax
+   0x5555555551d8:      call   0x555555555040 <puts@plt>
+   0x5555555551dd:      nop
+   0x5555555551de:      pop    rbp
+   0x5555555551df:      ret
+   0x5555555551e0:      push   rbp
+   0x5555555551e1:      mov    rbp,rsp
+   0x5555555551e4:      mov    DWORD PTR [rbp-0x4],edi
+   0x5555555551e7:      mov    DWORD PTR [rbp-0x8],esi
+   0x5555555551ea:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551ed:      imul   eax,DWORD PTR [rbp-0x8]
+   0x5555555551f1:      mov    edx,eax
+   0x5555555551f3:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551f6:      xor    eax,DWORD PTR [rbp-0x8]
+   0x5555555551f9:      add    edx,eax
+   0x5555555551fb:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551fe:      and    eax,DWORD PTR [rbp-0x8]
+   0x555555555201:      sub    edx,eax
+   0x555555555203:      mov    eax,edx
+   0x555555555205:      pop    rbp
+   0x555555555206:      ret
+
+
+
+
+
+gef➤  x/40i 0x555555555207
+   0x555555555207:      push   rbp
+   0x555555555208:      mov    rbp,rsp
+   0x55555555520b:      lea    rax,[rip+0xe16]        # 0x555555556028
+   0x555555555212:      mov    rdi,rax
+   0x555555555215:      call   0x555555555040 <puts@plt>
+   0x55555555521a:      nop
+   0x55555555521b:      pop    rbp
+   0x55555555521c:      ret
+   0x55555555521d:      push   rbp
+   0x55555555521e:      mov    rbp,rsp
+   0x555555555221:      sub    rsp,0x20
+   0x555555555225:      mov    DWORD PTR [rbp-0x4],0x0
+   0x55555555522c:      jmp    0x55555555526c
+   0x55555555522e:      mov    edi,0x2e
+   0x555555555233:      call   0x555555555030 <putchar@plt>
+   0x555555555238:      mov    rax,QWORD PTR [rip+0x2e19]        # 0x555555558058 <stdout>
+   0x55555555523f:      mov    rdi,rax
+   0x555555555242:      call   0x5555555550a0 <fflush@plt>
+   0x555555555247:      mov    QWORD PTR [rbp-0x20],0x0
+   0x55555555524f:      mov    QWORD PTR [rbp-0x18],0x11e1a300
+   0x555555555257:      lea    rax,[rbp-0x20]
+   0x55555555525b:      mov    esi,0x0
+   0x555555555260:      mov    rdi,rax
+   0x555555555263:      call   0x555555555070 <nanosleep@plt>
+   0x555555555268:      add    DWORD PTR [rbp-0x4],0x1
+   0x55555555526c:      cmp    DWORD PTR [rbp-0x4],0x2
+   0x555555555270:      jle    0x55555555522e
+   0x555555555272:      mov    edi,0xa
+   0x555555555277:      call   0x555555555030 <putchar@plt>
+   0x55555555527c:      nop
+   0x55555555527d:      leave
+   0x55555555527e:      ret
+
+
+gef➤  x/40i 0x55555555521d
+   0x55555555521d:      push   rbp
+   0x55555555521e:      mov    rbp,rsp
+   0x555555555221:      sub    rsp,0x20
+   0x555555555225:      mov    DWORD PTR [rbp-0x4],0x0
+   0x55555555522c:      jmp    0x55555555526c
+   0x55555555522e:      mov    edi,0x2e
+   0x555555555233:      call   0x555555555030 <putchar@plt>
+   0x555555555238:      mov    rax,QWORD PTR [rip+0x2e19]        # 0x555555558058 <stdout>
+   0x55555555523f:      mov    rdi,rax
+   0x555555555242:      call   0x5555555550a0 <fflush@plt>
+   0x555555555247:      mov    QWORD PTR [rbp-0x20],0x0
+   0x55555555524f:      mov    QWORD PTR [rbp-0x18],0x11e1a300
+   0x555555555257:      lea    rax,[rbp-0x20]
+   0x55555555525b:      mov    esi,0x0
+   0x555555555260:      mov    rdi,rax
+   0x555555555263:      call   0x555555555070 <nanosleep@plt>
+   0x555555555268:      add    DWORD PTR [rbp-0x4],0x1
+   0x55555555526c:      cmp    DWORD PTR [rbp-0x4],0x2
+   0x555555555270:      jle    0x55555555522e
+   0x555555555272:      mov    edi,0xa
+   0x555555555277:      call   0x555555555030 <putchar@plt>
+   0x55555555527c:      nop
+   0x55555555527d:      leave
+   0x55555555527e:      ret
+
+
+gef➤  x/40i 0x55555555527f
+   0x55555555527f:      push   rbp
+   0x555555555280:      mov    rbp,rsp
+   0x555555555283:      sub    rsp,0x10
+   0x555555555287:      mov    DWORD PTR [rbp-0x4],0x0
+   0x55555555528e:      mov    DWORD PTR [rbp-0x8],0x0
+   0x555555555295:      jmp    0x5555555552b6
+   0x555555555297:      call   0x5555555550b0 <rand@plt>
+   0x55555555529c:      mov    edx,eax
+   0x55555555529e:      mov    eax,edx
+   0x5555555552a0:      sar    eax,0x1f
+   0x5555555552a3:      shr    eax,0x18
+   0x5555555552a6:      add    edx,eax
+   0x5555555552a8:      movzx  edx,dl
+   0x5555555552ab:      sub    edx,eax
+   0x5555555552ad:      mov    eax,edx
+   0x5555555552af:      add    DWORD PTR [rbp-0x4],eax
+   0x5555555552b2:      add    DWORD PTR [rbp-0x8],0x1
+   0x5555555552b6:      cmp    DWORD PTR [rbp-0x8],0x63
+   0x5555555552ba:      jle    0x555555555297
+   0x5555555552bc:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555552bf:      mov    esi,eax
+   0x5555555552c1:      lea    rax,[rip+0xd8a]        # 0x555555556052
+   0x5555555552c8:      mov    rdi,rax
+   0x5555555552cb:      mov    eax,0x0
+   0x5555555552d0:      call   0x555555555060 <printf@plt>
+   0x5555555552d5:      nop
+   0x5555555552d6:      leave
+   0x5555555552d7:      ret
+
+
+gef➤  x/40i 0x5555555552d8
+   0x5555555552d8:      push   rbp
+   0x5555555552d9:      mov    rbp,rsp
+   0x5555555552dc:      mov    QWORD PTR [rbp-0x18],rdi
+   0x5555555552e0:      mov    DWORD PTR [rbp-0xa],0x4a626472
+   0x5555555552e7:      mov    WORD PTR [rbp-0x6],0x7864
+   0x5555555552ed:      mov    DWORD PTR [rbp-0x4],0x0
+   0x5555555552f4:      jmp    0x555555555316
+   0x5555555552f6:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555552f9:      cdqe
+   0x5555555552fb:      movzx  edx,BYTE PTR [rbp+rax*1-0xa]
+   0x555555555300:      mov    eax,DWORD PTR [rbp-0x4]
+   0x555555555303:      movsxd rcx,eax
+   0x555555555306:      mov    rax,QWORD PTR [rbp-0x18]
+   0x55555555530a:      add    rax,rcx
+   0x55555555530d:      xor    edx,0x1
+   0x555555555310:      mov    BYTE PTR [rax],dl
+   0x555555555312:      add    DWORD PTR [rbp-0x4],0x1
+   0x555555555316:      cmp    DWORD PTR [rbp-0x4],0x5
+   0x55555555531a:      jle    0x5555555552f6
+   0x55555555531c:      mov    rax,QWORD PTR [rbp-0x18]
+   0x555555555320:      add    rax,0x6
+   0x555555555324:      mov    BYTE PTR [rax],0x0
+   0x555555555327:      nop
+   0x555555555328:      pop    rbp
+   0x555555555329:      ret
+
+
+gef➤  x/60i 0x55555555532a
+   0x55555555532a:      push   rbp
+   0x55555555532b:      mov    rbp,rsp
+   0x55555555532e:      push   r12
+   0x555555555330:      push   rbx
+   0x555555555331:      sub    rsp,0x30
+   0x555555555335:      mov    QWORD PTR [rbp-0x28],rdi
+   0x555555555339:      mov    DWORD PTR [rbp-0x2c],esi
+   0x55555555533c:      mov    QWORD PTR [rbp-0x38],rdx
+   0x555555555340:      mov    QWORD PTR [rbp-0x40],rcx
+   0x555555555344:      mov    DWORD PTR [rbp-0x14],0x0
+   0x55555555534b:      jmp    0x5555555553a8
+   0x55555555534d:      mov    eax,DWORD PTR [rbp-0x14]
+   0x555555555350:      movsxd rdx,eax
+   0x555555555353:      mov    rax,QWORD PTR [rbp-0x28]
+   0x555555555357:      add    rax,rdx
+   0x55555555535a:      movzx  eax,BYTE PTR [rax]
+   0x55555555535d:      mov    r12d,eax
+   0x555555555360:      mov    eax,DWORD PTR [rbp-0x14]
+   0x555555555363:      movsxd rbx,eax
+   0x555555555366:      mov    rax,QWORD PTR [rbp-0x38]
+   0x55555555536a:      mov    rdi,rax
+   0x55555555536d:      call   0x555555555050 <strlen@plt>
+   0x555555555372:      mov    rsi,rax
+   0x555555555375:      mov    rax,rbx
+   0x555555555378:      mov    edx,0x0
+   0x55555555537d:      div    rsi
+   0x555555555380:      mov    rcx,rdx
+   0x555555555383:      mov    rdx,rcx
+   0x555555555386:      mov    rax,QWORD PTR [rbp-0x38]
+   0x55555555538a:      add    rax,rdx
+   0x55555555538d:      movzx  ecx,BYTE PTR [rax]
+   0x555555555390:      mov    eax,DWORD PTR [rbp-0x14]
+   0x555555555393:      movsxd rdx,eax
+   0x555555555396:      mov    rax,QWORD PTR [rbp-0x40]
+   0x55555555539a:      add    rax,rdx
+   0x55555555539d:      mov    edx,r12d
+   0x5555555553a0:      xor    edx,ecx
+   0x5555555553a2:      mov    BYTE PTR [rax],dl
+   0x5555555553a4:      add    DWORD PTR [rbp-0x14],0x1
+   0x5555555553a8:      mov    eax,DWORD PTR [rbp-0x14]
+   0x5555555553ab:      cmp    eax,DWORD PTR [rbp-0x2c]
+   0x5555555553ae:      jl     0x55555555534d
+   0x5555555553b0:      mov    eax,DWORD PTR [rbp-0x2c]
+   0x5555555553b3:      movsxd rdx,eax
+   0x5555555553b6:      mov    rax,QWORD PTR [rbp-0x40]
+   0x5555555553ba:      add    rax,rdx
+   0x5555555553bd:      mov    BYTE PTR [rax],0x0
+   0x5555555553c0:      nop
+   0x5555555553c1:      add    rsp,0x30
+   0x5555555553c5:      pop    rbx
+   0x5555555553c6:      pop    r12
+   0x5555555553c8:      pop    rbp
+   0x5555555553c9:      ret
+
+
+
+gef➤  x/60i 0x5555555551e0
+   0x5555555551e0:      push   rbp
+   0x5555555551e1:      mov    rbp,rsp
+   0x5555555551e4:      mov    DWORD PTR [rbp-0x4],edi
+   0x5555555551e7:      mov    DWORD PTR [rbp-0x8],esi
+   0x5555555551ea:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551ed:      imul   eax,DWORD PTR [rbp-0x8]
+   0x5555555551f1:      mov    edx,eax
+   0x5555555551f3:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551f6:      xor    eax,DWORD PTR [rbp-0x8]
+   0x5555555551f9:      add    edx,eax
+   0x5555555551fb:      mov    eax,DWORD PTR [rbp-0x4]
+   0x5555555551fe:      and    eax,DWORD PTR [rbp-0x8]
+   0x555555555201:      sub    edx,eax
+   0x555555555203:      mov    eax,edx
+   0x555555555205:      pop    rbp
+   0x555555555206:      ret
+   0x555555555207:      push   rbp
+   0x555555555208:      mov    rbp,rsp
+   0x55555555520b:      lea    rax,[rip+0xe16]        # 0x555555556028
+   0x555555555212:      mov    rdi,rax
+   0x555555555215:      call   0x555555555040 <puts@plt>
+   0x55555555521a:      nop
+   0x55555555521b:      pop    rbp
+   0x55555555521c:      ret
+   0x55555555521d:      push   rbp
+   0x55555555521e:      mov    rbp,rsp
+   0x555555555221:      sub    rsp,0x20
+   0x555555555225:      mov    DWORD PTR [rbp-0x4],0x0
+   0x55555555522c:      jmp    0x55555555526c
+   0x55555555522e:      mov    edi,0x2e
+   0x555555555233:      call   0x555555555030 <putchar@plt>
+   0x555555555238:      mov    rax,QWORD PTR [rip+0x2e19]        # 0x555555558058 <stdout>
+   0x55555555523f:      mov    rdi,rax
+   0x555555555242:      call   0x5555555550a0 <fflush@plt>
+   0x555555555247:      mov    QWORD PTR [rbp-0x20],0x0
+   0x55555555524f:      mov    QWORD PTR [rbp-0x18],0x11e1a300
+   0x555555555257:      lea    rax,[rbp-0x20]
+   0x55555555525b:      mov    esi,0x0
+   0x555555555260:      mov    rdi,rax
+   0x555555555263:      call   0x555555555070 <nanosleep@plt>
+   0x555555555268:      add    DWORD PTR [rbp-0x4],0x1
+   0x55555555526c:      cmp    DWORD PTR [rbp-0x4],0x2
+   0x555555555270:      jle    0x55555555522e
+   0x555555555272:      mov    edi,0xa
+   0x555555555277:      call   0x555555555030 <putchar@plt>
+   0x55555555527c:      nop
+   0x55555555527d:      leave
+   0x55555555527e:      ret
+

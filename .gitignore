@@ -1,0 +1,25 @@
+# Ignore all tar and compressed files
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# Ignore specific files and folders
+nahamcon/pwn/theJumps/
+tamuctf/rev/05backdoored.tar
+airtech_finals/
+
+# Optional: Ignore Python venvs if ever created inside this folder
+venv/
+env/
+.venv/
+
+# Optional: Ignore system files and junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# Ignore logs and temp files
+*.log
+*.tmp

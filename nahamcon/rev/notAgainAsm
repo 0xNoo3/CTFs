@@ -1,0 +1,1381 @@
+sub_7FF6EBBA14A9 proc near              ; DATA XREF: main+5↓o
+; this is the function where the program asks me for input of the flag and validates it.
+
+.text:00007FF6EBBA14A9                                         ; .pdata:00007FF6EBBA9048↓o
+.text:00007FF6EBBA14A9
+.text:00007FF6EBBA14A9 IoStatusBlock   = qword ptr -2138h
+.text:00007FF6EBBA14A9 Buffer          = qword ptr -2130h
+.text:00007FF6EBBA14A9 Length          = dword ptr -2128h
+.text:00007FF6EBBA14A9 ByteOffset      = qword ptr -2120h
+.text:00007FF6EBBA14A9 var_2110        = qword ptr -2110h
+.text:00007FF6EBBA14A9 var_2108        = qword ptr -2108h
+.text:00007FF6EBBA14A9 var_2100        = qword ptr -2100h
+.text:00007FF6EBBA14A9 var_20F8        = qword ptr -20F8h
+.text:00007FF6EBBA14A9 var_20F0        = qword ptr -20F0h
+.text:00007FF6EBBA14A9 var_20E8        = qword ptr -20E8h
+.text:00007FF6EBBA14A9 var_20E0        = qword ptr -20E0h
+.text:00007FF6EBBA14A9 var_20A4        = dword ptr -20A4h
+.text:00007FF6EBBA14A9 var_20A0        = dword ptr -20A0h
+.text:00007FF6EBBA14A9 var_2098        = qword ptr -2098h
+.text:00007FF6EBBA14A9 var_2090        = qword ptr -2090h
+.text:00007FF6EBBA14A9 var_2088        = qword ptr -2088h
+.text:00007FF6EBBA14A9 var_2080        = qword ptr -2080h
+.text:00007FF6EBBA14A9 var_2078        = byte ptr -2078h
+.text:00007FF6EBBA14A9 var_2068        = byte ptr -2068h
+.text:00007FF6EBBA14A9 var_2058        = byte ptr -2058h
+.text:00007FF6EBBA14A9 var_2040        = qword ptr -2040h
+.text:00007FF6EBBA14A9 var_2038        = dword ptr -2038h
+.text:00007FF6EBBA14A9 var_2034        = word ptr -2034h
+.text:00007FF6EBBA14A9 var_200C        = dword ptr -200Ch
+.text:00007FF6EBBA14A9 var_2008        = dword ptr -2008h
+.text:00007FF6EBBA14A9 var_58          = xmmword ptr -58h
+.text:00007FF6EBBA14A9
+.text:00007FF6EBBA14A9                 push    r15
+.text:00007FF6EBBA14AB                 push    r14
+.text:00007FF6EBBA14AD                 push    r13
+.text:00007FF6EBBA14AF                 push    r12
+.text:00007FF6EBBA14B1                 push    rsi
+.text:00007FF6EBBA14B2                 push    rdi
+.text:00007FF6EBBA14B3                 push    rbp
+.text:00007FF6EBBA14B4                 push    rbx
+.text:00007FF6EBBA14B5                 mov     eax, 2118h
+.text:00007FF6EBBA14BA                 call    __alloca_probe
+.text:00007FF6EBBA14BF                 sub     rsp, rax
+.text:00007FF6EBBA14C2                 movaps  [rsp+2158h+var_58], xmm6
+.text:00007FF6EBBA14CA                 lea     rax, unk_7FF6EBBA6360
+.text:00007FF6EBBA14D1                 lea     rcx, [rsp+2158h+var_2068]
+.text:00007FF6EBBA14D9                 mov     [rcx], rax
+.text:00007FF6EBBA14DC                 mov     qword ptr [rcx+8], 95h
+.text:00007FF6EBBA14E4                 lea     rax, unk_7FF6EBBA63F5
+.text:00007FF6EBBA14EB                 mov     [rsp+2158h+var_2098], rax
+.text:00007FF6EBBA14F3                 lea     rax, unk_7FF6EBBA645F
+.text:00007FF6EBBA14FA                 mov     [rsp+2158h+var_2088], rax
+.text:00007FF6EBBA1502                 lea     r13, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1507                 mov     [r13+0], rcx
+.text:00007FF6EBBA150B                 lea     rax, sub_7FF6EBBA117E
+.text:00007FF6EBBA1512                 mov     [r13+8], rax
+.text:00007FF6EBBA1516                 lea     r15, unk_7FF6EBBA6498
+.text:00007FF6EBBA151D                 lea     rcx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1525                 mov     [rcx], r15
+.text:00007FF6EBBA1528                 mov     qword ptr [rcx+8], 2
+.text:00007FF6EBBA1530                 and     qword ptr [rcx+20h], 0
+.text:00007FF6EBBA1535                 mov     [rsp+2158h+var_2090], 6Ah ; 'j'
+.text:00007FF6EBBA1541                 mov     [rsp+2158h+var_2080], 11h
+.text:00007FF6EBBA154D                 mov     [rcx+10h], r13
+.text:00007FF6EBBA1551                 mov     qword ptr [rcx+18h], 1
+
+
+.text:00007FF6EBBA1559                 call    sub_7FF6EBBA3E21 ; this is the function which prompts what is flag?
+
+
+.text:00007FF6EBBA155E                 lea     rdx, aB87a5dae3a3686 ; "b87a5dae3a3686ddd6f14ebcb4f4d49bIncorre"...
+.text:00007FF6EBBA1565                 lea     rsi, [rsp+2158h+var_2058]
+.text:00007FF6EBBA156D                 mov     rcx, rsi
+.text:00007FF6EBBA1570                 call    sub_7FF6EBBA43A9
+.text:00007FF6EBBA1575                 mov     rbx, [rsi]
+.text:00007FF6EBBA1578                 mov     rsi, [rsi+8]
+.text:00007FF6EBBA157C                 mov     rax, rbx
+.text:00007FF6EBBA157F                 neg     rax
+.text:00007FF6EBBA1582                 jo      loc_7FF6EBBA164B
+.text:00007FF6EBBA1588                 lea     rdi, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA158D                 mov     rcx, rdi
+.text:00007FF6EBBA1590                 mov     rdx, rsi
+.text:00007FF6EBBA1593                 xor     r8d, r8d
+.text:00007FF6EBBA1596                 call    sub_7FF6EBBA2D59
+.text:00007FF6EBBA159B                 mov     r15, [rdi]
+.text:00007FF6EBBA159E                 mov     r14, [rdi+8]
+.text:00007FF6EBBA15A2                 cmp     r15, 2
+.text:00007FF6EBBA15A6                 jnz     short loc_7FF6EBBA1616
+.text:00007FF6EBBA15A8                 mov     rcx, r14
+.text:00007FF6EBBA15AB                 call    sub_7FF6EBBA2CB4
+.text:00007FF6EBBA15B0                 cmp     edx, 780h
+.text:00007FF6EBBA15B6                 setz    cl
+.text:00007FF6EBBA15B9                 test    al, cl
+.text:00007FF6EBBA15BB                 jz      short loc_7FF6EBBA1616
+.text:00007FF6EBBA15BD                 lea     r15, [rsp+2158h+var_2058]
+.text:00007FF6EBBA15C5                 mov     rcx, r15
+.text:00007FF6EBBA15C8                 mov     rdx, rsi
+.text:00007FF6EBBA15CB                 mov     r8d, 200000h
+.text:00007FF6EBBA15D1                 call    sub_7FF6EBBA2D59
+.text:00007FF6EBBA15D6                 mov     r15, [r15]
+.text:00007FF6EBBA15D9                 cmp     r15, 2
+.text:00007FF6EBBA15DD                 jz      short loc_7FF6EBBA1601
+.text:00007FF6EBBA15DF                 mov     r12d, [rsp+2158h+var_200C]
+.text:00007FF6EBBA15E7                 mov     ebp, [rsp+2158h+var_2008]
+.text:00007FF6EBBA15EE                 mov     ecx, r12d
+.text:00007FF6EBBA15F1                 mov     edx, ebp
+.text:00007FF6EBBA15F3                 call    sub_7FF6EBBA2D45
+.text:00007FF6EBBA15F8                 test    dl, 1
+.text:00007FF6EBBA15FB                 jz      loc_7FF6EBBA1FB2
+.text:00007FF6EBBA1601
+.text:00007FF6EBBA1601 loc_7FF6EBBA1601:                       ; CODE XREF: sub_7FF6EBBA14A9+134↑j
+.text:00007FF6EBBA1601                 mov     rdx, qword ptr [rsp+2158h+var_2058+8]
+.text:00007FF6EBBA1609                 mov     rcx, r15
+.text:00007FF6EBBA160C                 call    sub_7FF6EBBA300A
+.text:00007FF6EBBA1611                 mov     r15b, 1
+.text:00007FF6EBBA1614                 jmp     short loc_7FF6EBBA162D
+.text:00007FF6EBBA1616 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1616
+.text:00007FF6EBBA1616 loc_7FF6EBBA1616:                       ; CODE XREF: sub_7FF6EBBA14A9+FD↑j
+.text:00007FF6EBBA1616                                         ; sub_7FF6EBBA14A9+112↑j
+.text:00007FF6EBBA1616                 mov     r12d, [rsp+2158h+var_20A4]
+.text:00007FF6EBBA161E                 mov     ebp, [rsp+2158h+var_20A0]
+.text:00007FF6EBBA1625
+.text:00007FF6EBBA1625 loc_7FF6EBBA1625:                       ; CODE XREF: sub_7FF6EBBA14A9+B2B↓j
+.text:00007FF6EBBA1625                 cmp     r15d, 2
+.text:00007FF6EBBA1629                 setz    r15b
+.text:00007FF6EBBA162D
+.text:00007FF6EBBA162D loc_7FF6EBBA162D:                       ; CODE XREF: sub_7FF6EBBA14A9+16B↑j
+.text:00007FF6EBBA162D                 mov     rcx, rbx
+.text:00007FF6EBBA1630                 mov     rdx, rsi
+.text:00007FF6EBBA1633                 call    sub_7FF6EBBA4189
+.text:00007FF6EBBA1638                 mov     rsi, r14
+.text:00007FF6EBBA163B                 test    r15b, r15b
+.text:00007FF6EBBA163E                 lea     r15, unk_7FF6EBBA6498
+.text:00007FF6EBBA1645                 jz      loc_7FF6EBBA1747
+.text:00007FF6EBBA164B
+.text:00007FF6EBBA164B loc_7FF6EBBA164B:                       ; CODE XREF: sub_7FF6EBBA14A9+D9↑j
+.text:00007FF6EBBA164B                 and     dword ptr [rsp+2158h+var_2058], 0
+.text:00007FF6EBBA1653                 and     [rsp+2158h+var_2038], 0
+.text:00007FF6EBBA165B                 and     [rsp+2158h+var_2034], 0
+.text:00007FF6EBBA1664                 mov     rbx, 8000000000000000h
+.text:00007FF6EBBA166E                 mov     [rsp+2158h+var_2040], 7
+.text:00007FF6EBBA167A                 xorps   xmm0, xmm0
+.text:00007FF6EBBA167D                 movups  xmmword ptr [rsp+2158h+var_2058+8], xmm0
+.text:00007FF6EBBA1685                 mov     al, 1
+.text:00007FF6EBBA1687                 mov     byte ptr [rsp+2158h+var_2038+1], al
+.text:00007FF6EBBA168E                 mov     byte ptr [rsp+2158h+var_2034], al
+.text:00007FF6EBBA1695                 mov     byte ptr [rsp+2158h+var_2038+3], al
+.text:00007FF6EBBA169C                 lea     rdx, aB87a5dae3a3686 ; "b87a5dae3a3686ddd6f14ebcb4f4d49bIncorre"...
+.text:00007FF6EBBA16A3                 lea     rdi, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA16A8                 mov     rcx, rdi
+.text:00007FF6EBBA16AB                 call    sub_7FF6EBBA43A9
+.text:00007FF6EBBA16B0                 mov     r14, [rdi]
+.text:00007FF6EBBA16B3                 mov     rdi, [rdi+8]
+.text:00007FF6EBBA16B7                 cmp     r14, rbx
+.text:00007FF6EBBA16BA                 jnz     short loc_7FF6EBBA16C3
+.text:00007FF6EBBA16BC                 mov     ebx, 1
+.text:00007FF6EBBA16C1                 jmp     short loc_7FF6EBBA16ED
+.text:00007FF6EBBA16C3 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA16C3
+.text:00007FF6EBBA16C3 loc_7FF6EBBA16C3:                       ; CODE XREF: sub_7FF6EBBA14A9+211↑j
+.text:00007FF6EBBA16C3                 lea     rdx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA16CB                 mov     rcx, rdi
+.text:00007FF6EBBA16CE                 call    sub_7FF6EBBA2B12
+.text:00007FF6EBBA16D3                 mov     rbx, rax
+.text:00007FF6EBBA16D6                 mov     r12, r15
+.text:00007FF6EBBA16D9                 mov     r15, rdx
+.text:00007FF6EBBA16DC                 mov     rcx, r14
+.text:00007FF6EBBA16DF                 mov     rdx, rdi
+.text:00007FF6EBBA16E2                 call    sub_7FF6EBBA4189
+.text:00007FF6EBBA16E7                 mov     rdi, r15
+.text:00007FF6EBBA16EA                 mov     r15, r12
+.text:00007FF6EBBA16ED
+.text:00007FF6EBBA16ED loc_7FF6EBBA16ED:                       ; CODE XREF: sub_7FF6EBBA14A9+218↑j
+.text:00007FF6EBBA16ED                 test    bl, 1
+.text:00007FF6EBBA16F0                 jnz     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA16F6                 mov     rcx, rdi        ; hObject
+.text:00007FF6EBBA16F9                 call    cs:CloseHandle
+.text:00007FF6EBBA16FF                 mov     eax, esi
+.text:00007FF6EBBA1701                 and     eax, 3
+.text:00007FF6EBBA1704                 cmp     eax, 1
+.text:00007FF6EBBA1707                 jnz     loc_7FF6EBBA179A
+.text:00007FF6EBBA170D                 mov     rdi, [rsi-1]
+.text:00007FF6EBBA1711                 mov     rbx, [rsi+7]
+.text:00007FF6EBBA1715                 mov     rax, [rbx]
+.text:00007FF6EBBA1718                 test    rax, rax
+.text:00007FF6EBBA171B                 jz      short loc_7FF6EBBA1722
+.text:00007FF6EBBA171D                 mov     rcx, rdi
+.text:00007FF6EBBA1720                 call    rax
+.text:00007FF6EBBA1722
+.text:00007FF6EBBA1722 loc_7FF6EBBA1722:                       ; CODE XREF: sub_7FF6EBBA14A9+272↑j
+.text:00007FF6EBBA1722                 dec     rsi
+.text:00007FF6EBBA1725                 cmp     qword ptr [rbx+8], 0
+.text:00007FF6EBBA172A                 jz      short loc_7FF6EBBA1738
+.text:00007FF6EBBA172C                 mov     rdx, [rbx+10h]
+.text:00007FF6EBBA1730                 mov     rcx, rdi
+.text:00007FF6EBBA1733                 call    sub_7FF6EBBA2130
+.text:00007FF6EBBA1738
+.text:00007FF6EBBA1738 loc_7FF6EBBA1738:                       ; CODE XREF: sub_7FF6EBBA14A9+281↑j
+.text:00007FF6EBBA1738                 mov     edx, 8
+.text:00007FF6EBBA173D                 mov     rcx, rsi
+.text:00007FF6EBBA1740                 call    sub_7FF6EBBA2130
+.text:00007FF6EBBA1745                 jmp     short loc_7FF6EBBA179A
+.text:00007FF6EBBA1747 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1747
+.text:00007FF6EBBA1747 loc_7FF6EBBA1747:                       ; CODE XREF: sub_7FF6EBBA14A9+19C↑j
+.text:00007FF6EBBA1747                 mov     ecx, r12d
+.text:00007FF6EBBA174A                 mov     edx, ebp
+.text:00007FF6EBBA174C                 call    sub_7FF6EBBA2D45
+.text:00007FF6EBBA1751                 or      dl, al
+.text:00007FF6EBBA1753                 test    dl, 1
+.text:00007FF6EBBA1756                 jnz     short loc_7FF6EBBA179A
+.text:00007FF6EBBA1758                 lea     rax, [rsp+2158h+var_2098]
+.text:00007FF6EBBA1760                 mov     [rsp+2158h+var_20F0], rax
+.text:00007FF6EBBA1765                 lea     rcx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA176D                 mov     [rcx], r15
+.text:00007FF6EBBA1770                 mov     qword ptr [rcx+8], 2
+.text:00007FF6EBBA1778                 and     qword ptr [rcx+20h], 0
+.text:00007FF6EBBA177D                 lea     rax, sub_7FF6EBBA1286
+.text:00007FF6EBBA1784                 mov     [rsp+2158h+var_20E8], rax
+.text:00007FF6EBBA1789                 mov     [rcx+10h], rdi
+.text:00007FF6EBBA178D                 mov     qword ptr [rcx+18h], 1
+.text:00007FF6EBBA1795                 call    sub_7FF6EBBA3E21
+.text:00007FF6EBBA179A
+.text:00007FF6EBBA179A loc_7FF6EBBA179A:                       ; CODE XREF: sub_7FF6EBBA14A9+25E↑j
+.text:00007FF6EBBA179A                                         ; sub_7FF6EBBA14A9+29C↑j ...
+.text:00007FF6EBBA179A                 lea     rax, [rsp+2158h+var_2088]
+.text:00007FF6EBBA17A2                 mov     [rsp+2158h+var_20F0], rax
+.text:00007FF6EBBA17A7                 lea     rcx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA17AF                 mov     [rcx], r15
+.text:00007FF6EBBA17B2                 lea     rax, sub_7FF6EBBA138E
+.text:00007FF6EBBA17B9                 mov     qword ptr [rcx+8], 2
+.text:00007FF6EBBA17C1                 and     qword ptr [rcx+20h], 0
+.text:00007FF6EBBA17C6                 mov     [rsp+2158h+var_20E8], rax
+.text:00007FF6EBBA17CB                 mov     [rcx+10h], r13
+.text:00007FF6EBBA17CF                 mov     esi, 1
+.text:00007FF6EBBA17D4                 mov     [rcx+18h], rsi
+.text:00007FF6EBBA17D8                 call    sub_7FF6EBBA3E21
+.text:00007FF6EBBA17DD                 and     [rsp+2158h+var_20F0], 0
+.text:00007FF6EBBA17E3                 mov     [rsp+2158h+var_20E8], rsi
+.text:00007FF6EBBA17E8                 and     [rsp+2158h+var_20E0], 0
+.text:00007FF6EBBA17EE                 mov     eax, cs:dword_7FF6EBBA80D8
+.text:00007FF6EBBA17F4                 cmp     eax, 3
+.text:00007FF6EBBA17F7                 jnz     loc_7FF6EBBA1FDB
+.text:00007FF6EBBA17FD
+.text:00007FF6EBBA17FD loc_7FF6EBBA17FD:                       ; CODE XREF: sub_7FF6EBBA14A9+B3B↓j
+.text:00007FF6EBBA17FD                                         ; sub_7FF6EBBA14A9+B85↓j
+.text:00007FF6EBBA17FD                 mov     cl, 1
+.text:00007FF6EBBA17FF                 xor     eax, eax
+.text:00007FF6EBBA1801                 lock cmpxchg cs:byte_7FF6EBBA80A0, cl
+.text:00007FF6EBBA1809                 jnz     loc_7FF6EBBA2033
+.text:00007FF6EBBA180F
+.text:00007FF6EBBA180F loc_7FF6EBBA180F:                       ; CODE XREF: sub_7FF6EBBA14A9+B96↓j
+.text:00007FF6EBBA180F                 mov     rsi, 8080808080808080h
+.text:00007FF6EBBA1819                 mov     rdi, 0A0A0A0A0A0A0A0Ah
+.text:00007FF6EBBA1823                 mov     rbp, 101010101010100h
+.text:00007FF6EBBA182D                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1832                 mov     rax, [rbx+10h]
+.text:00007FF6EBBA1836                 mov     [rsp+2158h+var_2110], rax
+.text:00007FF6EBBA183B                 xorps   xmm6, xmm6
+.text:00007FF6EBBA183E
+.text:00007FF6EBBA183E loc_7FF6EBBA183E:                       ; CODE XREF: sub_7FF6EBBA14A9+755↓j
+.text:00007FF6EBBA183E                                         ; sub_7FF6EBBA14A9+7F5↓j
+.text:00007FF6EBBA183E                 mov     rax, cs:qword_7FF6EBBA80B8
+.text:00007FF6EBBA1845                 mov     r15, cs:qword_7FF6EBBA80C0
+.text:00007FF6EBBA184C                 mov     r14, cs:lpMultiByteStr
+.text:00007FF6EBBA1853                 sub     r15, rax
+.text:00007FF6EBBA1856                 jbe     short loc_7FF6EBBA1865
+.text:00007FF6EBBA1858                 test    r14, r14
+.text:00007FF6EBBA185B                 jz      short loc_7FF6EBBA18D2
+.text:00007FF6EBBA185D                 add     r14, rax
+.text:00007FF6EBBA1860                 jmp     loc_7FF6EBBA1B97
+.text:00007FF6EBBA1865 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1865
+.text:00007FF6EBBA1865 loc_7FF6EBBA1865:                       ; CODE XREF: sub_7FF6EBBA14A9+3AD↑j
+.text:00007FF6EBBA1865                 mov     r12, cs:cbMultiByte
+.text:00007FF6EBBA186C                 mov     rcx, cs:qword_7FF6EBBA80C8
+.text:00007FF6EBBA1873                 mov     r8, r12
+.text:00007FF6EBBA1876                 sub     r8, rcx         ; Size
+.text:00007FF6EBBA1879                 add     rcx, r14        ; void *
+.text:00007FF6EBBA187C                 xor     edx, edx        ; Val
+.text:00007FF6EBBA187E                 call    memset
+.text:00007FF6EBBA1883                 mov     ecx, 0FFFFFFF6h
+.text:00007FF6EBBA1888                 call    sub_7FF6EBBA30BA
+.text:00007FF6EBBA188D                 mov     r13, rdx
+.text:00007FF6EBBA1890                 test    al, 1
+.text:00007FF6EBBA1892                 jnz     loc_7FF6EBBA1A0E
+.text:00007FF6EBBA1898                 mov     rcx, r13
+.text:00007FF6EBBA189B                 call    sub_7FF6EBBA3101
+.text:00007FF6EBBA18A0                 test    al, al
+.text:00007FF6EBBA18A2                 jz      short loc_7FF6EBBA18EB
+.text:00007FF6EBBA18A4                 lea     rcx, MultiByteStr ; void *
+.text:00007FF6EBBA18AB                 mov     rdx, r14        ; void *
+.text:00007FF6EBBA18AE                 mov     r8, r12
+.text:00007FF6EBBA18B1                 call    sub_7FF6EBBA36AE
+.text:00007FF6EBBA18B6                 mov     rbx, r12
+.text:00007FF6EBBA18B9                 sub     rbx, rax
+.text:00007FF6EBBA18BC                 jnz     loc_7FF6EBBA1961
+.text:00007FF6EBBA18C2                 mov     r15, r12
+.text:00007FF6EBBA18C5                 xor     r13d, r13d
+.text:00007FF6EBBA18C8                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA18CD                 jmp     loc_7FF6EBBA1B53
+.text:00007FF6EBBA18D2 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA18D2
+.text:00007FF6EBBA18D2 loc_7FF6EBBA18D2:                       ; CODE XREF: sub_7FF6EBBA14A9+3B2↑j
+.text:00007FF6EBBA18D2                 mov     eax, r15d
+.text:00007FF6EBBA18D5                 and     eax, 3
+.text:00007FF6EBBA18D8                 mov     r14b, 1
+.text:00007FF6EBBA18DB                 lea     rcx, jpt_7FF6EBBA18E9
+.text:00007FF6EBBA18E2                 movsxd  rax, ds:(jpt_7FF6EBBA18E9 - 7FF6EBBA6A40h)[rcx+rax*4] ; switch 4 cases
+.text:00007FF6EBBA18E6                 add     rax, rcx
+.text:00007FF6EBBA18E9                 jmp     rax             ; switch jump
+.text:00007FF6EBBA18EB ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA18EB
+.text:00007FF6EBBA18EB loc_7FF6EBBA18EB:                       ; CODE XREF: sub_7FF6EBBA14A9+3F9↑j
+.text:00007FF6EBBA18EB                 movups  xmm0, cs:xmmword_7FF6EBBA6710
+.text:00007FF6EBBA18F2                 movaps  xmmword ptr [rsp+2158h+var_2058], xmm0
+.text:00007FF6EBBA18FA                 mov     eax, 0FFFFFFFFh
+.text:00007FF6EBBA18FF                 cmp     r12, rax
+.text:00007FF6EBBA1902                 cmovb   rax, r12
+.text:00007FF6EBBA1906                 movups  xmmword ptr [rsp+2158h+ByteOffset], xmm6 ; ByteOffset
+.text:00007FF6EBBA190B                 mov     [rsp+2158h+Length], eax ; Length
+.text:00007FF6EBBA190F                 mov     [rsp+2158h+Buffer], r14 ; Buffer
+.text:00007FF6EBBA1914                 lea     rax, [rsp+2158h+var_2058]
+.text:00007FF6EBBA191C                 mov     [rsp+2158h+IoStatusBlock], rax ; IoStatusBlock
+.text:00007FF6EBBA1921                 mov     rcx, r13        ; FileHandle
+.text:00007FF6EBBA1924                 xor     edx, edx        ; Event
+.text:00007FF6EBBA1926                 xor     r8d, r8d        ; ApcRoutine
+.text:00007FF6EBBA1929                 xor     r9d, r9d        ; ApcContext
+.text:00007FF6EBBA192C                 call    cs:NtReadFile
+.text:00007FF6EBBA1932                 cmp     eax, 103h
+.text:00007FF6EBBA1937                 jnz     short loc_7FF6EBBA194E
+.text:00007FF6EBBA1939                 mov     rcx, r13        ; hHandle
+.text:00007FF6EBBA193C                 mov     edx, 0FFFFFFFFh ; dwMilliseconds
+.text:00007FF6EBBA1941                 call    cs:WaitForSingleObject
+.text:00007FF6EBBA1947                 mov     eax, dword ptr [rsp+2158h+var_2058]
+.text:00007FF6EBBA194E
+.text:00007FF6EBBA194E loc_7FF6EBBA194E:                       ; CODE XREF: sub_7FF6EBBA14A9+48E↑j
+.text:00007FF6EBBA194E                 cmp     eax, 0C0000011h
+.text:00007FF6EBBA1953                 jnz     loc_7FF6EBBA19E1
+.text:00007FF6EBBA1959
+.text:00007FF6EBBA1959 loc_7FF6EBBA1959:                       ; CODE XREF: sub_7FF6EBBA14A9+83A↓j
+.text:00007FF6EBBA1959                 xor     r15d, r15d
+.text:00007FF6EBBA195C                 jmp     loc_7FF6EBBA19FC
+.text:00007FF6EBBA1961 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1961
+.text:00007FF6EBBA1961 loc_7FF6EBBA1961:                       ; CODE XREF: sub_7FF6EBBA14A9+413↑j
+.text:00007FF6EBBA1961                 mov     [rsp+2158h+var_2108], rax
+.text:00007FF6EBBA1966                 cmp     rbx, 4
+.text:00007FF6EBBA196A                 jnb     loc_7FF6EBBA1A32
+.text:00007FF6EBBA1970                 and     word ptr [rsp+2158h+var_2058], 0
+.text:00007FF6EBBA1979                 lea     rax, unk_7FF6EBBA80D0
+.text:00007FF6EBBA1980                 mov     [rsp+2158h+IoStatusBlock], rax ; __int64
+.text:00007FF6EBBA1985                 mov     r8d, 1
+.text:00007FF6EBBA198B                 mov     r9d, 1
+.text:00007FF6EBBA1991                 mov     rcx, r13        ; hConsoleInput
+.text:00007FF6EBBA1994                 lea     rdx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA199C                 call    sub_7FF6EBBA3716
+.text:00007FF6EBBA19A1                 mov     r15, rdx
+.text:00007FF6EBBA19A4                 test    al, 1
+.text:00007FF6EBBA19A6                 jnz     short loc_7FF6EBBA19DA
+.text:00007FF6EBBA19A8                 cmp     r15, 2
+.text:00007FF6EBBA19AC                 jnb     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA19B2                 mov     r9d, 4          ; cbMultiByte
+.text:00007FF6EBBA19B8                 lea     rcx, [rsp+2158h+var_2058] ; lpWideCharStr
+.text:00007FF6EBBA19C0                 mov     rdx, r15        ; cchWideChar
+.text:00007FF6EBBA19C3                 lea     r8, MultiByteStr ; lpMultiByteStr
+.text:00007FF6EBBA19CA                 call    sub_7FF6EBBA3868
+.text:00007FF6EBBA19CF                 mov     r15, rdx
+.text:00007FF6EBBA19D2                 test    al, 1
+.text:00007FF6EBBA19D4                 jz      loc_7FF6EBBA1B11
+.text:00007FF6EBBA19DA
+.text:00007FF6EBBA19DA loc_7FF6EBBA19DA:                       ; CODE XREF: sub_7FF6EBBA14A9+4FD↑j
+.text:00007FF6EBBA19DA                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA19DF                 jmp     short loc_7FF6EBBA1A06
+.text:00007FF6EBBA19E1 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA19E1
+.text:00007FF6EBBA19E1 loc_7FF6EBBA19E1:                       ; CODE XREF: sub_7FF6EBBA14A9+4AA↑j
+.text:00007FF6EBBA19E1                 cmp     eax, 103h
+.text:00007FF6EBBA19E6                 jz      loc_7FF6EBBA2044
+.text:00007FF6EBBA19EC                 test    eax, eax
+.text:00007FF6EBBA19EE                 js      loc_7FF6EBBA1A86
+.text:00007FF6EBBA19F4                 mov     r15, qword ptr [rsp+2158h+var_2058+8]
+.text:00007FF6EBBA19FC
+.text:00007FF6EBBA19FC loc_7FF6EBBA19FC:                       ; CODE XREF: sub_7FF6EBBA14A9+4B3↑j
+.text:00007FF6EBBA19FC                 xor     eax, eax
+.text:00007FF6EBBA19FE
+.text:00007FF6EBBA19FE loc_7FF6EBBA19FE:                       ; CODE XREF: sub_7FF6EBBA14A9+5D8↓j
+.text:00007FF6EBBA19FE                                         ; sub_7FF6EBBA14A9+663↓j ...
+.text:00007FF6EBBA19FE                 test    al, 1
+.text:00007FF6EBBA1A00                 jz      loc_7FF6EBBA1B47
+.text:00007FF6EBBA1A06
+.text:00007FF6EBBA1A06 loc_7FF6EBBA1A06:                       ; CODE XREF: sub_7FF6EBBA14A9+536↑j
+.text:00007FF6EBBA1A06                 mov     r13, r15
+.text:00007FF6EBBA1A09                 test    r15, r15
+.text:00007FF6EBBA1A0C                 jz      short loc_7FF6EBBA1A22
+.text:00007FF6EBBA1A0E
+.text:00007FF6EBBA1A0E loc_7FF6EBBA1A0E:                       ; CODE XREF: sub_7FF6EBBA14A9+3E9↑j
+.text:00007FF6EBBA1A0E                 mov     rcx, r13
+.text:00007FF6EBBA1A11                 call    sub_7FF6EBBA38BF
+.text:00007FF6EBBA1A16                 test    al, al
+.text:00007FF6EBBA1A18                 jz      short loc_7FF6EBBA1A2A
+.text:00007FF6EBBA1A1A                 mov     rcx, r13
+.text:00007FF6EBBA1A1D                 call    sub_7FF6EBBA3B2A
+.text:00007FF6EBBA1A22
+.text:00007FF6EBBA1A22 loc_7FF6EBBA1A22:                       ; CODE XREF: sub_7FF6EBBA14A9+563↑j
+.text:00007FF6EBBA1A22                 xor     r15d, r15d
+.text:00007FF6EBBA1A25                 jmp     loc_7FF6EBBA1B50
+.text:00007FF6EBBA1A2A ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1A2A
+.text:00007FF6EBBA1A2A loc_7FF6EBBA1A2A:                       ; CODE XREF: sub_7FF6EBBA14A9+56F↑j
+.text:00007FF6EBBA1A2A                 xor     r15d, r15d
+.text:00007FF6EBBA1A2D                 jmp     loc_7FF6EBBA1B53
+.text:00007FF6EBBA1A32 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1A32
+.text:00007FF6EBBA1A32 loc_7FF6EBBA1A32:                       ; CODE XREF: sub_7FF6EBBA14A9+4C1↑j
+.text:00007FF6EBBA1A32                 mov     rax, r12
+.text:00007FF6EBBA1A35                 xor     edx, edx
+.text:00007FF6EBBA1A37                 mov     ecx, 3
+.text:00007FF6EBBA1A3C                 div     rcx
+.text:00007FF6EBBA1A3F                 mov     ecx, 1000h
+.text:00007FF6EBBA1A44                 cmp     rax, rcx
+.text:00007FF6EBBA1A47                 cmovnb  rax, rcx
+.text:00007FF6EBBA1A4B                 lea     rcx, unk_7FF6EBBA80D0
+.text:00007FF6EBBA1A52                 mov     [rsp+2158h+IoStatusBlock], rcx ; __int64
+.text:00007FF6EBBA1A57                 mov     r8d, 1000h
+.text:00007FF6EBBA1A5D                 mov     rcx, r13        ; hConsoleInput
+.text:00007FF6EBBA1A60                 lea     rdx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1A68                 mov     r9, rax
+.text:00007FF6EBBA1A6B                 call    sub_7FF6EBBA3716  ;this function reads the console,i enter flag{fake_flag} here
+.text:00007FF6EBBA1A70                 mov     r15, rdx
+.text:00007FF6EBBA1A73                 test    al, 1
+.text:00007FF6EBBA1A75                 jz      short loc_7FF6EBBA1AD1
+.text:00007FF6EBBA1A77                 mov     eax, 1
+.text:00007FF6EBBA1A7C                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1A81                 jmp     loc_7FF6EBBA19FE
+.text:00007FF6EBBA1A86 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1A86
+.text:00007FF6EBBA1A86 loc_7FF6EBBA1A86:                       ; CODE XREF: sub_7FF6EBBA14A9+545↑j
+.text:00007FF6EBBA1A86                 mov     ecx, eax        ; Status
+.text:00007FF6EBBA1A88                 call    cs:RtlNtStatusToDosError
+.text:00007FF6EBBA1A8E                 mov     r15d, eax
+.text:00007FF6EBBA1A91                 shl     r15, 20h
+.text:00007FF6EBBA1A95                 or      r15, 2
+.text:00007FF6EBBA1A99                 lea     rcx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1AA1                 mov     rdx, r15
+.text:00007FF6EBBA1AA4                 call    sub_7FF6EBBA3067
+.text:00007FF6EBBA1AA9                 movzx   eax, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1AB1                 lea     rcx, jpt_7FF6EBBA1ABF
+.text:00007FF6EBBA1AB8                 movsxd  rax, ds:(jpt_7FF6EBBA1ABF - 7FF6EBBA6A30h)[rcx+rax*4] ; switch 4 cases
+.text:00007FF6EBBA1ABC                 add     rax, rcx
+.text:00007FF6EBBA1ABF                 jmp     rax             ; switch jump
+.text:00007FF6EBBA1AC1 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1AC1
+.text:00007FF6EBBA1AC1 loc_7FF6EBBA1AC1:                       ; CODE XREF: sub_7FF6EBBA14A9+616↑j
+.text:00007FF6EBBA1AC1                                         ; DATA XREF: .rdata:jpt_7FF6EBBA1ABF↓o
+.text:00007FF6EBBA1AC1                 mov     rax, qword ptr [rsp+2158h+var_2058+8] ; jumptable 00007FF6EBBA1ABF cases 2,3
+.text:00007FF6EBBA1AC9                 mov     cl, [rax+10h]
+.text:00007FF6EBBA1ACC                 jmp     loc_7FF6EBBA1CCD
+.text:00007FF6EBBA1AD1 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1AD1
+.text:00007FF6EBBA1AD1 loc_7FF6EBBA1AD1:                       ; CODE XREF: sub_7FF6EBBA14A9+5CC↑j
+.text:00007FF6EBBA1AD1                 cmp     r15, 1001h
+.text:00007FF6EBBA1AD8                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1ADD                 jnb     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1AE3                 lea     rcx, [rsp+2158h+var_2058] ; lpWideCharStr
+.text:00007FF6EBBA1AEB                 mov     rdx, r15        ; cchWideChar
+.text:00007FF6EBBA1AEE                 mov     r8, r14         ; lpMultiByteStr
+.text:00007FF6EBBA1AF1                 mov     r9, r12         ; cbMultiByte
+.text:00007FF6EBBA1AF4                 call    sub_7FF6EBBA3868
+.text:00007FF6EBBA1AF9                 test    al, 1
+.text:00007FF6EBBA1AFB                 mov     ecx, 0
+.text:00007FF6EBBA1B00                 mov     r15, [rsp+2158h+var_2108]
+.text:00007FF6EBBA1B05                 cmovnz  r15, rcx
+.text:00007FF6EBBA1B09                 add     r15, rdx
+.text:00007FF6EBBA1B0C                 jmp     loc_7FF6EBBA19FE
+.text:00007FF6EBBA1B11 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1B11
+.text:00007FF6EBBA1B11 loc_7FF6EBBA1B11:                       ; CODE XREF: sub_7FF6EBBA14A9+52B↑j
+.text:00007FF6EBBA1B11                 mov     cs:byte_7FF6EBBA80D6, r15b
+.text:00007FF6EBBA1B18                 mov     rax, [rsp+2158h+var_2108]
+.text:00007FF6EBBA1B1D                 cmp     r12, rax
+.text:00007FF6EBBA1B20                 jb      loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1B26                 lea     rdx, [r14+rax]  ; void *
+.text:00007FF6EBBA1B2A                 lea     rcx, MultiByteStr ; void *
+.text:00007FF6EBBA1B31                 mov     r8, rbx
+.text:00007FF6EBBA1B34                 mov     rbx, rax
+.text:00007FF6EBBA1B37                 call    sub_7FF6EBBA36AE
+.text:00007FF6EBBA1B3C                 mov     r15, rax
+.text:00007FF6EBBA1B3F                 add     r15, rbx
+.text:00007FF6EBBA1B42                 lea     rbx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1B47
+.text:00007FF6EBBA1B47 loc_7FF6EBBA1B47:                       ; CODE XREF: sub_7FF6EBBA14A9+557↑j
+.text:00007FF6EBBA1B47                 cmp     r15, r12
+.text:00007FF6EBBA1B4A                 ja      loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1B50
+.text:00007FF6EBBA1B50 loc_7FF6EBBA1B50:                       ; CODE XREF: sub_7FF6EBBA14A9+57C↑j
+.text:00007FF6EBBA1B50                 xor     r13d, r13d
+.text:00007FF6EBBA1B53
+.text:00007FF6EBBA1B53 loc_7FF6EBBA1B53:                       ; CODE XREF: sub_7FF6EBBA14A9+424↑j
+.text:00007FF6EBBA1B53                                         ; sub_7FF6EBBA14A9+584↑j
+.text:00007FF6EBBA1B53                 and     cs:qword_7FF6EBBA80B8, 0
+.text:00007FF6EBBA1B5B                 mov     cs:qword_7FF6EBBA80C0, r15
+.text:00007FF6EBBA1B62                 mov     cs:qword_7FF6EBBA80C8, r12
+.text:00007FF6EBBA1B69                 test    r13, r13
+.text:00007FF6EBBA1B6C                 jz      short loc_7FF6EBBA1B97
+.text:00007FF6EBBA1B6E                 mov     eax, r13d
+.text:00007FF6EBBA1B71                 and     eax, 3
+.text:00007FF6EBBA1B74                 mov     r14b, 1
+.text:00007FF6EBBA1B77                 lea     rcx, jpt_7FF6EBBA18E9
+.text:00007FF6EBBA1B7E                 movsxd  rax, ds:(jpt_7FF6EBBA18E9 - 7FF6EBBA6A40h)[rcx+rax*4] ; switch 4 cases
+.text:00007FF6EBBA1B82                 add     rax, rcx
+.text:00007FF6EBBA1B85                 mov     r15, r13
+.text:00007FF6EBBA1B88                 jmp     rax             ; switch jump
+.text:00007FF6EBBA1B8A ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1B8A
+.text:00007FF6EBBA1B8A loc_7FF6EBBA1B8A:                       ; CODE XREF: sub_7FF6EBBA14A9+440↑j
+.text:00007FF6EBBA1B8A                                         ; sub_7FF6EBBA14A9+6DF↑j
+.text:00007FF6EBBA1B8A                                         ; DATA XREF: ...
+.text:00007FF6EBBA1B8A                 cmp     byte ptr [r15+10h], 23h ; '#' ; jumptable 00007FF6EBBA18E9 case 0
+.text:00007FF6EBBA1B8A                                         ; jumptable 00007FF6EBBA1B88 case 0
+.text:00007FF6EBBA1B8F                 jnz     loc_7FF6EBBA1D2F
+.text:00007FF6EBBA1B95                 jmp     short loc_7FF6EBBA1BF6
+.text:00007FF6EBBA1B97 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1B97
+.text:00007FF6EBBA1B97 loc_7FF6EBBA1B97:                       ; CODE XREF: sub_7FF6EBBA14A9+3B7↑j
+.text:00007FF6EBBA1B97                                         ; sub_7FF6EBBA14A9+6C3↑j
+.text:00007FF6EBBA1B97                 cmp     r15, 0Fh
+.text:00007FF6EBBA1B9B                 ja      short loc_7FF6EBBA1BB1
+.text:00007FF6EBBA1B9D                 xor     r12d, r12d
+.text:00007FF6EBBA1BA0
+.text:00007FF6EBBA1BA0 loc_7FF6EBBA1BA0:                       ; CODE XREF: sub_7FF6EBBA14A9+706↓j
+.text:00007FF6EBBA1BA0                 cmp     r15, r12
+.text:00007FF6EBBA1BA3                 jz      short loc_7FF6EBBA1C03
+.text:00007FF6EBBA1BA5                 cmp     byte ptr [r14+r12], 0Ah
+.text:00007FF6EBBA1BAA                 jz      short loc_7FF6EBBA1C0A
+.text:00007FF6EBBA1BAC                 inc     r12
+.text:00007FF6EBBA1BAF                 jmp     short loc_7FF6EBBA1BA0
+.text:00007FF6EBBA1BB1 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1BB1
+.text:00007FF6EBBA1BB1 loc_7FF6EBBA1BB1:                       ; CODE XREF: sub_7FF6EBBA14A9+6F2↑j
+.text:00007FF6EBBA1BB1                 lea     r13, [r14+7]
+.text:00007FF6EBBA1BB5                 and     r13, 0FFFFFFFFFFFFFFF8h
+.text:00007FF6EBBA1BB9                 sub     r13, r14
+.text:00007FF6EBBA1BBC                 jz      short loc_7FF6EBBA1C11
+.text:00007FF6EBBA1BBE                 mov     rcx, r14
+.text:00007FF6EBBA1BC1                 mov     rdx, r13
+.text:00007FF6EBBA1BC4                 call    sub_7FF6EBBA2ACB
+.text:00007FF6EBBA1BC9                 test    al, 1
+.text:00007FF6EBBA1BCB                 jz      short loc_7FF6EBBA1C14
+.text:00007FF6EBBA1BCD                 mov     r12, rdx
+.text:00007FF6EBBA1BD0                 jmp     loc_7FF6EBBA1C6A
+.text:00007FF6EBBA1BD5 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1BD5
+.text:00007FF6EBBA1BD5 loc_7FF6EBBA1BD5:                       ; CODE XREF: sub_7FF6EBBA14A9+440↑j
+.text:00007FF6EBBA1BD5                                         ; sub_7FF6EBBA14A9+6DF↑j
+.text:00007FF6EBBA1BD5                                         ; DATA XREF: ...
+.text:00007FF6EBBA1BD5                 cmp     byte ptr [r15+0Fh], 23h ; '#' ; jumptable 00007FF6EBBA18E9 case 1
+.text:00007FF6EBBA1BD5                                         ; jumptable 00007FF6EBBA1B88 case 1
+.text:00007FF6EBBA1BDA                 jnz     loc_7FF6EBBA1D2F
+.text:00007FF6EBBA1BE0                 jmp     short loc_7FF6EBBA1BF6
+.text:00007FF6EBBA1BE2 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1BE2
+.text:00007FF6EBBA1BE2 loc_7FF6EBBA1BE2:                       ; CODE XREF: sub_7FF6EBBA14A9+440↑j
+.text:00007FF6EBBA1BE2                                         ; sub_7FF6EBBA14A9+6DF↑j
+.text:00007FF6EBBA1BE2                                         ; DATA XREF: ...
+.text:00007FF6EBBA1BE2                 mov     rcx, r15        ; jumptable 00007FF6EBBA18E9 case 3
+.text:00007FF6EBBA1BE2                                         ; jumptable 00007FF6EBBA1B88 case 3
+.text:00007FF6EBBA1BE5                 shr     rcx, 20h
+.text:00007FF6EBBA1BE9                 call    sub_7FF6EBBA2D39
+.text:00007FF6EBBA1BEE                 cmp     al, 23h ; '#'
+.text:00007FF6EBBA1BF0                 jnz     loc_7FF6EBBA1D2F
+.text:00007FF6EBBA1BF6
+.text:00007FF6EBBA1BF6 loc_7FF6EBBA1BF6:                       ; CODE XREF: sub_7FF6EBBA14A9+6EC↑j
+.text:00007FF6EBBA1BF6                                         ; sub_7FF6EBBA14A9+737↑j
+.text:00007FF6EBBA1BF6                 mov     rcx, r15
+.text:00007FF6EBBA1BF9                 call    sub_7FF6EBBA2CD4
+.text:00007FF6EBBA1BFE                 jmp     loc_7FF6EBBA183E
+.text:00007FF6EBBA1C03 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1C03
+.text:00007FF6EBBA1C03 loc_7FF6EBBA1C03:                       ; CODE XREF: sub_7FF6EBBA14A9+6FA↑j
+.text:00007FF6EBBA1C03                 mov     r12, r15
+.text:00007FF6EBBA1C06                 xor     eax, eax
+.text:00007FF6EBBA1C08                 jmp     short loc_7FF6EBBA1C6A
+.text:00007FF6EBBA1C0A ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1C0A
+.text:00007FF6EBBA1C0A loc_7FF6EBBA1C0A:                       ; CODE XREF: sub_7FF6EBBA14A9+701↑j
+.text:00007FF6EBBA1C0A                 mov     eax, 1
+.text:00007FF6EBBA1C0F                 jmp     short loc_7FF6EBBA1C6A
+.text:00007FF6EBBA1C11 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1C11
+.text:00007FF6EBBA1C11 loc_7FF6EBBA1C11:                       ; CODE XREF: sub_7FF6EBBA14A9+713↑j
+.text:00007FF6EBBA1C11                 xor     r13d, r13d
+.text:00007FF6EBBA1C14
+.text:00007FF6EBBA1C14 loc_7FF6EBBA1C14:                       ; CODE XREF: sub_7FF6EBBA14A9+722↑j
+.text:00007FF6EBBA1C14                 lea     rax, [r15-10h]
+.text:00007FF6EBBA1C18
+.text:00007FF6EBBA1C18 loc_7FF6EBBA1C18:                       ; CODE XREF: sub_7FF6EBBA14A9+7A7↓j
+.text:00007FF6EBBA1C18                 cmp     r13, rax
+.text:00007FF6EBBA1C1B                 ja      short loc_7FF6EBBA1C52
+.text:00007FF6EBBA1C1D                 mov     rcx, [r14+r13]
+.text:00007FF6EBBA1C21                 mov     rdx, rcx
+.text:00007FF6EBBA1C24                 xor     rdx, rdi
+.text:00007FF6EBBA1C27                 mov     r8, rbp
+.text:00007FF6EBBA1C2A                 sub     r8, rdx
+.text:00007FF6EBBA1C2D                 or      r8, rcx
+.text:00007FF6EBBA1C30                 mov     rcx, [r14+r13+8]
+.text:00007FF6EBBA1C35                 xor     rcx, rdi
+.text:00007FF6EBBA1C38                 mov     rdx, rbp
+.text:00007FF6EBBA1C3B                 sub     rdx, rcx
+.text:00007FF6EBBA1C3E                 or      rdx, rcx
+.text:00007FF6EBBA1C41                 and     r8, rsi
+.text:00007FF6EBBA1C44                 and     r8, rdx
+.text:00007FF6EBBA1C47                 cmp     r8, rsi
+.text:00007FF6EBBA1C4A                 jnz     short loc_7FF6EBBA1C52
+.text:00007FF6EBBA1C4C                 add     r13, 10h
+.text:00007FF6EBBA1C50                 jmp     short loc_7FF6EBBA1C18
+.text:00007FF6EBBA1C52 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1C52
+.text:00007FF6EBBA1C52 loc_7FF6EBBA1C52:                       ; CODE XREF: sub_7FF6EBBA14A9+772↑j
+.text:00007FF6EBBA1C52                                         ; sub_7FF6EBBA14A9+7A1↑j
+.text:00007FF6EBBA1C52                 lea     rcx, [r14+r13]
+.text:00007FF6EBBA1C56                 mov     rdx, r15
+.text:00007FF6EBBA1C59                 sub     rdx, r13
+.text:00007FF6EBBA1C5C                 call    sub_7FF6EBBA2ACB
+.text:00007FF6EBBA1C61                 mov     r12, rdx
+.text:00007FF6EBBA1C64                 add     r12, r13
+.text:00007FF6EBBA1C67                 and     eax, 1
+.text:00007FF6EBBA1C6A
+.text:00007FF6EBBA1C6A loc_7FF6EBBA1C6A:                       ; CODE XREF: sub_7FF6EBBA14A9+727↑j
+.text:00007FF6EBBA1C6A                                         ; sub_7FF6EBBA14A9+75F↑j ...
+.text:00007FF6EBBA1C6A                 test    al, 1
+.text:00007FF6EBBA1C6C                 jnz     short loc_7FF6EBBA1CE8
+.text:00007FF6EBBA1C6E                 mov     rcx, rbx
+.text:00007FF6EBBA1C71                 mov     rdx, r14
+.text:00007FF6EBBA1C74                 mov     r8, r15
+.text:00007FF6EBBA1C77                 call    sub_7FF6EBBA215C
+.text:00007FF6EBBA1C7C                 mov     rax, cs:qword_7FF6EBBA80B8
+.text:00007FF6EBBA1C83                 add     rax, r15
+.text:00007FF6EBBA1C86                 mov     rcx, cs:qword_7FF6EBBA80C0
+.text:00007FF6EBBA1C8D                 cmp     rcx, rax
+.text:00007FF6EBBA1C90                 cmovb   rax, rcx
+.text:00007FF6EBBA1C94                 mov     cs:qword_7FF6EBBA80B8, rax
+.text:00007FF6EBBA1C9B                 test    r15, r15
+.text:00007FF6EBBA1C9E                 jnz     loc_7FF6EBBA183E
+.text:00007FF6EBBA1CA4                 jmp     loc_7FF6EBBA1D2A
+.text:00007FF6EBBA1CA9 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1CA9
+.text:00007FF6EBBA1CA9 loc_7FF6EBBA1CA9:                       ; CODE XREF: sub_7FF6EBBA14A9+616↑j
+.text:00007FF6EBBA1CA9                                         ; DATA XREF: .rdata:jpt_7FF6EBBA1ABF↓o
+.text:00007FF6EBBA1CA9                 mov     eax, dword ptr [rsp+2158h+var_2058+4] ; jumptable 00007FF6EBBA1ABF case 0
+.text:00007FF6EBBA1CB0                 cmp     eax, 0E8h
+.text:00007FF6EBBA1CB5                 jz      short loc_7FF6EBBA1CDB
+.text:00007FF6EBBA1CB7                 cmp     eax, 6Dh ; 'm'
+.text:00007FF6EBBA1CBA                 jz      short loc_7FF6EBBA1CDB
+.text:00007FF6EBBA1CBC                 mov     eax, 1
+.text:00007FF6EBBA1CC1                 jmp     loc_7FF6EBBA19FE
+.text:00007FF6EBBA1CC6 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1CC6
+.text:00007FF6EBBA1CC6 loc_7FF6EBBA1CC6:                       ; CODE XREF: sub_7FF6EBBA14A9+616↑j
+.text:00007FF6EBBA1CC6                                         ; DATA XREF: .rdata:jpt_7FF6EBBA1ABF↓o
+.text:00007FF6EBBA1CC6                 mov     cl, [rsp+2158h+var_2058+1] ; jumptable 00007FF6EBBA1ABF case 1
+.text:00007FF6EBBA1CCD
+.text:00007FF6EBBA1CCD loc_7FF6EBBA1CCD:                       ; CODE XREF: sub_7FF6EBBA14A9+623↑j
+.text:00007FF6EBBA1CCD                 mov     eax, 1
+.text:00007FF6EBBA1CD2                 cmp     cl, 0Bh
+.text:00007FF6EBBA1CD5                 jnz     loc_7FF6EBBA19FE
+.text:00007FF6EBBA1CDB
+.text:00007FF6EBBA1CDB loc_7FF6EBBA1CDB:                       ; CODE XREF: sub_7FF6EBBA14A9+80C↑j
+.text:00007FF6EBBA1CDB                                         ; sub_7FF6EBBA14A9+811↑j
+.text:00007FF6EBBA1CDB                 mov     rcx, r15
+.text:00007FF6EBBA1CDE                 call    sub_7FF6EBBA2CD4
+.text:00007FF6EBBA1CE3                 jmp     loc_7FF6EBBA1959
+.text:00007FF6EBBA1CE8 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1CE8
+.text:00007FF6EBBA1CE8 loc_7FF6EBBA1CE8:                       ; CODE XREF: sub_7FF6EBBA14A9+7C3↑j
+.text:00007FF6EBBA1CE8                 cmp     r12, 0FFFFFFFFFFFFFFFFh
+.text:00007FF6EBBA1CEC                 jz      loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1CF2                 cmp     r12, r15
+.text:00007FF6EBBA1CF5                 jnb     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1CFB                 inc     r12
+.text:00007FF6EBBA1CFE                 lea     rcx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1D03                 mov     rdx, r14
+.text:00007FF6EBBA1D06                 mov     r8, r12
+.text:00007FF6EBBA1D09                 call    sub_7FF6EBBA215C
+.text:00007FF6EBBA1D0E                 add     r12, cs:qword_7FF6EBBA80B8
+.text:00007FF6EBBA1D15                 mov     rax, cs:qword_7FF6EBBA80C0
+.text:00007FF6EBBA1D1C                 cmp     rax, r12
+.text:00007FF6EBBA1D1F                 cmovb   r12, rax
+.text:00007FF6EBBA1D23                 mov     cs:qword_7FF6EBBA80B8, r12
+.text:00007FF6EBBA1D2A
+.text:00007FF6EBBA1D2A loc_7FF6EBBA1D2A:                       ; CODE XREF: sub_7FF6EBBA14A9+7FB↑j
+.text:00007FF6EBBA1D2A                 xor     r14d, r14d
+.text:00007FF6EBBA1D2D                 jmp     short loc_7FF6EBBA1D32 ; jumptable 00007FF6EBBA18E9 case 2
+.text:00007FF6EBBA1D2D                                         ; jumptable 00007FF6EBBA1B88 case 2
+.text:00007FF6EBBA1D2F ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1D2F
+.text:00007FF6EBBA1D2F loc_7FF6EBBA1D2F:                       ; CODE XREF: sub_7FF6EBBA14A9+6E6↑j
+.text:00007FF6EBBA1D2F                                         ; sub_7FF6EBBA14A9+731↑j ...
+.text:00007FF6EBBA1D2F                 mov     r14b, 1
+.text:00007FF6EBBA1D32
+.text:00007FF6EBBA1D32 loc_7FF6EBBA1D32:                       ; CODE XREF: sub_7FF6EBBA14A9+440↑j
+.text:00007FF6EBBA1D32                                         ; sub_7FF6EBBA14A9+6DF↑j ...
+.text:00007FF6EBBA1D32                 mov     rsi, [rsp+2158h+var_20E8] ; jumptable 00007FF6EBBA18E9 case 2
+.text:00007FF6EBBA1D32                                         ; jumptable 00007FF6EBBA1B88 case 2
+.text:00007FF6EBBA1D37                 mov     rbx, [rsp+2158h+var_20E0]
+.text:00007FF6EBBA1D3C                 mov     r8, rbx
+.text:00007FF6EBBA1D3F                 mov     r15, [rsp+2158h+var_2110]
+.text:00007FF6EBBA1D44                 sub     r8, r15
+.text:00007FF6EBBA1D47                 lea     rdx, [rsi+r15]
+.text:00007FF6EBBA1D4B                 lea     rdi, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1D53                 mov     rcx, rdi
+.text:00007FF6EBBA1D56                 call    sub_7FF6EBBA28F1
+.text:00007FF6EBBA1D5B                 mov     dil, [rdi]
+.text:00007FF6EBBA1D5E                 test    dil, dil
+.text:00007FF6EBBA1D61                 cmovnz  rbx, r15
+.text:00007FF6EBBA1D65                 mov     [rsp+2158h+var_20E0], rbx
+.text:00007FF6EBBA1D6A                 lea     rcx, byte_7FF6EBBA80A0
+.text:00007FF6EBBA1D71                 call    sub_7FF6EBBA3B86
+.text:00007FF6EBBA1D76                 test    dil, 1
+.text:00007FF6EBBA1D7A                 jnz     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1D80                 test    r14b, r14b
+.text:00007FF6EBBA1D83                 jnz     loc_7FF6EBBA1FD9
+.text:00007FF6EBBA1D89                 add     rbx, rsi
+.text:00007FF6EBBA1D8C                 xor     r15d, r15d
+.text:00007FF6EBBA1D8F                 mov     rdx, rsi
+.text:00007FF6EBBA1D92
+.text:00007FF6EBBA1D92 loc_7FF6EBBA1D92:                       ; CODE XREF: sub_7FF6EBBA14A9+983↓j
+.text:00007FF6EBBA1D92                 mov     rdi, r15
+.text:00007FF6EBBA1D95                 cmp     rdx, rbx
+.text:00007FF6EBBA1D98                 jz      loc_7FF6EBBA1E34
+.text:00007FF6EBBA1D9E                 movzx   ecx, byte ptr [rdx]
+.text:00007FF6EBBA1DA1                 test    cl, cl
+.text:00007FF6EBBA1DA3                 js      short loc_7FF6EBBA1DAB
+.text:00007FF6EBBA1DA5                 lea     r14, [rdx+1]
+.text:00007FF6EBBA1DA9                 jmp     short loc_7FF6EBBA1E16
+.text:00007FF6EBBA1DAB ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1DAB
+.text:00007FF6EBBA1DAB loc_7FF6EBBA1DAB:                       ; CODE XREF: sub_7FF6EBBA14A9+8FA↑j
+.text:00007FF6EBBA1DAB                 mov     eax, ecx
+.text:00007FF6EBBA1DAD                 and     eax, 1Fh
+.text:00007FF6EBBA1DB0                 movzx   r9d, byte ptr [rdx+1]
+.text:00007FF6EBBA1DB5                 and     r9d, 3Fh
+.text:00007FF6EBBA1DB9                 cmp     cl, 0DFh
+.text:00007FF6EBBA1DBC                 jbe     short loc_7FF6EBBA1DFB
+.text:00007FF6EBBA1DBE                 movzx   r8d, byte ptr [rdx+2]
+.text:00007FF6EBBA1DC3                 shl     r9d, 6
+.text:00007FF6EBBA1DC7                 and     r8d, 3Fh
+.text:00007FF6EBBA1DCB                 or      r8d, r9d
+.text:00007FF6EBBA1DCE                 cmp     cl, 0F0h
+.text:00007FF6EBBA1DD1                 jb      short loc_7FF6EBBA1E09
+.text:00007FF6EBBA1DD3                 lea     r14, [rdx+4]
+.text:00007FF6EBBA1DD7                 movzx   ecx, byte ptr [rdx+3]
+.text:00007FF6EBBA1DDB                 and     eax, 7
+.text:00007FF6EBBA1DDE                 shl     eax, 12h
+.text:00007FF6EBBA1DE1                 shl     r8d, 6
+.text:00007FF6EBBA1DE5                 and     ecx, 3Fh
+.text:00007FF6EBBA1DE8                 or      ecx, r8d
+.text:00007FF6EBBA1DEB                 or      ecx, eax
+.text:00007FF6EBBA1DED                 cmp     ecx, 110000h
+.text:00007FF6EBBA1DF3                 jz      loc_7FF6EBBA1FAA
+.text:00007FF6EBBA1DF9                 jmp     short loc_7FF6EBBA1E16
+.text:00007FF6EBBA1DFB ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1DFB
+.text:00007FF6EBBA1DFB loc_7FF6EBBA1DFB:                       ; CODE XREF: sub_7FF6EBBA14A9+913↑j
+.text:00007FF6EBBA1DFB                 lea     r14, [rdx+2]
+.text:00007FF6EBBA1DFF                 shl     eax, 6
+.text:00007FF6EBBA1E02                 or      eax, r9d
+.text:00007FF6EBBA1E05                 mov     ecx, eax
+.text:00007FF6EBBA1E07                 jmp     short loc_7FF6EBBA1E16
+.text:00007FF6EBBA1E09 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1E09
+.text:00007FF6EBBA1E09 loc_7FF6EBBA1E09:                       ; CODE XREF: sub_7FF6EBBA14A9+928↑j
+.text:00007FF6EBBA1E09                 lea     r14, [rdx+3]
+.text:00007FF6EBBA1E0D                 shl     eax, 0Ch
+.text:00007FF6EBBA1E10                 or      r8d, eax
+.text:00007FF6EBBA1E13                 mov     ecx, r8d
+.text:00007FF6EBBA1E16
+.text:00007FF6EBBA1E16 loc_7FF6EBBA1E16:                       ; CODE XREF: sub_7FF6EBBA14A9+900↑j
+.text:00007FF6EBBA1E16                                         ; sub_7FF6EBBA14A9+950↑j ...
+.text:00007FF6EBBA1E16                 mov     r15, r14
+.text:00007FF6EBBA1E19                 sub     r15, rdx
+.text:00007FF6EBBA1E1C                 add     r15, rdi
+.text:00007FF6EBBA1E1F                 call    sub_7FF6EBBA1028
+.text:00007FF6EBBA1E24                 mov     rdx, r14
+.text:00007FF6EBBA1E27                 mov     r12, r15
+.text:00007FF6EBBA1E2A                 test    al, al
+.text:00007FF6EBBA1E2C                 jnz     loc_7FF6EBBA1D92
+.text:00007FF6EBBA1E32                 jmp     short loc_7FF6EBBA1E3F
+.text:00007FF6EBBA1E34 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1E34
+.text:00007FF6EBBA1E34 loc_7FF6EBBA1E34:                       ; CODE XREF: sub_7FF6EBBA14A9+8EF↑j
+.text:00007FF6EBBA1E34                 mov     r15, rdi
+.text:00007FF6EBBA1E37                 mov     r14, rbx
+.text:00007FF6EBBA1E3A
+.text:00007FF6EBBA1E3A loc_7FF6EBBA1E3A:                       ; CODE XREF: sub_7FF6EBBA14A9+B04↓j
+.text:00007FF6EBBA1E3A                 xor     r12d, r12d
+.text:00007FF6EBBA1E3D                 xor     edi, edi
+.text:00007FF6EBBA1E3F
+.text:00007FF6EBBA1E3F loc_7FF6EBBA1E3F:                       ; CODE XREF: sub_7FF6EBBA14A9+989↑j
+.text:00007FF6EBBA1E3F                                         ; sub_7FF6EBBA14A9+A07↓j
+.text:00007FF6EBBA1E3F                 cmp     r14, rbx
+.text:00007FF6EBBA1E42                 jz      short loc_7FF6EBBA1EBB
+.text:00007FF6EBBA1E44                 mov     r13, rbx
+.text:00007FF6EBBA1E47                 movsx   ecx, byte ptr [rbx-1]
+.text:00007FF6EBBA1E4B                 test    ecx, ecx
+.text:00007FF6EBBA1E4D                 js      short loc_7FF6EBBA1E55
+.text:00007FF6EBBA1E4F                 lea     rbx, [r13-1]
+.text:00007FF6EBBA1E53                 jmp     short loc_7FF6EBBA1EA9
+.text:00007FF6EBBA1E55 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1E55
+.text:00007FF6EBBA1E55 loc_7FF6EBBA1E55:                       ; CODE XREF: sub_7FF6EBBA14A9+9A4↑j
+.text:00007FF6EBBA1E55                 movzx   eax, byte ptr [r13-2]
+.text:00007FF6EBBA1E5A                 cmp     al, 0C0h
+.text:00007FF6EBBA1E5C                 jge     short loc_7FF6EBBA1E81
+.text:00007FF6EBBA1E5E                 movzx   edx, byte ptr [r13-3]
+.text:00007FF6EBBA1E63                 cmp     dl, 0C0h
+.text:00007FF6EBBA1E66                 jge     short loc_7FF6EBBA1E8A
+.text:00007FF6EBBA1E68                 lea     rbx, [r13-4]
+.text:00007FF6EBBA1E6C                 movzx   r8d, byte ptr [r13-4]
+.text:00007FF6EBBA1E71                 and     r8d, 7
+.text:00007FF6EBBA1E75                 shl     r8d, 6
+.text:00007FF6EBBA1E79                 and     edx, 3Fh
+.text:00007FF6EBBA1E7C                 or      edx, r8d
+.text:00007FF6EBBA1E7F                 jmp     short loc_7FF6EBBA1E91
+.text:00007FF6EBBA1E81 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1E81
+.text:00007FF6EBBA1E81 loc_7FF6EBBA1E81:                       ; CODE XREF: sub_7FF6EBBA14A9+9B3↑j
+.text:00007FF6EBBA1E81                 lea     rbx, [r13-2]
+.text:00007FF6EBBA1E85                 and     eax, 1Fh
+.text:00007FF6EBBA1E88                 jmp     short loc_7FF6EBBA1E99
+.text:00007FF6EBBA1E8A ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1E8A
+.text:00007FF6EBBA1E8A loc_7FF6EBBA1E8A:                       ; CODE XREF: sub_7FF6EBBA14A9+9BD↑j
+.text:00007FF6EBBA1E8A                 lea     rbx, [r13-3]
+.text:00007FF6EBBA1E8E                 and     edx, 0Fh
+.text:00007FF6EBBA1E91
+.text:00007FF6EBBA1E91 loc_7FF6EBBA1E91:                       ; CODE XREF: sub_7FF6EBBA14A9+9D6↑j
+.text:00007FF6EBBA1E91                 shl     edx, 6
+.text:00007FF6EBBA1E94                 and     eax, 3Fh
+.text:00007FF6EBBA1E97                 or      eax, edx
+.text:00007FF6EBBA1E99
+.text:00007FF6EBBA1E99 loc_7FF6EBBA1E99:                       ; CODE XREF: sub_7FF6EBBA14A9+9DF↑j
+.text:00007FF6EBBA1E99                 shl     eax, 6
+.text:00007FF6EBBA1E9C                 and     ecx, 3Fh
+.text:00007FF6EBBA1E9F                 or      ecx, eax
+.text:00007FF6EBBA1EA1                 cmp     ecx, 110000h
+.text:00007FF6EBBA1EA7                 jz      short loc_7FF6EBBA1EBB
+.text:00007FF6EBBA1EA9
+.text:00007FF6EBBA1EA9 loc_7FF6EBBA1EA9:                       ; CODE XREF: sub_7FF6EBBA14A9+9AA↑j
+.text:00007FF6EBBA1EA9                 call    sub_7FF6EBBA1028
+.text:00007FF6EBBA1EAE                 test    al, al
+.text:00007FF6EBBA1EB0                 jnz     short loc_7FF6EBBA1E3F
+.text:00007FF6EBBA1EB2                 sub     r15, r14
+.text:00007FF6EBBA1EB5                 add     r15, r13
+.text:00007FF6EBBA1EB8                 mov     r12, r15
+.text:00007FF6EBBA1EBB
+.text:00007FF6EBBA1EBB loc_7FF6EBBA1EBB:                       ; CODE XREF: sub_7FF6EBBA14A9+999↑j
+.text:00007FF6EBBA1EBB                                         ; sub_7FF6EBBA14A9+9FE↑j
+.text:00007FF6EBBA1EBB                 sub     r12, rdi
+.text:00007FF6EBBA1EBE                 add     rdi, rsi
+.text:00007FF6EBBA1EC1                 mov     [rsp+2158h+var_2100], rdi
+.text:00007FF6EBBA1EC6                 mov     [rsp+2158h+var_20F8], r12
+.text:00007FF6EBBA1ECB                 cmp     r12, 26h ; '&'
+.text:00007FF6EBBA1ECF                 jnz     short loc_7FF6EBBA1F1D
+.text:00007FF6EBBA1ED1                 mov     rax, 0DFB432BC61353FB0h
+.text:00007FF6EBBA1EDB                 xor     ecx, ecx
+.text:00007FF6EBBA1EDD                 mov     rdx, 0BAC16AC89DF00E1Dh
+.text:00007FF6EBBA1EE7                 mov     r8, 0CFA8C7711A026A35h
+.text:00007FF6EBBA1EF1                 lea     r9, byte_7FF6EBBA6470
+.text:00007FF6EBBA1EF8
+.text:00007FF6EBBA1EF8 loc_7FF6EBBA1EF8:                       ; CODE XREF: sub_7FF6EBBA14A9+A72↓j
+.text:00007FF6EBBA1EF8                 cmp     rcx, 26h ; '&'
+.text:00007FF6EBBA1EFC                 jz      short loc_7FF6EBBA1F36
+.text:00007FF6EBBA1EFE                 imul    rax, rdx
+.text:00007FF6EBBA1F02                 add     rax, r8
+.text:00007FF6EBBA1F05                 mov     r10d, eax
+.text:00007FF6EBBA1F08                 shr     r10d, 15h
+.text:00007FF6EBBA1F0C                 xor     r10b, [rdi+rcx]
+.text:00007FF6EBBA1F10                 lea     r11, [rcx+1]
+.text:00007FF6EBBA1F14                 cmp     r10b, [rcx+r9]
+.text:00007FF6EBBA1F18                 mov     rcx, r11
+.text:00007FF6EBBA1F1B                 jz      short loc_7FF6EBBA1EF8
+.text:00007FF6EBBA1F1D
+.text:00007FF6EBBA1F1D loc_7FF6EBBA1F1D:                       ; CODE XREF: sub_7FF6EBBA14A9+A26↑j
+.text:00007FF6EBBA1F1D                 lea     rax, [rsp+2158h+var_2100]
+.text:00007FF6EBBA1F22                 lea     rdx, [rsp+2158h+var_2078]
+.text:00007FF6EBBA1F2A                 mov     [rdx], rax
+.text:00007FF6EBBA1F2D                 lea     rax, off_7FF6EBBA64F8 ; "Incorrect! The flag is not: "
+.text:00007FF6EBBA1F34                 jmp     short loc_7FF6EBBA1F4D
+.text:00007FF6EBBA1F36 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA1F36
+.text:00007FF6EBBA1F36 loc_7FF6EBBA1F36:                       ; CODE XREF: sub_7FF6EBBA14A9+A53↑j
+.text:00007FF6EBBA1F36                 lea     rax, [rsp+2158h+var_2100]
+.text:00007FF6EBBA1F3B                 lea     rdx, [rsp+2158h+var_2078]
+.text:00007FF6EBBA1F43                 mov     [rdx], rax
+.text:00007FF6EBBA1F46                 lea     rax, off_7FF6EBBA6530 ; "Correct! The flag is: "
+.text:00007FF6EBBA1F4D
+.text:00007FF6EBBA1F4D loc_7FF6EBBA1F4D:                       ; CODE XREF: sub_7FF6EBBA14A9+A8B↑j
+.text:00007FF6EBBA1F4D                 lea     rcx, [rsp+2158h+var_2058]
+.text:00007FF6EBBA1F55                 mov     [rcx], rax
+.text:00007FF6EBBA1F58                 mov     qword ptr [rcx+8], 2
+.text:00007FF6EBBA1F60                 and     qword ptr [rcx+20h], 0
+.text:00007FF6EBBA1F65                 lea     rax, sub_7FF6EBBA28DF
+.text:00007FF6EBBA1F6C                 mov     [rdx+8], rax
+.text:00007FF6EBBA1F70                 mov     [rcx+10h], rdx
+.text:00007FF6EBBA1F74                 mov     qword ptr [rcx+18h], 1
+.text:00007FF6EBBA1F7C                 call    sub_7FF6EBBA3E21 ; the same flag which gave me enter the flag, now i think validates it, because of flag is not true it prompts that its not the flag
+.text:00007FF6EBBA1F81                 mov     rcx, [rsp+2158h+var_20F0]
+.text:00007FF6EBBA1F86                 mov     rdx, rsi
+.text:00007FF6EBBA1F89                 call    sub_7FF6EBBA22C2
+.text:00007FF6EBBA1F8E                 movaps  xmm6, [rsp+2158h+var_58]
+.text:00007FF6EBBA1F96                 add     rsp, 2118h
+.text:00007FF6EBBA1F9D                 pop     rbx
+.text:00007FF6EBBA1F9E                 pop     rbp
+.text:00007FF6EBBA1F9F                 pop     rdi
+.text:00007FF6EBBA1FA0                 pop     rsi
+.text:00007FF6EBBA1FA1                 pop     r12
+.text:00007FF6EBBA1FA3                 pop     r13
+.text:00007FF6EBBA1FA5                 pop     r14
+.text:00007FF6EBBA1FA7                 pop     r15
+.text:00007FF6EBBA1FA9                 retn
+
+loc_7FF6EBBA3E39:                       ; CODE XREF: sub_7FF6EBBA3E21+D0↓j
+.text:00007FF6EBBA3E39                                         ; sub_7FF6EBBA3E21+10B↓j
+.text:00007FF6EBBA3E39                 call    sub_7FF6EBBA40DA
+.text:00007FF6EBBA3E3E                 mov     rdi, rax
+.text:00007FF6EBBA3E41                 mov     rax, cs:qword_7FF6EBBA80E0
+.text:00007FF6EBBA3E48                 cmp     rdi, rax
+.text:00007FF6EBBA3E4B                 jnz     short loc_7FF6EBBA3E60
+.text:00007FF6EBBA3E4D                 mov     eax, cs:dword_7FF6EBBA80E8
+.text:00007FF6EBBA3E53                 cmp     eax, 0FFFFFFFFh
+.text:00007FF6EBBA3E56                 jz      loc_7FF6EBBA3F42
+.text:00007FF6EBBA3E5C                 inc     eax
+.text:00007FF6EBBA3E5E                 jmp     short loc_7FF6EBBA3E7E
+.text:00007FF6EBBA3E60 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA3E60
+.text:00007FF6EBBA3E60 loc_7FF6EBBA3E60:                       ; CODE XREF: sub_7FF6EBBA3E21+2A↑j
+.text:00007FF6EBBA3E60                 mov     cl, 1
+.text:00007FF6EBBA3E62                 xor     eax, eax
+.text:00007FF6EBBA3E64                 lock cmpxchg cs:byte_7FF6EBBA80EC, cl
+.text:00007FF6EBBA3E6C                 jnz     loc_7FF6EBBA3F31
+.text:00007FF6EBBA3E72
+.text:00007FF6EBBA3E72 loc_7FF6EBBA3E72:                       ; CODE XREF: sub_7FF6EBBA3E21+11C↓j
+.text:00007FF6EBBA3E72                 mov     cs:qword_7FF6EBBA80E0, rdi
+.text:00007FF6EBBA3E79                 mov     eax, 1
+.text:00007FF6EBBA3E7E
+.text:00007FF6EBBA3E7E loc_7FF6EBBA3E7E:                       ; CODE XREF: sub_7FF6EBBA3E21+3D↑j
+.text:00007FF6EBBA3E7E                 mov     cs:dword_7FF6EBBA80E8, eax
+.text:00007FF6EBBA3E84                 lea     rax, qword_7FF6EBBA80E0
+.text:00007FF6EBBA3E8B                 mov     [rsp+58h+var_28], rax
+.text:00007FF6EBBA3E90                 cmp     qword ptr [rsi+8], 1
+.text:00007FF6EBBA3E95                 lea     rax, [rsp+58h+var_28]
+.text:00007FF6EBBA3E9A                 lea     rdi, [rsp+58h+var_20]
+.text:00007FF6EBBA3E9F                 mov     [rdi], rax
+.text:00007FF6EBBA3EA2                 and     qword ptr [rdi+8], 0
+.text:00007FF6EBBA3EA7                 lea     rdx, off_7FF6EBBA6878
+.text:00007FF6EBBA3EAE                 mov     rcx, rdi
+.text:00007FF6EBBA3EB1                 mov     r8, rsi
+.text:00007FF6EBBA3EB4                 call    sub_7FF6EBBA23AB
+.text:00007FF6EBBA3EB9                 mov     rsi, [rdi+8]
+.text:00007FF6EBBA3EBD                 test    al, al
+.text:00007FF6EBBA3EBF                 jz      short loc_7FF6EBBA3EC8
+.text:00007FF6EBBA3EC1                 test    rsi, rsi
+.text:00007FF6EBBA3EC4                 jnz     short loc_7FF6EBBA3ED2
+.text:00007FF6EBBA3EC6                 jmp     short loc_7FF6EBBA3F42
+.text:00007FF6EBBA3EC8 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA3EC8
+.text:00007FF6EBBA3EC8 loc_7FF6EBBA3EC8:                       ; CODE XREF: sub_7FF6EBBA3E21+9E↑j
+.text:00007FF6EBBA3EC8                 mov     rcx, rsi
+.text:00007FF6EBBA3ECB                 call    sub_7FF6EBBA3A41
+.text:00007FF6EBBA3ED0                 xor     esi, esi
+.text:00007FF6EBBA3ED2
+.text:00007FF6EBBA3ED2 loc_7FF6EBBA3ED2:                       ; CODE XREF: sub_7FF6EBBA3E21+A3↑j
+.text:00007FF6EBBA3ED2                 mov     rcx, [rsp+58h+var_28]
+.text:00007FF6EBBA3ED7                 call    sub_7FF6EBBA3C50
+.text:00007FF6EBBA3EDC                 test    rsi, rsi
+.text:00007FF6EBBA3EDF                 jnz     short loc_7FF6EBBA3F42
+.text:00007FF6EBBA3EE1                 add     rsp, 48h
+.text:00007FF6EBBA3EE5                 pop     rdi
+.text:00007FF6EBBA3EE6                 pop     rsi
+.text:00007FF6EBBA3EE7                 retn
+
+
+sub_7FF6EBBA40DA proc near              ; CODE XREF: sub_7FF6EBBA3E21:loc_7FF6EBBA3E39↑p
+.text:00007FF6EBBA40DA                                         ; sub_7FF6EBBA41B4+33↓p
+.text:00007FF6EBBA40DA                                         ; DATA XREF: ...
+.text:00007FF6EBBA40DA                 sub     rsp, 28h
+.text:00007FF6EBBA40DE                 mov     eax, cs:TlsIndex
+.text:00007FF6EBBA40E4                 mov     rcx, gs:58h
+.text:00007FF6EBBA40ED                 mov     rax, [rcx+rax*8]
+.text:00007FF6EBBA40F1                 mov     rax, [rax+8]
+.text:00007FF6EBBA40F8                 test    rax, rax
+.text:00007FF6EBBA40FB                 jnz     short loc_7FF6EBBA411C
+.text:00007FF6EBBA40FD                 call    sub_7FF6EBBA3F44 ; this function is never called because eax was 3
+.text:00007FF6EBBA4102                 mov     ecx, cs:TlsIndex
+.text:00007FF6EBBA4108                 mov     rdx, gs:58h
+.text:00007FF6EBBA4111                 mov     rcx, [rdx+rcx*8]
+.text:00007FF6EBBA4115                 mov     [rcx+8], rax
+.text:00007FF6EBBA411C
+.text:00007FF6EBBA411C loc_7FF6EBBA411C:                       ; CODE XREF: sub_7FF6EBBA40DA+21↑j
+.text:00007FF6EBBA411C                 add     rsp, 28h
+.text:00007FF6EBBA4120                 retn
+
+
+
+sub_7FF6EBBA23AB proc near              ; CODE XREF: sub_7FF6EBBA117E+DA↑p
+.text:00007FF6EBBA23AB                                         ; sub_7FF6EBBA1286+DA↑p ...
+.text:00007FF6EBBA23AB
+.text:00007FF6EBBA23AB var_68          = qword ptr -68h
+.text:00007FF6EBBA23AB var_60          = qword ptr -60h
+.text:00007FF6EBBA23AB var_58          = qword ptr -58h
+.text:00007FF6EBBA23AB var_50          = qword ptr -50h
+.text:00007FF6EBBA23AB var_48          = qword ptr -48h
+.text:00007FF6EBBA23AB
+.text:00007FF6EBBA23AB                 push    r15
+.text:00007FF6EBBA23AD                 push    r14
+.text:00007FF6EBBA23AF                 push    r13
+.text:00007FF6EBBA23B1                 push    r12
+.text:00007FF6EBBA23B3                 push    rsi
+.text:00007FF6EBBA23B4                 push    rdi
+.text:00007FF6EBBA23B5                 push    rbp
+.text:00007FF6EBBA23B6                 push    rbx
+.text:00007FF6EBBA23B7                 sub     rsp, 48h
+.text:00007FF6EBBA23BB                 mov     eax, 0E0000020h
+.text:00007FF6EBBA23C0                 mov     [rsp+88h+var_58], rax
+.text:00007FF6EBBA23C5                 mov     [rsp+88h+var_68], rcx
+.text:00007FF6EBBA23CA                 mov     [rsp+88h+var_60], rdx
+.text:00007FF6EBBA23CF                 mov     r14, [r8+20h]
+.text:00007FF6EBBA23D3                 test    r14, r14
+.text:00007FF6EBBA23D6                 jz      loc_7FF6EBBA249A
+.text:00007FF6EBBA23DC                 mov     rax, [r8+28h]
+.text:00007FF6EBBA23E0                 mov     r15, [r8]
+.text:00007FF6EBBA23E3                 mov     rcx, [r8+8]
+.text:00007FF6EBBA23E7                 mov     [rsp+88h+var_50], rcx
+.text:00007FF6EBBA23EC                 mov     rsi, [r8+10h]
+.text:00007FF6EBBA23F0                 mov     rdi, [r8+18h]
+.text:00007FF6EBBA23F4                 mov     rcx, 0FFFFFFFFFFFFFFFh
+.text:00007FF6EBBA23FE                 and     rcx, rax
+.text:00007FF6EBBA2401                 mov     [rsp+88h+var_48], rcx
+.text:00007FF6EBBA2406                 imul    r13, rax, 30h ; '0'
+.text:00007FF6EBBA240A                 lea     r12, [r15+8]
+.text:00007FF6EBBA240E
+.text:00007FF6EBBA240E loc_7FF6EBBA240E:                       ; CODE XREF: sub_7FF6EBBA23AB+E7↓j
+.text:00007FF6EBBA240E                 test    r13, r13
+.text:00007FF6EBBA2411                 jz      loc_7FF6EBBA24FD
+.text:00007FF6EBBA2417                 mov     r8, [r12]
+.text:00007FF6EBBA241B                 test    r8, r8
+.text:00007FF6EBBA241E                 jz      short loc_7FF6EBBA243A
+.text:00007FF6EBBA2420                 mov     rcx, [rsp+88h+var_68]
+.text:00007FF6EBBA2425                 mov     rax, [rsp+88h+var_60]
+.text:00007FF6EBBA242A                 mov     rdx, [r12-8]
+.text:00007FF6EBBA242F                 call    qword ptr [rax+18h]
+.text:00007FF6EBBA2432                 test    al, al
+.text:00007FF6EBBA2434                 jnz     loc_7FF6EBBA24F9
+.text:00007FF6EBBA243A
+.text:00007FF6EBBA243A loc_7FF6EBBA243A:                       ; CODE XREF: sub_7FF6EBBA23AB+73↑j
+.text:00007FF6EBBA243A                 lea     rbx, [r14+30h]
+.text:00007FF6EBBA243E                 lea     r8, [r14+10h]
+.text:00007FF6EBBA2442                 mov     rcx, rsi
+.text:00007FF6EBBA2445                 mov     rdx, rdi
+.text:00007FF6EBBA2448                 call    sub_7FF6EBBA253E
+.text:00007FF6EBBA244D                 mov     ebp, eax
+.text:00007FF6EBBA244F                 mov     rcx, rsi
+.text:00007FF6EBBA2452                 mov     rdx, rdi
+.text:00007FF6EBBA2455                 mov     r8, r14
+.text:00007FF6EBBA2458                 call    sub_7FF6EBBA253E
+.text:00007FF6EBBA245D                 mov     ecx, [r14+28h]
+.text:00007FF6EBBA2461                 mov     r8, [r14+20h]
+.text:00007FF6EBBA2465                 shl     r8, 4
+.text:00007FF6EBBA2469                 mov     dword ptr [rsp+88h+var_58], ecx
+.text:00007FF6EBBA246D                 mov     word ptr [rsp+88h+var_58+4], bp
+.text:00007FF6EBBA2472                 mov     word ptr [rsp+88h+var_58+6], ax
+.text:00007FF6EBBA2477                 mov     rcx, [rsi+r8]
+.text:00007FF6EBBA247B                 lea     rdx, [rsp+88h+var_68]
+.text:00007FF6EBBA2480                 call    qword ptr [rsi+r8+8]
+.text:00007FF6EBBA2485                 add     r13, 0FFFFFFFFFFFFFFD0h
+.text:00007FF6EBBA2489                 add     r12, 10h
+.text:00007FF6EBBA248D                 mov     r14, rbx
+.text:00007FF6EBBA2490                 test    al, al
+.text:00007FF6EBBA2492                 jz      loc_7FF6EBBA240E
+.text:00007FF6EBBA2498                 jmp     short loc_7FF6EBBA24F9
+.text:00007FF6EBBA249A ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA249A
+.text:00007FF6EBBA249A loc_7FF6EBBA249A:                       ; CODE XREF: sub_7FF6EBBA23AB+2B↑j
+.text:00007FF6EBBA249A                 mov     r14, [r8+10h]
+.text:00007FF6EBBA249E                 mov     r13, [r8+18h]
+.text:00007FF6EBBA24A2                 mov     r15, [r8]
+.text:00007FF6EBBA24A5                 mov     rax, [r8+8]
+.text:00007FF6EBBA24A9                 mov     [rsp+88h+var_50], rax
+.text:00007FF6EBBA24AE                 mov     rdi, r13
+.text:00007FF6EBBA24B1                 shl     rdi, 4
+.text:00007FF6EBBA24B5                 xor     ebx, ebx
+.text:00007FF6EBBA24B7                 lea     rsi, [rsp+88h+var_68]
+.text:00007FF6EBBA24BC
+.text:00007FF6EBBA24BC loc_7FF6EBBA24BC:                       ; CODE XREF: sub_7FF6EBBA23AB+14C↓j
+.text:00007FF6EBBA24BC                 cmp     rdi, rbx
+.text:00007FF6EBBA24BF                 jz      short loc_7FF6EBBA2502
+.text:00007FF6EBBA24C1                 mov     r8, [r15+rbx+8]
+.text:00007FF6EBBA24C6                 test    r8, r8
+.text:00007FF6EBBA24C9                 jz      short loc_7FF6EBBA24E0
+.text:00007FF6EBBA24CB                 mov     rcx, [rsp+88h+var_68]
+.text:00007FF6EBBA24D0                 mov     rax, [rsp+88h+var_60]
+.text:00007FF6EBBA24D5                 mov     rdx, [r15+rbx]
+.text:00007FF6EBBA24D9                 call    qword ptr [rax+18h] ; call a function sub_7FF6EBBA3A79
+.text:00007FF6EBBA24DC                 test    al, al
+.text:00007FF6EBBA24DE                 jnz     short loc_7FF6EBBA24F9
+.text:00007FF6EBBA24E0
+.text:00007FF6EBBA24E0 loc_7FF6EBBA24E0:                       ; CODE XREF: sub_7FF6EBBA23AB+11E↑j
+.text:00007FF6EBBA24E0                 lea     r12, [r14+10h]
+.text:00007FF6EBBA24E4                 mov     rcx, [r14]
+.text:00007FF6EBBA24E7                 mov     rdx, rsi
+.text:00007FF6EBBA24EA                 call    qword ptr [r14+8]
+.text:00007FF6EBBA24EE                 add     rbx, 10h
+.text:00007FF6EBBA24F2                 mov     r14, r12
+.text:00007FF6EBBA24F5                 test    al, al
+.text:00007FF6EBBA24F7                 jz      short loc_7FF6EBBA24BC
+.text:00007FF6EBBA24F9
+.text:00007FF6EBBA24F9 loc_7FF6EBBA24F9:                       ; CODE XREF: sub_7FF6EBBA23AB+89↑j
+.text:00007FF6EBBA24F9                                         ; sub_7FF6EBBA23AB+ED↑j ...
+.text:00007FF6EBBA24F9                 mov     al, 1
+.text:00007FF6EBBA24FB                 jmp     short loc_7FF6EBBA252D
+.text:00007FF6EBBA24FD ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA24FD
+.text:00007FF6EBBA24FD loc_7FF6EBBA24FD:                       ; CODE XREF: sub_7FF6EBBA23AB+66↑j
+.text:00007FF6EBBA24FD                 mov     r13, [rsp+88h+var_48]
+.text:00007FF6EBBA2502
+.text:00007FF6EBBA2502 loc_7FF6EBBA2502:                       ; CODE XREF: sub_7FF6EBBA23AB+114↑j
+.text:00007FF6EBBA2502                 cmp     r13, [rsp+88h+var_50]
+.text:00007FF6EBBA2507                 jnb     short loc_7FF6EBBA252B
+.text:00007FF6EBBA2509                 shl     r13, 4
+.text:00007FF6EBBA250D                 mov     rcx, [rsp+88h+var_68]
+.text:00007FF6EBBA2512                 mov     rax, [rsp+88h+var_60]
+.text:00007FF6EBBA2517                 mov     rdx, [r15+r13]
+.text:00007FF6EBBA251B                 mov     r8, [r15+r13+8]
+.text:00007FF6EBBA2520                 call    qword ptr [rax+18h]
+.text:00007FF6EBBA2523                 mov     ecx, eax
+.text:00007FF6EBBA2525                 mov     al, 1
+.text:00007FF6EBBA2527                 test    cl, cl
+.text:00007FF6EBBA2529                 jnz     short loc_7FF6EBBA252D
+.text:00007FF6EBBA252B
+.text:00007FF6EBBA252B loc_7FF6EBBA252B:                       ; CODE XREF: sub_7FF6EBBA23AB+15C↑j
+.text:00007FF6EBBA252B                 xor     eax, eax
+.text:00007FF6EBBA252D
+.text:00007FF6EBBA252D loc_7FF6EBBA252D:                       ; CODE XREF: sub_7FF6EBBA23AB+150↑j
+.text:00007FF6EBBA252D                                         ; sub_7FF6EBBA23AB+17E↑j
+.text:00007FF6EBBA252D                 add     rsp, 48h
+.text:00007FF6EBBA2531                 pop     rbx
+.text:00007FF6EBBA2532                 pop     rbp
+.text:00007FF6EBBA2533                 pop     rdi
+.text:00007FF6EBBA2534                 pop     rsi
+.text:00007FF6EBBA2535                 pop     r12
+.text:00007FF6EBBA2537                 pop     r13
+.text:00007FF6EBBA2539                 pop     r14
+.text:00007FF6EBBA253B                 pop     r15
+.text:00007FF6EBBA253D                 retn
+.text:00007FF6EBBA253D sub_7FF6EBBA23AB endp
+
+
+
+
+sub_7FF6EBBA3A79 proc near              ; CODE XREF: sub_7FF6EBBA3A4B+22↑p
+.text:00007FF6EBBA3A79                                         ; sub_7FF6EBBA3ADC+28↓j
+.text:00007FF6EBBA3A79                                         ; DATA XREF: ...
+.text:00007FF6EBBA3A79                 push    rsi
+.text:00007FF6EBBA3A7A                 push    rdi
+.text:00007FF6EBBA3A7B                 sub     rsp, 28h
+.text:00007FF6EBBA3A7F                 mov     rsi, rcx
+.text:00007FF6EBBA3A82                 mov     rax, [rcx]
+.text:00007FF6EBBA3A85                 mov     rcx, [rax]
+.text:00007FF6EBBA3A88                 call    sub_7FF6EBBA3C66
+.text:00007FF6EBBA3A8D                 mov     rdi, rax
+.text:00007FF6EBBA3A90                 test    rax, rax
+.text:00007FF6EBBA3A93                 jz      short loc_7FF6EBBA3AA2
+.text:00007FF6EBBA3A95                 mov     rcx, [rsi+8]
+.text:00007FF6EBBA3A99                 call    sub_7FF6EBBA3A41
+.text:00007FF6EBBA3A9E                 mov     [rsi+8], rdi
+.text:00007FF6EBBA3AA2
+.text:00007FF6EBBA3AA2 loc_7FF6EBBA3AA2:                       ; CODE XREF: sub_7FF6EBBA3A79+1A↑j
+.text:00007FF6EBBA3AA2                 test    rdi, rdi
+.text:00007FF6EBBA3AA5                 setnz   al
+.text:00007FF6EBBA3AA8                 add     rsp, 28h
+.text:00007FF6EBBA3AAC                 pop     rdi
+.text:00007FF6EBBA3AAD                 pop     rsi
+.text:00007FF6EBBA3AAE                 retn
+
+
+
+
+sub_7FF6EBBA3C66 proc near              ; CODE XREF: sub_7FF6EBBA3A79+F↑p
+.text:00007FF6EBBA3C66                                         ; DATA XREF: .pdata:00007FF6EBBA921C↓o
+.text:00007FF6EBBA3C66                 push    r15
+.text:00007FF6EBBA3C68                 push    r14
+.text:00007FF6EBBA3C6A                 push    r13
+.text:00007FF6EBBA3C6C                 push    r12
+.text:00007FF6EBBA3C6E                 push    rsi
+.text:00007FF6EBBA3C6F                 push    rdi
+.text:00007FF6EBBA3C70                 push    rbp
+.text:00007FF6EBBA3C71                 push    rbx
+.text:00007FF6EBBA3C72                 sub     rsp, 28h
+.text:00007FF6EBBA3C76                 cmp     qword ptr [rcx+10h], 0
+.text:00007FF6EBBA3C7B                 jnz     loc_7FF6EBBA3E1F
+.text:00007FF6EBBA3C81                 mov     rdi, r8
+.text:00007FF6EBBA3C84                 mov     rbx, rdx
+.text:00007FF6EBBA3C87                 mov     rsi, rcx
+.text:00007FF6EBBA3C8A                 lea     rax, [rdx+7]
+.text:00007FF6EBBA3C8E                 and     rax, 0FFFFFFFFFFFFFFF8h
+.text:00007FF6EBBA3C92                 sub     rax, rdx
+.text:00007FF6EBBA3C95                 mov     rcx, r8
+.text:00007FF6EBBA3C98                 sub     rcx, rax
+.text:00007FF6EBBA3C9B                 and     ecx, 0Fh
+.text:00007FF6EBBA3C9E                 xor     edx, edx
+.text:00007FF6EBBA3CA0                 cmp     r8, rax
+.text:00007FF6EBBA3CA3                 cmovnb  rdx, rcx
+.text:00007FF6EBBA3CA7                 or      qword ptr [rsi+10h], 0FFFFFFFFFFFFFFFFh
+.text:00007FF6EBBA3CAC                 cmp     rax, r8
+.text:00007FF6EBBA3CAF                 cmovnb  rax, r8
+.text:00007FF6EBBA3CB3                 mov     rcx, r8
+.text:00007FF6EBBA3CB6                 sub     rcx, rdx
+.text:00007FF6EBBA3CB9                 jb      loc_7FF6EBBA3E1F
+.text:00007FF6EBBA3CBF                 lea     r14, [rsi+18h]
+.text:00007FF6EBBA3CC3                 lea     r8, [rdi+rbx]
+.text:00007FF6EBBA3CC7                 dec     r8
+.text:00007FF6EBBA3CCA                 mov     r9, rdx
+.text:00007FF6EBBA3CCD
+.text:00007FF6EBBA3CCD loc_7FF6EBBA3CCD:                       ; CODE XREF: sub_7FF6EBBA3C66+7A↓j
+.text:00007FF6EBBA3CCD                 test    r9, r9
+.text:00007FF6EBBA3CD0                 jz      short loc_7FF6EBBA3CEA
+.text:00007FF6EBBA3CD2                 mov     r15, r9
+.text:00007FF6EBBA3CD5                 dec     r9
+.text:00007FF6EBBA3CD8                 cmp     byte ptr [r8], 0Ah
+.text:00007FF6EBBA3CDC                 lea     r8, [r8-1]
+.text:00007FF6EBBA3CE0                 jnz     short loc_7FF6EBBA3CCD
+.text:00007FF6EBBA3CE2                 add     r15, rcx
+.text:00007FF6EBBA3CE5                 jmp     loc_7FF6EBBA3D8C
+.text:00007FF6EBBA3CEA ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA3CEA
+.text:00007FF6EBBA3CEA loc_7FF6EBBA3CEA:                       ; CODE XREF: sub_7FF6EBBA3C66+6A↑j
+.text:00007FF6EBBA3CEA                 mov     r9, 8080808080808080h
+.text:00007FF6EBBA3CF4                 mov     r10, 0A0A0A0A0A0A0A0Ah
+.text:00007FF6EBBA3CFE                 mov     r11, 101010101010100h
+.text:00007FF6EBBA3D08                 mov     r13, rdx
+.text:00007FF6EBBA3D0B                 not     r13
+.text:00007FF6EBBA3D0E                 add     r13, rbx
+.text:00007FF6EBBA3D11                 neg     rdx
+.text:00007FF6EBBA3D14
+.text:00007FF6EBBA3D14 loc_7FF6EBBA3D14:                       ; CODE XREF: sub_7FF6EBBA3C66+F7↓j
+.text:00007FF6EBBA3D14                 mov     r12, rcx
+.text:00007FF6EBBA3D17                 mov     r8, r13
+.text:00007FF6EBBA3D1A                 mov     r15, rdx
+.text:00007FF6EBBA3D1D                 cmp     rcx, rax
+.text:00007FF6EBBA3D20                 jbe     short loc_7FF6EBBA3D5F
+.text:00007FF6EBBA3D22                 lea     rcx, [r12-10h]
+.text:00007FF6EBBA3D27                 mov     rdx, [rbx+r12-10h]
+.text:00007FF6EBBA3D2C                 mov     r13, rdx
+.text:00007FF6EBBA3D2F                 xor     r13, r10
+.text:00007FF6EBBA3D32                 mov     rbp, r11
+.text:00007FF6EBBA3D35                 sub     rbp, r13
+.text:00007FF6EBBA3D38                 or      rbp, rdx
+.text:00007FF6EBBA3D3B                 mov     rdx, [rbx+r12-8]
+.text:00007FF6EBBA3D40                 xor     rdx, r10
+.text:00007FF6EBBA3D43                 mov     r13, r11
+.text:00007FF6EBBA3D46                 sub     r13, rdx
+.text:00007FF6EBBA3D49                 or      r13, rdx
+.text:00007FF6EBBA3D4C                 and     rbp, r9
+.text:00007FF6EBBA3D4F                 and     rbp, r13
+.text:00007FF6EBBA3D52                 lea     r13, [r8-10h]
+.text:00007FF6EBBA3D56                 lea     rdx, [r15-10h]
+.text:00007FF6EBBA3D5A                 cmp     rbp, r9
+.text:00007FF6EBBA3D5D                 jz      short loc_7FF6EBBA3D14
+.text:00007FF6EBBA3D5F
+.text:00007FF6EBBA3D5F loc_7FF6EBBA3D5F:                       ; CODE XREF: sub_7FF6EBBA3C66+BA↑j
+.text:00007FF6EBBA3D5F                 cmp     r12, rdi
+.text:00007FF6EBBA3D62                 ja      loc_7FF6EBBA3E1F
+.text:00007FF6EBBA3D68
+.text:00007FF6EBBA3D68 loc_7FF6EBBA3D68:                       ; CODE XREF: sub_7FF6EBBA3C66+11A↓j
+.text:00007FF6EBBA3D68                 mov     rcx, rdi
+.text:00007FF6EBBA3D6B                 add     rcx, r15
+.text:00007FF6EBBA3D6E                 jz      short loc_7FF6EBBA3DD2
+.text:00007FF6EBBA3D70                 mov     rax, r15
+.text:00007FF6EBBA3D73                 cmp     byte ptr [r8+rdi], 0Ah
+.text:00007FF6EBBA3D78                 lea     r8, [r8-1]
+.text:00007FF6EBBA3D7C                 lea     r15, [r15-1]
+.text:00007FF6EBBA3D80                 jnz     short loc_7FF6EBBA3D68
+.text:00007FF6EBBA3D82                 lea     r15, [rdi+rax]
+.text:00007FF6EBBA3D86                 dec     r15
+.text:00007FF6EBBA3D89                 inc     r15
+.text:00007FF6EBBA3D8C
+.text:00007FF6EBBA3D8C loc_7FF6EBBA3D8C:                       ; CODE XREF: sub_7FF6EBBA3C66+7F↑j
+.text:00007FF6EBBA3D8C                 sub     rdi, r15
+.text:00007FF6EBBA3D8F                 jb      loc_7FF6EBBA3E1F
+.text:00007FF6EBBA3D95                 cmp     qword ptr [rsi+28h], 0
+.text:00007FF6EBBA3D9A                 jz      short loc_7FF6EBBA3DB9
+.text:00007FF6EBBA3D9C                 mov     rcx, r14
+.text:00007FF6EBBA3D9F                 mov     rdx, rbx
+.text:00007FF6EBBA3DA2                 mov     r8, r15
+.text:00007FF6EBBA3DA5                 call    sub_7FF6EBBA3019
+.text:00007FF6EBBA3DAA                 test    rax, rax
+.text:00007FF6EBBA3DAD                 jnz     short loc_7FF6EBBA3E0A
+.text:00007FF6EBBA3DAF                 mov     rcx, r14
+.text:00007FF6EBBA3DB2                 call    sub_7FF6EBBA3FAF
+.text:00007FF6EBBA3DB7                 jmp     short loc_7FF6EBBA3DC8
+.text:00007FF6EBBA3DB9 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA3DB9
+.text:00007FF6EBBA3DB9 loc_7FF6EBBA3DB9:                       ; CODE XREF: sub_7FF6EBBA3C66+134↑j
+.text:00007FF6EBBA3DB9                 lea     rcx, [rsi+31h]
+.text:00007FF6EBBA3DBD                 mov     rdx, rbx
+.text:00007FF6EBBA3DC0                 mov     r8, r15
+.text:00007FF6EBBA3DC3                 call    sub_7FF6EBBA3B96
+.text:00007FF6EBBA3DC8
+.text:00007FF6EBBA3DC8 loc_7FF6EBBA3DC8:                       ; CODE XREF: sub_7FF6EBBA3C66+151↑j
+.text:00007FF6EBBA3DC8                 test    rax, rax
+.text:00007FF6EBBA3DCB                 jnz     short loc_7FF6EBBA3E0A
+.text:00007FF6EBBA3DCD                 add     rbx, r15
+.text:00007FF6EBBA3DD0                 jmp     short loc_7FF6EBBA3DFC
+.text:00007FF6EBBA3DD2 ; ---------------------------------------------------------------------------
+.text:00007FF6EBBA3DD2
+.text:00007FF6EBBA3DD2 loc_7FF6EBBA3DD2:                       ; CODE XREF: sub_7FF6EBBA3C66+108↑j
+.text:00007FF6EBBA3DD2                 mov     rax, [rsi+28h]
+.text:00007FF6EBBA3DD6                 test    rax, rax
+.text:00007FF6EBBA3DD9                 setz    cl
+.text:00007FF6EBBA3DDC                 add     rax, [rsi+20h]
+.text:00007FF6EBBA3DE0                 dec     rax
+.text:00007FF6EBBA3DE3                 setz    dl
+.text:00007FF6EBBA3DE6                 or      dl, cl
+.text:00007FF6EBBA3DE8                 jnz     short loc_7FF6EBBA3DFC
+.text:00007FF6EBBA3DEA                 cmp     byte ptr [rax], 0Ah
+.text:00007FF6EBBA3DED                 jnz     short loc_7FF6EBBA3DFC
+.text:00007FF6EBBA3DEF                 mov     rcx, r14
+.text:00007FF6EBBA3DF2                 call    sub_7FF6EBBA3FAF
+.text:00007FF6EBBA3DF7                 test    rax, rax
+.text:00007FF6EBBA3DFA                 jnz     short loc_7FF6EBBA3E0A
+.text:00007FF6EBBA3DFC
+.text:00007FF6EBBA3DFC loc_7FF6EBBA3DFC:                       ; CODE XREF: sub_7FF6EBBA3C66+16A↑j
+.text:00007FF6EBBA3DFC                                         ; sub_7FF6EBBA3C66+182↑j ...
+.text:00007FF6EBBA3DFC                 mov     rcx, r14
+.text:00007FF6EBBA3DFF                 mov     rdx, rbx
+.text:00007FF6EBBA3E02                 mov     r8, rdi
+.text:00007FF6EBBA3E05                 call    sub_7FF6EBBA3019
+.text:00007FF6EBBA3E0A
+.text:00007FF6EBBA3E0A loc_7FF6EBBA3E0A:                       ; CODE XREF: sub_7FF6EBBA3C66+147↑j
+.text:00007FF6EBBA3E0A                                         ; sub_7FF6EBBA3C66+165↑j ...
+.text:00007FF6EBBA3E0A                 inc     qword ptr [rsi+10h]
+.text:00007FF6EBBA3E0E                 add     rsp, 28h
+.text:00007FF6EBBA3E12                 pop     rbx
+.text:00007FF6EBBA3E13                 pop     rbp
+.text:00007FF6EBBA3E14                 pop     rdi
+.text:00007FF6EBBA3E15                 pop     rsi
+.text:00007FF6EBBA3E16                 pop     r12
+.text:00007FF6EBBA3E18                 pop     r13
+.text:00007FF6EBBA3E1A                 pop     r14
+.text:00007FF6EBBA3E1C                 pop     r15
+.text:00007FF6EBBA3E1E                 retn
+
+
+sub_7FF6EBBA3019 proc near              ; CODE XREF: sub_7FF6EBBA3C66+13F↓p
+.text:00007FF6EBBA3019                                         ; sub_7FF6EBBA3C66+19F↓p
+.text:00007FF6EBBA3019                                         ; DATA XREF: ...
+.text:00007FF6EBBA3019                 push    rsi
+.text:00007FF6EBBA301A                 push    rdi
+.text:00007FF6EBBA301B                 push    rbx
+.text:00007FF6EBBA301C                 sub     rsp, 20h
+.text:00007FF6EBBA3020                 mov     rsi, r8
+.text:00007FF6EBBA3023                 mov     rdi, rcx
+.text:00007FF6EBBA3026                 mov     rax, [rcx]
+.text:00007FF6EBBA3029                 mov     rbx, [rcx+10h]
+.text:00007FF6EBBA302D                 sub     rax, rbx
+.text:00007FF6EBBA3030                 cmp     r8, rax
+.text:00007FF6EBBA3033                 jnb     short loc_7FF6EBBA3055
+.text:00007FF6EBBA3035                 mov     rcx, [rdi+8]
+.text:00007FF6EBBA3039                 add     rcx, rbx        ; void *
+.text:00007FF6EBBA303C                 mov     r8, rsi         ; Size
+.text:00007FF6EBBA303F                 call    memcpy
+.text:00007FF6EBBA3044                 add     rbx, rsi
+.text:00007FF6EBBA3047                 mov     [rdi+10h], rbx
+.text:00007FF6EBBA304B                 xor     eax, eax
+.text:00007FF6EBBA304D                 add     rsp, 20h
+.text:00007FF6EBBA3051                 pop     rbx
+.text:00007FF6EBBA3052                 pop     rdi
+.text:00007FF6EBBA3053                 pop     rsi
+.text:00007FF6EBBA3054                 retn

@@ -1,0 +1,170 @@
+undefined8 main(void)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined1 local_68 [41];
+  undefined1 local_3f [7];
+  undefined8 local_38;
+  undefined4 local_30;
+  undefined4 uStack_2c;
+  undefined4 uStack_28;
+  undefined8 local_24;
+  uint local_1c;
+  
+  FUN_001011b9();
+  FUN_00101207();
+  FUN_0010121d();
+  FUN_0010127f();
+  local_38 = 0x3f07101e2c020915;
+  local_30 = 0x4c30213c;
+  uStack_2c = 0x23373a07;
+  uStack_28 = 0x11462656;
+  local_24 = 0x361b550b26313957;
+  FUN_001012d8(local_3f);
+  FUN_0010132a(&local_38,0x1c,local_3f,local_68);
+  puts("Encrypted flag is hidden in memory. Use your tools wisely.");
+  iVar1 = rand();
+  iVar2 = rand();
+  local_1c = FUN_001011e0(iVar2 % 100,iVar1 % 100);
+  printf("Debug value: %d\n",(ulong)local_1c);
+  return 0;
+}
+
+
+
+void FUN_001011b9(void)
+
+{
+  time_t tVar1;
+  
+  tVar1 = time((time_t *)0x0);
+  srand((uint)tVar1);
+  puts("Initializing secure RNG...");
+  return;
+}
+
+
+
+void FUN_00101207(void)
+
+{
+  puts("This isn\'t the flag you\'re looking for...");
+  return;
+}
+
+
+
+
+void FUN_0010121d(void)
+
+{
+  timespec local_28;
+  int local_c;
+  
+  for (local_c = 0; local_c < 3; local_c = local_c + 1) {
+    putchar(0x2e);
+    fflush(stdout);
+    local_28.tv_sec = 0;
+    local_28.tv_nsec = 300000000;
+    nanosleep(&local_28,(timespec *)0x0);
+  }
+  putchar(10);
+  return;
+}
+
+
+
+
+void FUN_0010127f(void)
+
+{
+  int iVar1;
+  int local_10;
+  uint local_c;
+  
+  local_c = 0;
+  for (local_10 = 0; local_10 < 100; local_10 = local_10 + 1) {
+    iVar1 = rand();
+    local_c = local_c + iVar1 % 0x100;
+  }
+  printf("Checksum: %u\n",(ulong)local_c);
+  return;
+}
+
+
+
+void FUN_001012d8(long param_1)
+
+{
+  byte local_12 [6];
+  int local_c;
+  
+  local_12[0] = 0x72;
+  local_12[1] = 100;
+  local_12[2] = 0x62;
+  local_12[3] = 0x4a;
+  local_12[4] = 100;
+  local_12[5] = 0x78;
+  for (local_c = 0; local_c < 6; local_c = local_c + 1) {
+     *(byte *)(param_1 + local_c) = local_12[local_c] ^ 1;
+  }
+  *(undefined1 *)(param_1 + 6) = 0;
+  return;
+}
+
+
+
+
+void FUN_0010132a(long param_1,int param_2,char *param_3,long param_4)
+
+{
+  byte bVar1;
+  size_t sVar2;
+  int local_1c;
+  
+  for (local_1c = 0; local_1c < param_2; local_1c = local_1c + 1) {
+     bVar1 = *(byte *)(param_1 + local_1c);
+     sVar2 = strlen(param_3);
+     *(byte *)(param_4 + local_1c) = bVar1 ^ param_3[(ulong)(long)local_1c % sVar2];
+  }
+  *(undefined1 *)(param_4 + param_2) = 0;
+  return;
+}
+
+
+
+
+int FUN_001011e0(uint param_1,uint param_2)
+
+{
+  return (param_1 * param_2 + (param_1 ^ param_2)) - (param_1 & param_2);
+}
+
+
+
+
+ 
+
+
+This is a rev challenge , when i run it it gives me the following:
+
+┌──(root㉿Noob-Novice)-[/mnt/d/ctfs/AirRange/rev]
+└─# ./sillyRange
+Initializing secure RNG...
+This isn't the flag you're looking for...
+...
+Checksum: 13503
+Encrypted flag is hidden in memory. Use your tools wisely.
+Debug value: 2059
+
+┌──(root㉿Noob-Novice)-[/mnt/d/ctfs/AirRange/rev]
+└─# ./sillyRange
+Initializing secure RNG...
+This isn't the flag you're looking for...
+...
+Checksum: 11923
+Encrypted flag is hidden in memory. Use your tools wisely.
+Debug value: 268
+
+each time checksum and debug value are different

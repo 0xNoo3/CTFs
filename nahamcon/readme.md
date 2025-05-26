@@ -4,4 +4,5 @@
 ## Reverse Engineering
 
 - [FlagsFlagsFlags](rev/FlagsFlagsFlags)
+- [Whast's a Base Amoung Friends](rev/What's%20a%20base%20amoungst%20friends/)
 

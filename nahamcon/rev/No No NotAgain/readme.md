@@ -1,8 +1,7 @@
-# CrackMe Challenge Writeup
+# No No NotAgain Challenge Writeup
 
 **Category:** Reverse Engineering  
 **CTF Name:** Nahamcon CTF 2025  
-**Points:** 100  
 
 ---
 
@@ -43,7 +42,7 @@ You can see i was reading asm and decompilation of binary, and kept it in Asm an
 ![alt text](image.png)
 
 
-2. So as the previous `[Whats a base](../What's%20a%20base%20amoungst%20friends/)` was approached
+2. So as the previous [Whats a base](../What's%20a%20base%20amoungst%20friends/) was approached
 
 ![alt text](image-1.png)
 
@@ -126,5 +125,4 @@ We entered the correct flag !
 
 ## 📌 Notes
 
-- Learned about string table lookup in executables.
-
+- 

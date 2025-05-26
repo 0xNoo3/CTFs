@@ -1,4 +1,4 @@
-# CrackMe Challenge Writeup
+# What's a base Amoungst friends Challenge Writeup
 
 **Category:** Reverse Engineering  
 **CTF Name:** NahamCon CTF 2025  

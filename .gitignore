@@ -3,6 +3,7 @@
 *.tar.gz
 *.zip
 *.7z
+*.i64
 
 # Ignore specific files and folders
 nahamcon/pwn/theJumps/

@@ -29,14 +29,21 @@
 
 ---
 
-## 📝 Approach  
+## 📝 Approach
+
+```
+I wasted alot of time, understanding the odd behaviour of binary while debugging it, without going to xrefs.
+and assuming the check maybe wayy above the xref.
+You can see i was reading asm and decompilation of binary, and kept it in Asm and Decomp file, So i could give it to AI to figure it out for me xD
+
+```
 
 1. When we start the challenge it asks for a flag
 
 ![alt text](image.png)
 
 
-2. So as the previous `[Whats a base](../What's%20a%20base%20amoungst%20friends/)` was approach
+2. So as the previous `[Whats a base](../What's%20a%20base%20amoungst%20friends/)` was approached
 
 ![alt text](image-1.png)
 

@@ -4,12 +4,18 @@
 *.zip
 *.7z
 *.i64
+*.apk
+app-release.apk
 
 # Ignore specific files and folders
 nahamcon/pwn/theJumps/
 tamuctf/rev/05backdoored.tar
 airtech_finals/
-AirRange/
+AirRange/Wave1
+AirRange/Wave2/pwn/Oozing/*.py
+AirRange/Wave2/mobile/app-release/
+AirRange/Wave2/mobile/app-release.apk
+AirRange/Wave2/rev/Donnow/
 
 # Optional: Ignore Python venvs if ever created inside this folder
 venv/

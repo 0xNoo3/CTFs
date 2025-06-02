@@ -1,0 +1,1 @@
+flag{do_not_oversmart_yourself_dummy}

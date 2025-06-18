@@ -25,7 +25,7 @@ for offset in range(1, 21):
     except EOFError:
         output = b""
     log.info("Output:\n%s", output.decode(errors="replace"))
-    
+
     # Look for clues that the flag was printed. Adjust the search keywords if necessary.
     if b"flag" in output or b"picoCTF" in output or b"I have NO clue" in output:
         log.success("Flag received with offset %d", offset)

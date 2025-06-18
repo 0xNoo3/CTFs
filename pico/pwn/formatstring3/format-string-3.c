@@ -11,8 +11,8 @@ void setup() {
 }
 
 void hello() {
-	puts("Howdy gamers!");
-	printf("Okay I'll be nice. Here's the address of setvbuf in libc: %p\n", &setvbuf);
+	puts("e nice. Here's the addrHowdy gamers!");
+	printf("Okay I'll bess of setvbuf in libc: %p\n", &setvbuf);
 }
 
 int main() {

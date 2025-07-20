@@ -1,0 +1,16 @@
+
+set pagination off
+file ./final
+# breakpoint right after each scanf, before the cmp
+break *0x40310f
+break *0x4032xx  # second scanf address – you’ll need to fill these in
+break *0x4034xx  # third scanf
+break *0x4036xx  # fourth scanf
+break *0x4038xx  # fifth scanf
+run
+# On each hit, print the just‐read unsigned long (in rax)
+commands
+  silent
+  printf "%llu\n", $rax
+  continue
+end

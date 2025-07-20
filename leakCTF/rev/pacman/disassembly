@@ -1,0 +1,156 @@
+
+gef➤  x/100i $pc (its the main function btw)
+=> 0x4012c8:    endbr64
+   0x4012cc:    push   rbp
+   0x4012cd:    mov    rbp,rsp
+   0x4012d0:    sub    rsp,0x50
+   0x4012d4:    mov    rax,QWORD PTR fs:0x28
+   0x4012dd:    mov    QWORD PTR [rbp-0x8],rax
+   0x4012e1:    xor    eax,eax
+   0x4012e3:    lea    rax,[rip+0xd76]        # 0x402060
+   0x4012ea:    mov    rdi,rax
+   0x4012ed:    mov    eax,0x0
+   0x4012f2:    call   0x4010d0 <printf@plt>
+   0x4012f7:    mov    rdx,QWORD PTR [rip+0x2d52]        # 0x404050 <stdin>
+   0x4012fe:    lea    rax,[rbp-0x30]
+   0x401302:    mov    esi,0x21
+   0x401307:    mov    rdi,rax
+   0x40130a:    call   0x401100 <fgets@plt>
+   0x40130f:    test   rax,rax
+   0x401312:    jne    0x40131e
+   0x401314:    mov    eax,0x1
+   0x401319:    jmp    0x4013ee
+   0x40131e:    lea    rax,[rbp-0x30]
+   0x401322:    lea    rdx,[rip+0xd55]        # 0x40207e
+   0x401329:    mov    rsi,rdx
+   0x40132c:    mov    rdi,rax
+   0x40132f:    call   0x4010e0 <strcspn@plt>
+   0x401334:    mov    BYTE PTR [rbp+rax*1-0x30],0x0
+   0x401339:    lea    rax,[rbp-0x30]
+   0x40133d:    mov    rdi,rax
+   0x401340:    call   0x4010b0 <strlen@plt>
+   0x401345:    cmp    rax,0x20
+   0x401349:    je     0x40136e
+   0x40134b:    mov    esi,0x20
+   0x401350:    lea    rax,[rip+0xd29]        # 0x402080
+   0x401357:    mov    rdi,rax
+   0x40135a:    mov    eax,0x0
+   0x40135f:    call   0x4010d0 <printf@plt>
+   0x401364:    mov    eax,0x1
+   0x401369:    jmp    0x4013ee
+   0x40136e:    mov    rax,QWORD PTR [rbp-0x30]
+   0x401372:    mov    rdx,QWORD PTR [rbp-0x28]
+   0x401376:    mov    QWORD PTR [rbp-0x50],rax
+   0x40137a:    mov    QWORD PTR [rbp-0x48],rdx
+   0x40137e:    mov    rax,QWORD PTR [rbp-0x20]
+   0x401382:    mov    rdx,QWORD PTR [rbp-0x18]
+   0x401386:    mov    QWORD PTR [rbp-0x40],rax
+   0x40138a:    mov    QWORD PTR [rbp-0x38],rdx
+   0x40138e:    lea    rax,[rbp-0x50]
+   0x401392:    mov    rdi,rax
+   0x401395:    call   0x401234
+   0x40139a:    lea    rax,[rbp-0x50]
+   0x40139e:    add    rax,0x10
+   0x4013a2:    mov    rdi,rax
+   0x4013a5:    call   0x401234
+   0x4013aa:    lea    rax,[rbp-0x50]
+   0x4013ae:    mov    edx,0x20
+   0x4013b3:    lea    rcx,[rip+0xc86]        # 0x402040
+   0x4013ba:    mov    rsi,rcx
+   0x4013bd:    mov    rdi,rax
+   0x4013c0:    call   0x4010f0 <memcmp@plt>
+   0x4013c5:    test   eax,eax
+   0x4013c7:    jne    0x4013da
+   0x4013c9:    lea    rax,[rip+0xce6]        # 0x4020b6
+   0x4013d0:    mov    rdi,rax
+   0x4013d3:    call   0x4010a0 <puts@plt>
+   0x4013d8:    jmp    0x4013e9
+   0x4013da:    lea    rax,[rip+0xcd9]        # 0x4020ba
+   0x4013e1:    mov    rdi,rax
+   0x4013e4:    call   0x4010a0 <puts@plt>  # wrong flag puts
+   0x4013e9:    mov    eax,0x0
+   0x4013ee:    mov    rdx,QWORD PTR [rbp-0x8]
+   0x4013f2:    sub    rdx,QWORD PTR fs:0x28
+   0x4013fb:    je     0x401402
+   0x4013fd:    call   0x4010c0 <__stack_chk_fail@plt>
+   0x401402:    leave
+   0x401403:    ret
+   0x401404:    endbr64
+   0x401408:    sub    rsp,0x8
+   0x40140c:    add    rsp,0x8
+   0x401410:    ret
+
+
+
+gef➤  x/50i 0x401234
+   0x401234:    endbr64
+   0x401238:    push   rbp
+   0x401239:    mov    rbp,rsp
+   0x40123c:    push   rbx
+   0x40123d:    sub    rsp,0x28
+   0x401241:    mov    QWORD PTR [rbp-0x30],rdi
+   0x401245:    mov    rax,QWORD PTR [rbp-0x30]
+   0x401249:    mov    QWORD PTR [rbp-0x20],rax
+   0x40124d:    mov    rax,QWORD PTR [rbp-0x30]
+   0x401251:    add    rax,0x8
+   0x401255:    mov    QWORD PTR [rbp-0x18],rax
+   0x401259:    mov    DWORD PTR [rbp-0x24],0x0
+   0x401260:    jmp    0x4012ba
+   0x401262:    mov    rax,QWORD PTR [rbp-0x18]
+   0x401266:    mov    rax,QWORD PTR [rax]
+   0x401269:    mov    QWORD PTR [rbp-0x10],rax
+   0x40126d:    mov    rax,QWORD PTR [rbp-0x20]
+   0x401271:    mov    rbx,QWORD PTR [rax]
+   0x401274:    mov    eax,DWORD PTR [rbp-0x24]
+   0x401277:    cdqe
+   0x401279:    lea    rdx,[rax*8+0x0]
+   0x401281:    lea    rax,[rip+0xd98]        # 0x402020
+   0x401288:    mov    rdx,QWORD PTR [rdx+rax*1]
+   0x40128c:    mov    rax,QWORD PTR [rbp-0x18]
+   0x401290:    mov    rax,QWORD PTR [rax]
+   0x401293:    mov    rsi,rdx
+   0x401296:    mov    rdi,rax
+   0x401299:    call   0x4011f6
+   0x40129e:    xor    rbx,rax
+   0x4012a1:    mov    rdx,rbx
+   0x4012a4:    mov    rax,QWORD PTR [rbp-0x18]
+   0x4012a8:    mov    QWORD PTR [rax],rdx
+   0x4012ab:    mov    rax,QWORD PTR [rbp-0x20]
+   0x4012af:    mov    rdx,QWORD PTR [rbp-0x10]
+   0x4012b3:    mov    QWORD PTR [rax],rdx
+   0x4012b6:    add    DWORD PTR [rbp-0x24],0x1
+   0x4012ba:    cmp    DWORD PTR [rbp-0x24],0x3
+   0x4012be:    jle    0x401262
+   0x4012c0:    nop
+   0x4012c1:    nop
+   0x4012c2:    mov    rbx,QWORD PTR [rbp-0x8]
+   0x4012c6:    leave
+   0x4012c7:    ret
+
+
+
+gef➤  x/50i 0x4011f6
+   0x4011f6:    endbr64
+   0x4011fa:    push   rbp
+   0x4011fb:    mov    rbp,rsp
+   0x4011fe:    mov    QWORD PTR [rbp-0x8],rdi
+   0x401202:    mov    QWORD PTR [rbp-0x10],rsi
+   0x401206:    mov    rax,QWORD PTR [rbp-0x10]
+   0x40120a:    xor    QWORD PTR [rbp-0x8],rax
+   0x40120e:    mov    rax,QWORD PTR [rbp-0x8]
+   0x401212:    rol    rax,0xd
+   0x401216:    mov    rcx,rax
+   0x401219:    mov    rdx,QWORD PTR [rbp-0x8]
+   0x40121d:    mov    rax,rdx
+   0x401220:    shl    rax,0x5
+   0x401224:    sub    rax,rdx
+   0x401227:    xor    rax,rcx
+   0x40122a:    mov    QWORD PTR [rbp-0x8],rax
+   0x40122e:    mov    rax,QWORD PTR [rbp-0x8]
+   0x401232:    pop    rbp
+   0x401233:    ret
+
+
+
+
+disassembly of pacman 

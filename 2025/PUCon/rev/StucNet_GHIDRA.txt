@@ -1,0 +1,1904 @@
+
+undefined4 main(int param_1,long param_2)
+
+{
+  bool bVar1;
+  char cVar2;
+  int rand_value;
+  time_t seed_ig;
+  ostream *poVar3;
+  void *pvVar4;
+  void *pvVar5;
+  undefined4 unaff_R12D;
+  long in_FS_OFFSET;
+  allocator unint_var_main1;
+  undefined1 init_zero;
+  int modified_rand_val;
+  int manuplated_rand_val;
+  undefined4 local_148;
+  int local_144;
+  void *local_140;
+  allocator *cp_unit1_1;
+  allocator *cp_uninit1_2;
+  allocator *local_128;
+  allocator *local_120;
+  allocator *local_118;
+  allocator *local_110;
+  allocator *local_108;
+  allocator *local_100;
+  string uninit_buffer_main2 [32];
+  string local_d8 [32];
+  string local_b8 [32];
+  string local_98 [32];
+  string uninit_buffer_main3 [32];
+  string uninit_buffer_main1 [40];
+  long local_30;
+  
+  local_30 = *(long *)(in_FS_OFFSET + 0x28);
+  seed_ig = time((time_t *)0x0);
+  srand((uint)seed_ig);
+  rand_value = rand();
+  modified_rand_val = rand_value % 200 + 900;
+  rand_value = rand();
+  check(uninit_buffer_main1,rand_value % 9 + 1);
+                            /* try { // try from 001027b1 to 001027b5 has its CatchHandler @ 0010322e */
+  ret_buffer_m(uninit_buffer_main2,&hardcoded_val,uninit_buffer_main1);
+  std::string::~string(uninit_buffer_main1);
+  cp_unit1_1 = &unint_var_main1;
+                            /* try { // try from 001027ed to 001027f1 has its CatchHandler @ 00103260 */
+  std::string::string(local_d8,"Allen-Bradley",&unint_var_main1);
+  ret_func(&unint_var_main1);
+  rand_value = rand();
+  manuplated_rand_val = rand_value % 0x14 + 300;
+  init_zero = 0;
+  cp_uninit1_2 = &unint_var_main1;
+                            /* try { // try from 0010286f to 00102873 has its CatchHandler @ 0010327c */
+  std::string::string(local_b8,"Modbus",&unint_var_main1);
+  ret_func(&unint_var_main1);
+  local_128 = &unint_var_main1;
+                            /* try { // try from 001028af to 001028b3 has its CatchHandler @ 00103298 */
+  std::string::string(local_98,"Ignition",&unint_var_main1);
+  ret_func(&unint_var_main1);
+  local_148 = 5;
+  for (local_144 = 1; local_144 < param_1; local_144 = local_144 + 1) {
+     local_120 = &unint_var_main1;
+                            /* try { // try from 0010291b to 0010291f has its CatchHandler @ 001032b4 */
+     std::string::string(uninit_buffer_main3,*(char **)(param_2 + (long)local_144 * 8),
+                                  &unint_var_main1);
+     ret_func(&unint_var_main1);
+     cVar2 = comp_buffer_ig(uninit_buffer_main3,"--speed");
+     if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+        bVar1 = false;
+     }
+     else {
+        bVar1 = true;
+     }
+     if (bVar1) {
+        local_118 = &unint_var_main1;
+        local_144 = local_144 + 1;
+                            /* try { // try from 001029b4 to 001029b8 has its CatchHandler @ 001032e5 */
+        std::string::string(uninit_buffer_main1,*(char **)(param_2 + (long)local_144 * 8),
+                                     &unint_var_main1);
+                            /* try { // try from 001029ca to 001029ce has its CatchHandler @ 001032d0 */
+        modified_rand_val = comparison_wraper(uninit_buffer_main1,0,10);
+        std::string::~string(uninit_buffer_main1);
+        ret_func(&unint_var_main1);
+LAB_00102fca:
+        bVar1 = true;
+     }
+     else {
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--model");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_144 = local_144 + 1;
+                            /* try { // try from 00102a61 to 00102adb has its CatchHandler @ 00103373 */
+           std::string::operator=(uninit_buffer_main2,*(char **)(param_2 + (long)local_144 * 8));
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--firmware");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_144 = local_144 + 1;
+           std::string::operator=(local_d8,*(char **)(param_2 + (long)local_144 * 8));
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--version");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_110 = &unint_var_main1;
+           local_144 = local_144 + 1;
+                            /* try { // try from 00102b65 to 00102b69 has its CatchHandler @ 00103313 */
+           std::string::string(uninit_buffer_main1,*(char **)(param_2 + (long)local_144 * 8),
+                                        &unint_var_main1);
+                            /* try { // try from 00102b7b to 00102b7f has its CatchHandler @ 001032fe */
+           manuplated_rand_val = comparison_wraper(uninit_buffer_main1,0,10);
+           std::string::~string(uninit_buffer_main1);
+           ret_func(&unint_var_main1);
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--airgap");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_108 = &unint_var_main1;
+           local_144 = local_144 + 1;
+                            /* try { // try from 00102c2a to 00102c2e has its CatchHandler @ 0010332c */
+           std::string::string(uninit_buffer_main1,*(char **)(param_2 + (long)local_144 * 8),
+                                        &unint_var_main1);
+           init_zero = comp_buffer_ig(uninit_buffer_main1,&DAT_00108367);
+           std::string::~string(uninit_buffer_main1);
+           ret_func(&unint_var_main1);
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--protocol");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_144 = local_144 + 1;
+                            /* try { // try from 00102cd7 to 00102d51 has its CatchHandler @ 00103373 */
+           std::string::operator=(local_b8,*(char **)(param_2 + (long)local_144 * 8));
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--vendor");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_144 = local_144 + 1;
+           std::string::operator=(local_98,*(char **)(param_2 + (long)local_144 * 8));
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--patch");
+        if ((cVar2 == '\0') || (param_1 <= local_144 + 1)) {
+           bVar1 = false;
+        }
+        else {
+           bVar1 = true;
+        }
+        if (bVar1) {
+           local_100 = &unint_var_main1;
+           local_144 = local_144 + 1;
+                            /* try { // try from 00102ddb to 00102ddf has its CatchHandler @ 0010335a */
+           std::string::string(uninit_buffer_main1,*(char **)(param_2 + (long)local_144 * 8),
+                                        &unint_var_main1);
+                            /* try { // try from 00102df1 to 00102df5 has its CatchHandler @ 00103345 */
+           local_148 = comparison_wraper(uninit_buffer_main1,0,10);
+           std::string::~string(uninit_buffer_main1);
+           ret_func(&unint_var_main1);
+           goto LAB_00102fca;
+        }
+        cVar2 = comp_buffer_ig(uninit_buffer_main3,"--help");
+        if (cVar2 == '\0') goto LAB_00102fca;
+                            /* try { // try from 00102e4e to 00102fbc has its CatchHandler @ 00103373 */
+        poVar3 = std::operator<<((ostream *)std::cout,"Stuxnet Analyzer - Parameter Options:");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,
+                                            "  --speed <value>     : Set centrifuge rotation speed");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --model <value>     : Set centrifuge model");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --firmware <value>  : Set PLC firmware type")
+        ;
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --version <value>   : Set PLC version number"
+                                          );
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,
+                                            "  --airgap true|false : Set network airgap status");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --protocol <value>  : Set network protocol");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --vendor <value>    : Set SCADA vendor");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        poVar3 = std::operator<<((ostream *)std::cout,"  --patch <value>     : Set SCADA patch level")
+        ;
+        std::ostream::operator<<(poVar3,std::endl<>);
+        unaff_R12D = 0;
+        bVar1 = false;
+     }
+     std::string::~string(uninit_buffer_main3);
+     if (!bVar1) goto LAB_001031d7;
+  }
+                            /* try { // try from 00103002 to 00103006 has its CatchHandler @ 00103462 */
+  pvVar4 = operator.new(0x30);
+                            /* try { // try from 00103013 to 00103017 has its CatchHandler @ 0010338b */
+  very_bigFunc(pvVar4);
+  local_140 = pvVar4;
+                            /* try { // try from 0010302b to 0010302f has its CatchHandler @ 00103462 */
+  pvVar5 = operator.new(0x30);
+                            /* try { // try from 0010304a to 0010304e has its CatchHandler @ 001033bc */
+  std::string::string(uninit_buffer_main1,uninit_buffer_main2);
+                            /* try { // try from 0010305e to 00103073 has its CatchHandler @ 001033a7 */
+  further_manupilation(pvVar5,modified_rand_val,uninit_buffer_main1);
+  repeating_function(pvVar4,pvVar5);
+  std::string::~string(uninit_buffer_main1);
+  pvVar4 = local_140;
+                            /* try { // try from 0010308c to 00103090 has its CatchHandler @ 00103462 */
+  pvVar5 = operator.new(0x30);
+                            /* try { // try from 001030ab to 001030af has its CatchHandler @ 001033ed */
+  std::string::string(uninit_buffer_main1,local_d8);
+                            /* try { // try from 001030c0 to 001030d5 has its CatchHandler @ 001033d8 */
+  wrapper_ig(pvVar5,uninit_buffer_main1,manuplated_rand_val);
+  repeating_function(pvVar4,pvVar5);
+  std::string::~string(uninit_buffer_main1);
+  pvVar4 = local_140;
+                            /* try { // try from 001030ee to 001030f2 has its CatchHandler @ 00103462 */
+  pvVar5 = operator.new(0x30);
+                            /* try { // try from 0010310d to 00103111 has its CatchHandler @ 0010341b */
+  std::string::string(uninit_buffer_main1,local_b8);
+                            /* try { // try from 00103122 to 00103137 has its CatchHandler @ 00103406 */
+  wrapper2(pvVar5,init_zero,uninit_buffer_main1);
+  repeating_function(pvVar4,pvVar5);
+  std::string::~string(uninit_buffer_main1);
+  pvVar4 = local_140;
+                            /* try { // try from 00103150 to 00103154 has its CatchHandler @ 00103462 */
+  pvVar5 = operator.new(0x30);
+                            /* try { // try from 0010316f to 00103173 has its CatchHandler @ 00103449 */
+  std::string::string(uninit_buffer_main1,local_98);
+                            /* try { // try from 00103184 to 00103199 has its CatchHandler @ 00103434 */
+  FUN_0010411c(pvVar5,uninit_buffer_main1,local_148);
+  repeating_function(pvVar4,pvVar5);
+  std::string::~string(uninit_buffer_main1);
+                            /* try { // try from 001031b0 to 001031b4 has its CatchHandler @ 00103462 */
+  FUN_001048a4(local_140);
+  pvVar4 = local_140;
+  if (local_140 != (void *)0x0) {
+     FUN_00104dc4(local_140);
+     operator.delete(pvVar4);
+  }
+  unaff_R12D = 0;
+LAB_001031d7:
+  std::string::~string(local_98);
+  std::string::~string(local_b8);
+  std::string::~string(local_d8);
+  std::string::~string(uninit_buffer_main2);
+  if (local_30 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return unaff_R12D;
+}
+
+
+
+
+string * check(string *buffer,int some_rand_val)
+
+{
+  undefined8 val_of_buffer;
+  long in_FS_OFFSET;
+  allocator uninit_var;
+  byte local_21;
+  int cp_rand_val;
+  int compare_ret_val;
+  allocator *local_18;
+  long some_value;
+  
+  some_value = *(long *)(in_FS_OFFSET + 0x28);
+  local_21 = -(char)(some_rand_val >> 0x1f);
+  if (local_21 != 0) {
+     some_rand_val = -some_rand_val;
+  }
+  cp_rand_val = some_rand_val;
+  compare_ret_val = comparison_of_value(some_rand_val,10);
+  local_18 = &uninit_var;
+  std::string::string(buffer,(ulong)(compare_ret_val + (uint)local_21),'-',&uninit_var);
+  ret_func(&uninit_var);
+  val_of_buffer = std::string::operator[]((ulong)buffer);
+  sm_comp_fun(val_of_buffer,compare_ret_val,cp_rand_val);
+  if (some_value == *(long *)(in_FS_OFFSET + 0x28)) {
+     return buffer;
+  }
+                            /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
+}
+
+
+int comparison_of_value(uint manupilated_value,uint constant_val_10)
+
+{
+  uint cube;
+  uint quad;
+  uint cp_m_val;
+  int init_1;
+  
+  init_1 = 1;
+  cube = constant_val_10 * constant_val_10 * constant_val_10;
+  quad = constant_val_10 * cube;
+  cp_m_val = manupilated_value;
+  while( true ) {
+     if (cp_m_val < constant_val_10) {
+        return init_1;
+     }
+     if (cp_m_val < constant_val_10 * constant_val_10) {
+        return init_1 + 1;
+     }
+     if (cp_m_val < cube) {
+        return init_1 + 2;
+     }
+     if (cp_m_val < quad) break;
+     cp_m_val = cp_m_val / quad;
+     init_1 = init_1 + 4;
+  }
+  return init_1 + 3;
+}
+
+
+
+
+void ret_func(void)
+
+{
+  return;
+}
+
+
+
+void sm_comp_fun(char *buffer,int m_val,uint rand_val)
+
+{
+  uint uVar1;
+  long in_FS_OFFSET;
+  uint local_108;
+  uint local_f4;
+  char local_e8 [216];
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  builtin_strncpy(local_e8,
+                         "000102030405060708091011121314151617181920212223242526272829303132333435363738394 0414243444546474849505152535455565758596061626364656667686970717273747576777879808 1828384858687888990919293949596979899"
+                         ,0xc9);
+  local_f4 = m_val - 1;
+  local_108 = rand_val;
+  while (99 < local_108) {
+     uVar1 = (local_108 % 100) * 2;
+     local_108 = local_108 / 100;
+     buffer[local_f4] = local_e8[uVar1 + 1];
+     buffer[local_f4 - 1] = local_e8[uVar1];
+     local_f4 = local_f4 - 2;
+  }
+  if (local_108 < 10) {
+     *buffer = (char)local_108 + '0';
+  }
+  else {
+     buffer[1] = local_e8[local_108 * 2 + 1];
+     *buffer = local_e8[local_108 * 2];
+  }
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return;
+}
+
+
+
+
+
+string * ret_buffer_m(string *buffer2,undefined8 param_2,ulong buffer1)
+
+{
+  undefined8 uVar1;
+  string *ret_val;
+  
+  uVar1 = std::string::insert(buffer1,(char *)0x0);
+  ret_val = (string *)ret_parameter(uVar1);
+  std::string::string(buffer2,ret_val);
+  return buffer2;
+}
+
+
+undefined8 ret_parameter(undefined8 param_1)
+
+{
+  return param_1;
+}
+
+
+undefined8 comp_buffer_ig(undefined8 param_1,undefined8 hardcoded_speed)
+
+{
+  int iVar1;
+  long size;
+  long size_of_hardcodedstr_speed;
+  undefined8 Size;
+  undefined8 data;
+  
+  size = std::string::size();
+  size_of_hardcodedstr_speed = strlen_param1(hardcoded_speed);
+  if (size == size_of_hardcodedstr_speed) {
+     Size = std::string::size();
+     data = std::string::data();
+     iVar1 = memcmp_str(data,hardcoded_speed,Size);
+     if (iVar1 == 0) {
+        return 1;
+     }
+  }
+  return 0;
+}
+
+
+
+
+int memcmp_str(void *data,void *str_speed,size_t Size)
+
+{
+  int iVar1;
+  
+  if (Size == 0) {
+     iVar1 = 0;
+  }
+  else {
+     iVar1 = memcmp(data,str_speed,Size);
+  }
+  return iVar1;
+}
+
+
+void comparison_wraper(undefined8 param_1,undefined8 zero,undefined4 ten)
+
+{
+  undefined8 c_string;
+  
+  c_string = std::string::c_str();
+  again_some_comp(__isoc23_strtol,&DAT_00108009,c_string,zero,ten);
+  return;
+}
+
+
+
+
+ulong again_some_comp(code *strol_idk,char *some_hard_val,long c_string,long *zero,undefined4 ten)
+
+{
+  bool bVar1;
+  ulong uVar2;
+  char cVar3;
+  int *piVar4;
+  long in_FS_OFFSET;
+  undefined1 local_38 [4];
+  undefined4 local_34;
+  long local_30;
+  ulong unint_localVar;
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  idk_func(local_38);
+                            /* try { // try from 00104f6b to 00104fe7 has its CatchHandler @ 0010502a */
+  unint_localVar = (*strol_idk)(c_string,&local_30,ten);
+  if (c_string == local_30) {
+     if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+        __stack_chk_fail();
+     }
+     std::__throw_invalid_argument(some_hard_val);
+  }
+  piVar4 = __errno_location();
+  if (*piVar4 != 0x22) {
+     cVar3 = cmp_uninitLocal_var(unint_localVar);
+     if (cVar3 == '\0') {
+        bVar1 = false;
+        goto LAB_00104fc4;
+     }
+  }
+  bVar1 = true;
+LAB_00104fc4:
+  if (bVar1) {
+     if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+        __stack_chk_fail();
+     }
+     std::__throw_out_of_range(some_hard_val);
+  }
+  uVar2 = unint_localVar;
+  local_34 = (undefined4)unint_localVar;
+  if (zero != (long *)0x0) {
+     *zero = local_30 - c_string;
+  }
+  idk_func2(local_38);
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return uVar2 & 0xffffffff;
+}
+
+
+
+
+void idk_func(int *param_1)
+
+{
+  int *piVar1;
+  
+  piVar1 = __errno_location();
+  *param_1 = *piVar1;
+  piVar1 = __errno_location();
+  *piVar1 = 0;
+  return;
+}
+
+
+undefined8 cmp_uninitLocal_var(long param_1)
+
+{
+  undefined8 uVar1;
+  
+  if ((param_1 < -0x80000000) || (0x7fffffff < param_1)) {
+     uVar1 = 1;
+  }
+  else {
+     uVar1 = 0;
+  }
+  return uVar1;
+}
+
+
+void further_manupilation(undefined8 *param_1,undefined4 param_2,string *param_3)
+
+{
+  some_func1(param_1);
+  *param_1 = &PTR_FUN_0010bb70;
+  *(undefined4 *)(param_1 + 1) = param_2;
+                            /* try { // try from 0010382c to 00103830 has its CatchHandler @ 00103833 */
+  std::string::string((string *)(param_1 + 2),param_3);
+  return;
+}
+
+
+
+void wrapper_ig(undefined8 *param_1,string *param_2,undefined4 param_3)
+
+{
+  some_func1(param_1);
+  *param_1 = &PTR_FUN_0010bb40;
+                            /* try { // try from 00103b6e to 00103b72 has its CatchHandler @ 00103b7f */
+  std::string::string((string *)(param_1 + 1),param_2);
+  *(undefined4 *)(param_1 + 5) = param_3;
+  return;
+}
+
+
+
+
+void some_func1(undefined8 *param_1)
+
+{
+  *param_1 = &PTR___cxa_pure_virtual_0010bba0;
+  return;
+}
+
+
+
+void wrapper2(undefined8 *param_1,undefined1 param_2,string *param_3)
+
+{
+  some_func1(param_1);
+  *param_1 = &PTR_FUN_0010bb10;
+  *(undefined1 *)(param_1 + 1) = param_2;
+                            /* try { // try from 00103e53 to 00103e57 has its CatchHandler @ 00103e5a */
+  std::string::string((string *)(param_1 + 2),param_3);
+  return;
+}
+
+
+void wrapper3(undefined8 param_1)
+
+{
+  wrapper2(param_1);
+  return;
+}
+
+
+
+void wrapper2(undefined8 param_1)
+
+{
+  wrapper1(param_1);
+  return;
+}
+
+
+
+void wrapper1(undefined8 param_1)
+
+{
+  working_func(param_1);
+  return;
+}
+
+
+
+
+void working_func(undefined8 *param_1)
+
+{
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  return;
+}
+
+
+long again_wrapper(undefined8 param_1)
+
+{
+  long lVar1;
+  long lVar2;
+  
+  lVar1 = ret_param(param_1);
+  lVar2 = ret_paramPLUS8(param_1);
+  return lVar2 + lVar1;
+}
+
+
+undefined8 ret_param(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+
+
+undefined8 ret_paramPLUS8(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 8);
+}
+
+
+
+void FUN_00105fe4(long *param_1,long param_2,long param_3)
+
+{
+  ulong uVar1;
+  undefined8 uVar2;
+  long lVar3;
+  long in_FS_OFFSET;
+  long local_78;
+  ulong local_70;
+  long local_68;
+  long local_60;
+  long local_58;
+  long local_50;
+  long local_48;
+  long local_40;
+  long local_38;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  long *local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_70 = param_3 - param_2;
+  local_78 = param_2;
+  local_58 = param_3;
+  local_50 = param_2;
+  local_48 = param_3;
+  uVar1 = FUN_001068f4(param_1);
+  if (uVar1 < local_70) {
+     uVar2 = FUN_00105f86(param_1);
+     FUN_00106917(local_70,uVar2);
+     local_60 = FUN_001069ba(param_1,local_70,param_2,param_3);
+     local_30 = FUN_00105f86(param_1);
+     local_38 = param_1[1];
+     local_40 = *param_1;
+     simple_ret(local_40,local_38);
+     FUN_00105f34(param_1,*param_1,param_1[2] - *param_1);
+     *param_1 = local_60;
+     param_1[1] = *param_1 + local_70;
+     param_1[2] = param_1[1];
+  }
+  else {
+     uVar1 = FUN_00105726(param_1);
+     if (uVar1 < local_70) {
+        local_78 = param_2;
+        local_28 = FUN_00105726(param_1);
+        local_18 = &local_78;
+        local_20 = local_28;
+        FUN_00107137(&local_78,local_28);
+        FUN_00106ace(param_2,local_78,*param_1);
+        local_68 = FUN_00105726(param_1);
+        local_68 = local_70 - local_68;
+        uVar2 = FUN_00105f86(param_1);
+        lVar3 = hugeWrapper_ans(local_78,param_3,param_1[1],uVar2);
+        param_1[1] = lVar3;
+     }
+     else {
+        uVar2 = hugeWrapper_ans(param_2,param_3,*param_1);
+        FUN_00106a5c(param_1,uVar2);
+     }
+  }
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return;
+}
+
+
+
+long FUN_001068f4(long *param_1)
+
+{
+  return param_1[2] - *param_1;
+}
+
+
+
+undefined8 FUN_00105f86(undefined8 param_1)
+
+{
+  return param_1;
+}
+
+
+
+
+
+ulong FUN_00106917(ulong param_1,undefined8 param_2)
+
+{
+  ulong uVar1;
+  long in_FS_OFFSET;
+  undefined1 local_39;
+  undefined8 local_38;
+  undefined1 *local_30;
+  undefined8 local_28;
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  local_30 = &local_39;
+  local_38 = param_2;
+  local_28 = param_2;
+  uVar1 = FUN_00106fe8(&local_39);
+  simple_ret_nothingElse(&local_39);
+  if (uVar1 < param_1) {
+     if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+        __stack_chk_fail();
+     }
+     std::__throw_length_error("cannot create std::vector larger than max_size()");
+  }
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return param_1;
+}
+
+
+
+
+
+
+undefined8 FUN_00106fe8(undefined8 param_1)
+
+{
+  undefined8 *puVar1;
+  long in_FS_OFFSET;
+  undefined8 local_38;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_38 = 0x7fffffffffffffff;
+  local_30 = 0x7fffffffffffffff;
+  local_28 = param_1;
+  local_20 = param_1;
+  local_18 = param_1;
+  puVar1 = (undefined8 *)FUN_001072e9(&local_38,&local_30);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return *puVar1;
+}
+
+
+
+
+ulong * FUN_001072e9(ulong *param_1,ulong *param_2)
+
+{
+  if (*param_2 < *param_1) {
+     param_1 = param_2;
+  }
+  return param_1;
+}
+
+
+
+
+
+undefined8 FUN_001069ba(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  
+  uVar1 = FUN_0010706a(param_1,param_2);
+  uVar2 = ret_param1(param_1);
+                            /* try { // try from 00106a0c to 00106a10 has its CatchHandler @ 00106a17 */
+  FUN_00106b1d(param_3,param_4,uVar1,uVar2);
+  return uVar1;
+}
+
+
+
+
+undefined8 FUN_0010706a(undefined8 param_1,long param_2)
+
+{
+  undefined8 uVar1;
+  
+  if (param_2 == 0) {
+     uVar1 = 0;
+  }
+  else {
+     uVar1 = FUN_001075e4(param_1,param_2,0);
+  }
+  return uVar1;
+}
+
+
+
+
+void FUN_001075e4(undefined8 param_1,ulong param_2)
+
+{
+  if (0x7fffffffffffffff < param_2) {
+     std::__throw_bad_alloc();
+  }
+  operator.new(param_2);
+  return;
+}
+
+
+void FUN_00106b1d(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  hugeWrapper_ans(param_1,param_2,param_3);
+  return;
+}
+
+
+
+void hugeWrapper_ans(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  
+  uVar1 = FUN_001070b7(param_2); //returning their parameters
+  uVar2 = FUN_001070b7(param_1); //returning their parameters
+  FUN_001070c9(uVar2,uVar1,param_3);  
+  return;
+}
+
+
+void FUN_001070c9(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  undefined8 uVar3;
+  undefined8 local_30;
+  undefined8 local_28;
+  undefined8 local_20;
+  
+  local_30 = param_3;
+  local_28 = param_2;
+  local_20 = param_1;
+  uVar1 = FUN_0010732a(param_3); // returning parameter
+  uVar2 = FUN_00107318(local_28); // returning parameter
+  uVar3 = FUN_00107318(local_20); // returning parameter
+  uVar1 = FUN_00107722(uVar3,uVar2,uVar1);
+  FUN_0010736d(&local_30,uVar1); //returning 2nd parameter
+  return;
+}
+
+
+
+long FUN_00107722(void *param_1,long param_2,void *param_3)
+
+{
+  size_t __n;
+  
+  __n = param_2 - (long)param_1;
+  if ((long)__n < 2) {
+     if (__n == 1) {
+        FUN_001077e5(param_3,param_1);
+     }
+  }
+  else {
+     memmove(param_3,param_1,__n);
+  }
+  return (long)param_3 + __n;
+}
+
+
+
+void FUN_001077e5(undefined1 *param_1,undefined1 *param_2)
+
+{
+  *param_1 = *param_2;
+  return;
+}
+
+
+
+undefined8 FUN_0010736d(undefined8 param_1,undefined8 param_2)
+
+{
+  return param_2;
+}
+
+
+
+void FUN_00105f34(undefined8 param_1,long param_2,undefined8 param_3)
+
+{
+  if (param_2 != 0) {
+     FUN_00106fae(param_1,param_2,param_3);
+  }
+  return;
+}
+
+
+
+
+void FUN_00106fae(undefined8 param_1,void *param_2)
+
+{
+  operator.delete(param_2);
+  return;
+}
+
+
+
+
+long FUN_00105726(long *param_1)
+
+{
+  return param_1[1] - *param_1;
+}
+
+
+
+long FUN_00105726(long *param_1)
+
+{
+  return param_1[1] - *param_1;
+}
+
+
+
+
+void FUN_00107137(long *param_1,long param_2)
+
+{
+  *param_1 = *param_1 + param_2;
+  return;
+}
+
+
+
+long FUN_00105726(long *param_1)
+
+{
+  return param_1[1] - *param_1;
+}
+
+
+
+
+void FUN_00106a5c(long param_1,long param_2)
+
+{
+  if (*(long *)(param_1 + 8) != param_2) {
+     ret_param1(param_1);
+     simple_ret(param_2,*(undefined8 *)(param_1 + 8));
+     *(long *)(param_1 + 8) = param_2;
+  }
+  return;
+}
+
+
+void very_bigFunc(long param_1)
+
+{
+  long in_FS_OFFSET;
+  undefined1 local_68;
+  undefined1 local_67;
+  undefined1 local_66;
+  undefined1 local_65;
+  undefined1 local_64;
+  undefined1 local_63;
+  undefined1 local_62;
+  undefined1 local_61;
+  undefined1 local_60;
+  undefined1 local_5f;
+  undefined1 local_5e;
+  undefined1 local_5d;
+  undefined1 local_5c;
+  undefined1 local_5b;
+  undefined1 local_5a;
+  undefined1 local_59;
+  undefined1 local_58;
+  undefined1 local_57;
+  undefined1 local_56;
+  undefined1 local_55;
+  undefined1 local_54;
+  undefined1 local_53;
+  undefined1 local_52;
+  undefined1 local_51;
+  undefined1 local_50;
+  undefined1 local_4f;
+  undefined1 local_4e;
+  undefined1 local_4d;
+  undefined1 local_4c;
+  undefined1 local_4b;
+  undefined1 local_4a;
+  undefined1 local_49;
+  undefined1 local_48;
+  undefined1 local_47;
+  undefined1 local_46;
+  undefined1 local_45;
+  undefined1 local_44;
+  undefined1 local_43;
+  undefined1 local_42;
+  undefined1 local_41;
+  undefined1 local_40;
+  undefined1 local_3f;
+  undefined1 local_3e;
+  undefined1 local_3d;
+  long local_30;
+  
+  local_30 = *(long *)(in_FS_OFFSET + 0x28);
+  wrapper3(param_1);
+  workingfunction(param_1 + 0x18);
+  local_68 = 0x70;
+  local_67 = 0x72;
+  local_66 = 0x6d;
+  local_65 = 0x7a;
+  local_64 = 0x72;
+  local_63 = 0x58;
+  local_62 = 0x79;
+  local_61 = 6;
+  local_60 = 0x6d;
+  local_5f = 0x67;
+  local_5e = 8;
+  local_5d = 0x7e;
+  local_5c = 0;
+  local_5b = 4;
+  local_5a = 0x21;
+  local_59 = 0x5a;
+  local_58 = 0x3e;
+  local_57 = 0x40;
+  local_56 = 0x2c;
+  local_55 = 0xb4;
+  local_54 = 0xca;
+  local_53 = 0xc6;
+  local_52 = 0xdd;
+  local_51 = 0x92;
+  local_50 = 0xf7;
+  local_4f = 0xec;
+  local_4e = 0xfe;
+  local_4d = 0x89;
+  local_4c = 0x88;
+  local_4b = 0x87;
+  local_4a = 0xe1;
+  local_49 = 0x97;
+  local_48 = 0xa7;
+  local_47 = 0xd4;
+  local_46 = 0xb1;
+  local_45 = 0xa7;
+  local_44 = 0xcf;
+  local_43 = 0x55;
+  local_42 = 0x39;
+  local_41 = 0x43;
+  local_40 = 0x4b;
+  local_3f = 0x2c;
+  local_3e = 0x62;
+  local_3d = 0x50;
+                            /* try { // try from 00104812 to 00104816 has its CatchHandler @ 00104819 */
+  big_function(param_1 + 0x18,&local_68,0x2c);
+  if (local_30 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return;
+}
+
+
+
+undefined8 big_function(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  long in_FS_OFFSET;
+  undefined8 local_48;
+  undefined8 local_40;
+  undefined8 local_30;
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  local_48 = param_2;
+  local_40 = param_3;
+  local_30 = param_1;
+  uVar1 = again_wrapper(&local_48);
+  uVar2 = ret_param(&local_48);
+  FUN_00105fe4(local_30,uVar2,uVar1);
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_30;
+}
+
+
+
+void FUN_001048a4(long param_1)
+
+{
+  bool bVar1;
+  char cVar2;
+  ostream *poVar3;
+  undefined8 *puVar4;
+  char *pcVar5;
+  long in_FS_OFFSET;
+  undefined4 local_74;
+  undefined8 local_70;
+  undefined8 local_68;
+  undefined1 local_60 [8];
+  long local_58;
+  long *local_50;
+  string local_48 [40];
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  FUN_00104454(param_1);
+  poVar3 = std::operator<<((ostream *)std::cout,"Stuxnet variant initializing...");
+  std::ostream::operator<<(poVar3,std::endl<>);
+  local_68._0_4_ = 1000;
+  FUN_00105a6c(local_60,&local_68);
+  FUN_00105a8f(local_60);
+  poVar3 = std::operator<<((ostream *)std::cout,"Checking system compatibility:");
+  std::ostream::operator<<(poVar3,std::endl<>);
+  local_68 = CONCAT44(local_68._4_4_,800);
+  FUN_00105a6c(local_60,&local_68);
+  FUN_00105a8f(local_60);
+  bVar1 = true;
+  local_58 = param_1;
+  local_70 = FUN_00105b78(param_1);
+  local_68 = func_wrapper2(local_58);
+  do {
+     cVar2 = FUN_00105c14(&local_70,&local_68);
+     if (cVar2 == '\0') {
+        poVar3 = std::operator<<((ostream *)std::cout,"\nTarget validation complete.");
+        std::ostream::operator<<(poVar3,std::endl<>);
+        local_68._0_4_ = 1000;
+        FUN_00105a6c(local_60,&local_68);
+        FUN_00105a8f(local_60);
+        if (bVar1) {
+           poVar3 = std::operator<<((ostream *)std::cout,"System is vulnerable. Deploying payload...");
+           std::ostream::operator<<(poVar3,std::endl<>);
+           local_68._0_4_ = 0x5dc;
+           FUN_00105a6c(local_60,&local_68);
+           FUN_00105a8f(local_60);
+           poVar3 = std::operator<<((ostream *)std::cout,"Flag: ");
+           FUN_001043a8(local_48,param_1,param_1 + 0x18);
+                            /* try { // try from 00104cc5 to 00104cdb has its CatchHandler @ 00104d77 */
+           poVar3 = std::operator<<(poVar3,local_48);
+           std::ostream::operator<<(poVar3,std::endl<>);
+           std::string::~string(local_48);
+        }
+        else {
+           poVar3 = std::operator<<((ostream *)std::cout,
+                                               "System is not a valid target. Payload aborted.");
+           std::ostream::operator<<(poVar3,std::endl<>);
+           poVar3 = std::operator<<((ostream *)std::cout,"Re-configure parameters and try again.");
+           std::ostream::operator<<(poVar3,std::endl<>);
+        }
+        if (local_20 == *(long *)(in_FS_OFFSET + 0x28)) {
+           return;
+        }
+                            /* WARNING: Subroutine does not return */
+        __stack_chk_fail();
+     }
+     puVar4 = (undefined8 *)FUN_00105c78(&local_70);
+     local_50 = (long *)*puVar4;
+     poVar3 = std::operator<<((ostream *)std::cout,"Checking ");
+     (**(code **)(*local_50 + 8))(local_48,local_50);
+                            /* try { // try from 001049fa to 00104a13 has its CatchHandler @ 00104d45 */
+     poVar3 = std::operator<<(poVar3,local_48);
+     std::operator<<(poVar3,"... ");
+     std::string::~string(local_48);
+     local_74 = 700;
+     FUN_00105a6c(local_60,&local_74);
+     FUN_00105a8f(local_60);
+     cVar2 = (**(code **)*local_50)(local_50);
+     if (cVar2 == '\0') {
+        pcVar5 = "NO MATCH";
+     }
+     else {
+        pcVar5 = "MATCH";
+     }
+     poVar3 = std::operator<<((ostream *)std::cout,pcVar5);
+     std::ostream::operator<<(poVar3,std::endl<>);
+     if (cVar2 != '\x01') {
+        bVar1 = false;
+        if (local_50 == (long *)0x0) {
+           if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+              __stack_chk_fail();
+           }
+           __cxa_bad_typeid();
+        }
+        else {
+           cVar2 = FUN_0010351a(*(undefined8 *)(*local_50 + -8),&PTR_vtable_0010bc08);
+           if (cVar2 != '\0') goto LAB_00104bb1;
+        }
+        if (local_50 == (long *)0x0) {
+           if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+              __stack_chk_fail();
+           }
+           __cxa_bad_typeid();
+        }
+        else {
+           cVar2 = FUN_0010351a(*(undefined8 *)(*local_50 + -8),&PTR_vtable_0010bbf0);
+           if (cVar2 != '\0') goto LAB_00104bb1;
+        }
+        if (local_50 == (long *)0x0) {
+           if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+              __stack_chk_fail();
+           }
+           __cxa_bad_typeid();
+        }
+        else {
+           cVar2 = FUN_0010351a(*(undefined8 *)(*local_50 + -8),&PTR_vtable_0010bbd8);
+           if (cVar2 != '\0') goto LAB_00104bb1;
+        }
+        if (local_50 == (long *)0x0) {
+           if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+              __stack_chk_fail();
+           }
+           __cxa_bad_typeid();
+        }
+        else {
+           FUN_0010351a(*(undefined8 *)(*local_50 + -8),&PTR_vtable_0010bbc0);
+        }
+     }
+LAB_00104bb1:
+     FUN_00105c54(&local_70);
+  } while( true );
+}
+
+
+
+
+void FUN_00104454(void)
+
+{
+  ostream *poVar1;
+  
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "====================================================");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "      CLASSIFIED - TOP SECRET - NATANZ OPERATION    ");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "====================================================");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,"STUXNET TARGET VERIFICATION SYSTEM v2.0");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "Targeting criteria based on Intelligence Report #42");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "---------------------------------------------------");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,"INSTRUCTIONS: Configure system parameters to match"
+                                     );
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,"target Iranian nuclear enrichment facility.");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,"Use --help for configuration options.");
+  std::ostream::operator<<(poVar1,std::endl<>);
+  poVar1 = std::operator<<((ostream *)std::cout,
+                                      "====================================================");
+  poVar1 = (ostream *)std::ostream::operator<<(poVar1,std::endl<>);
+  std::ostream::operator<<(poVar1,std::endl<>);
+  return;
+}
+
+
+
+void FUN_00105a6c(long *param_1,int *param_2)
+
+{
+  *param_1 = (long)*param_2;
+  return;
+}
+
+
+
+void FUN_00105a8f(undefined8 param_1)
+
+{
+  bool bVar1;
+  char cVar2;
+  int iVar3;
+  int *piVar4;
+  long in_FS_OFFSET;
+  undefined8 local_38;
+  undefined8 local_30;
+  timespec local_28;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_28.tv_sec = FUN_00106704();
+  cVar2 = FUN_00106755(param_1,&local_28);
+  if (cVar2 == '\0') {
+     local_38 = FUN_00106781(param_1);
+     local_28.tv_sec = FUN_0010679f(param_1,&local_38);
+     local_30 = FUN_00106f11(&local_28);
+     local_28.tv_sec = FUN_00105430(&local_38);
+     local_28.tv_nsec = FUN_00103762(&local_30);
+     do {
+        iVar3 = nanosleep(&local_28,&local_28);
+        if ((iVar3 == -1) && (piVar4 = __errno_location(), *piVar4 == 4)) {
+           bVar1 = true;
+        }
+        else {
+           bVar1 = false;
+        }
+     } while (bVar1);
+  }
+  if (local_10 == *(long *)(in_FS_OFFSET + 0x28)) {
+     return;
+  }
+                            /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
+}
+
+
+
+
+undefined8 FUN_00106704(void)
+
+{
+  long in_FS_OFFSET;
+  undefined8 local_20;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_20 = retZero();
+  FUN_00106d88(&local_18,&local_20);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_18;
+}
+
+
+void FUN_00106d88(undefined8 *param_1,undefined8 *param_2)
+
+{
+  *param_1 = *param_2;
+  return;
+}
+
+
+
+
+uint FUN_00106755(undefined8 param_1,undefined8 param_2)
+
+{
+  uint uVar1;
+  
+  uVar1 = FUN_00106da9(param_2,param_1);
+  return uVar1 ^ 1;
+}
+
+
+
+bool FUN_00106da9(undefined8 *param_1,undefined8 *param_2)
+
+{
+  long lVar1;
+  long lVar2;
+  long in_FS_OFFSET;
+  undefined8 local_30;
+  undefined8 local_28;
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  local_30 = *param_1;
+  lVar1 = FUN_00106e9e(&local_30);
+  local_28 = *param_2;
+  lVar2 = FUN_00106e9e(&local_28);
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return lVar1 < lVar2;
+}
+
+
+
+undefined8 FUN_00106e9e(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+void FUN_00106781(undefined8 param_1)
+
+{
+  FUN_00106e1e(param_1);
+  return;
+}
+
+
+
+
+undefined8 FUN_00106e1e(undefined8 param_1)
+
+{
+  long in_FS_OFFSET;
+  long local_20;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_20 = FUN_00106e9e(param_1);
+  local_20 = local_20 / 1000;
+  FUN_00105446(&local_18,&local_20);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_18;
+}
+
+
+void FUN_00105446(undefined8 *param_1,undefined8 *param_2)
+
+{
+  *param_1 = *param_2;
+  return;
+}
+
+
+
+undefined8 FUN_0010679f(undefined8 *param_1,undefined8 param_2)
+
+{
+  long lVar1;
+  long in_FS_OFFSET;
+  undefined8 local_40;
+  undefined1 local_38 [8];
+  long local_30;
+  undefined8 local_28;
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  local_40 = *param_1;
+  lVar1 = FUN_00106e9e(&local_40);
+  FUN_00106eb4(local_38,param_2);
+  local_30 = FUN_00106e9e(local_38);
+  local_30 = lVar1 - local_30;
+  FUN_00106d88(&local_28,&local_30);
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_28;
+}
+
+
+
+void FUN_00106eb4(undefined8 *param_1,undefined8 param_2)
+
+{
+  undefined8 uVar1;
+  long in_FS_OFFSET;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_18 = insideWrapperFunc(param_2);
+  uVar1 = FUN_00106e9e(&local_18);
+  *param_1 = uVar1;
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return;
+}
+
+
+
+undefined8 insideWrapperFunc(undefined8 param_1)
+
+{
+  long in_FS_OFFSET;
+  long local_20;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_20 = FUN_00105430(param_1);
+  local_20 = local_20 * 1000;
+  FUN_00106d88(&local_18,&local_20);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_18;
+}
+
+
+
+undefined8 FUN_00105430(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+
+void FUN_00106d88(undefined8 *param_1,undefined8 *param_2)
+
+{
+  *param_1 = *param_2;
+  return;
+}
+
+
+
+void FUN_00106d88(undefined8 *param_1,undefined8 *param_2)
+
+{
+  *param_1 = *param_2;
+  return;
+}
+
+
+
+undefined8 FUN_00106f11(undefined8 param_1)
+
+{
+  long in_FS_OFFSET;
+  long local_20;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_20 = FUN_00106e9e(param_1);
+  local_20 = local_20 * 1000000;
+  FUN_00103732(&local_18,&local_20);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_18;
+}
+
+
+
+
+undefined8 FUN_00105430(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+
+undefined8 FUN_00103762(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+
+
+undefined8 FUN_00105b78(undefined8 param_1)
+
+{
+  long in_FS_OFFSET;
+  undefined8 local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  copy_parm(&local_18,param_1);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return local_18;
+}
+
+
+
+undefined8 FUN_00105c14(undefined8 param_1,undefined8 param_2)
+
+{
+  long lVar1;
+  long *plVar2;
+  
+  plVar2 = (long *)FUN_00106878(param_1);
+  lVar1 = *plVar2;
+  plVar2 = (long *)FUN_00106878(param_2);
+  return CONCAT71((int7)((ulong)*plVar2 >> 8),lVar1 != *plVar2);
+}
+
+
+
+undefined8 FUN_00106878(undefined8 param_1)
+
+{
+  return param_1;
+}
+
+
+string * FUN_001043a8(string *param_1,undefined8 param_2,undefined8 param_3)
+
+{
+  byte *pbVar1;
+  ulong uVar2;
+  undefined8 local_20;
+  
+  std::string::string(param_1);
+  local_20 = 0;
+  while( true ) {
+     uVar2 = FUN_00105726(param_3);
+     if (uVar2 <= local_20) break;
+     pbVar1 = (byte *)FUN_0010574a(param_3,local_20);
+                            /* try { // try from 00104408 to 0010440c has its CatchHandler @ 0010442b */
+     std::string::operator+=(param_1,(char)local_20 * '\a' ^ *pbVar1);
+     local_20 = local_20 + 1;
+  }
+  return param_1;
+}
+
+
+
+long FUN_00105726(long *param_1)
+
+{
+  return param_1[1] - *param_1;
+}
+
+
+
+long FUN_0010574a(long *param_1,long param_2)
+
+{
+  return param_2 + *param_1;
+}
+
+
+
+undefined8 FUN_00105c78(undefined8 *param_1)
+
+{
+  return *param_1;
+}
+
+
+
+bool FUN_0010351a(long param_1,long param_2)
+
+{
+  char cVar1;
+  int iVar2;
+  char *__s2;
+  bool bVar3;
+  
+  cVar1 = retZero();
+  if (cVar1 == '\0') {
+     if (*(long *)(param_1 + 8) == *(long *)(param_2 + 8)) {
+        bVar3 = true;
+     }
+     else {
+        if (**(char **)(param_1 + 8) != '*') {
+           __s2 = (char *)FUN_001034e6(param_2);
+           iVar2 = strcmp(*(char **)(param_1 + 8),__s2);
+           if (iVar2 == 0) {
+              return true;
+           }
+        }
+        bVar3 = false;
+     }
+  }
+  else {
+     bVar3 = param_1 == param_2;
+  }
+  return bVar3;
+}
+
+
+long FUN_001034e6(long param_1)
+
+{
+  long lVar1;
+  
+  if (**(char **)(param_1 + 8) == '*') {
+     lVar1 = *(long *)(param_1 + 8) + 1;
+  }
+  else {
+     lVar1 = *(long *)(param_1 + 8);
+  }
+  return lVar1;
+}
+
+
+
+
+long * FUN_00105c54(long *param_1)
+
+{
+  *param_1 = *param_1 + 8;
+  return param_1;
+}
+
+
+
+
+void FUN_00104dc4(long param_1)
+
+{
+  char cVar1;
+  long in_FS_OFFSET;
+  undefined8 local_30;
+  undefined8 local_28;
+  long local_20;
+  long *local_18;
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  local_20 = param_1;
+  local_30 = FUN_00105b78(param_1);
+  local_28 = func_wrapper2(local_20);
+  while( true ) {
+     cVar1 = FUN_00105c14(&local_30,&local_28);
+     if (cVar1 == '\0') break;
+     local_18 = (long *)FUN_00105c78(&local_30);
+     local_18 = (long *)*local_18;
+     if (local_18 != (long *)0x0) {
+        (**(code **)(*local_18 + 0x18))(local_18);
+     }
+     FUN_00105c54(&local_30);
+  }
+  FUN_001058c2(param_1 + 0x18);
+  FUN_001057ee(param_1);
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                            /* WARNING: Subroutine does not return */
+     __stack_chk_fail();
+  }
+  return;
+}
+
+
+void FUN_001058c2(undefined8 *param_1)
+
+{
+  ret_param1(param_1);
+  simple_ret(*param_1,param_1[1]);
+  FUN_0010587a(param_1);
+  return;
+}
+
+
+void FUN_0010587a(long *param_1)
+
+{
+  FUN_00105f34(param_1,*param_1,param_1[2] - *param_1);
+  simple_ret_nothingElse(param_1);
+  return;
+}
+
+
+
+void FUN_00105f34(undefined8 param_1,long param_2,undefined8 param_3)
+
+{
+  if (param_2 != 0) {
+     FUN_00106fae(param_1,param_2,param_3);
+  }
+  return;
+}
+
+
+
+void FUN_00106fae(undefined8 param_1,void *param_2)
+
+{
+  operator.delete(param_2);
+  return;
+}
+
+
+
+void FUN_001057ee(undefined8 *param_1)
+
+{
+  ret_Param1(param_1);
+  simpleRet(*param_1,param_1[1]); // just return;
+  FUN_0010579c(param_1);
+  return;
+}
+
+
+
+void FUN_0010579c(long *param_1)
+
+{
+  FUN_00105e8e(param_1,*param_1,param_1[2] - *param_1 >> 3);
+  FUN_00104628(param_1); // its just doing return; nothing else
+  return;
+}
+
+
+void FUN_00105e8e(undefined8 param_1,long param_2,undefined8 param_3)
+
+{
+  if (param_2 != 0) {
+     FUN_00106f74(param_1,param_2,param_3);
+  }
+  return;
+}
+
+
+void FUN_00106f74(undefined8 param_1,void *param_2)
+
+{
+  operator.delete(param_2);
+  return;
+}
+
+

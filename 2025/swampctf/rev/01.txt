@@ -1,0 +1,411 @@
+youShallNotPass
+main 0x5555555550c0
+
+
+hb *0x5555555558f9 call rbp
+
+
+swampCTF{531F_L0AD1NG_T0TALLY_RUL3Z}
+
+main :
+
+gef➤  x/400i 0x5555555550c0
+   0x5555555550c0:      endbr64
+   0x5555555550c4:      push   r14
+   0x5555555550c6:      lea    rsi,[rip+0x2f73]        # 0x555555558040
+   0x5555555550cd:      lea    rdx,[rip+0x2f8c]        # 0x555555558060
+   0x5555555550d4:      mov    eax,DWORD PTR [rip+0x3046]        # 0x555555558120
+   0x5555555550da:      push   r13
+   0x5555555550dc:      lea    r8,[rsi+0x1c]
+   0x5555555550e0:      mov    rdi,rdx
+   0x5555555550e3:      push   r12
+   0x5555555550e5:      push   rbp
+   0x5555555550e6:      push   rbx
+   0x5555555550e7:      nop    WORD PTR [rax+rax*1+0x0]
+   0x5555555550f0:      imul   eax,eax,0x14a
+   0x5555555550f6:      add    rsi,0x1
+   0x5555555550fa:      add    rdi,0x1
+   0x5555555550fe:      lea    ecx,[rax+0x64]
+   0x555555555101:      movsxd rax,ecx
+   0x555555555104:      mov    r9d,ecx
+   0x555555555107:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555510e:      sar    r9d,0x1f
+   0x555555555112:      shr    rax,0x20
+   0x555555555116:      add    eax,ecx
+   0x555555555118:      sar    eax,0xb
+   0x55555555511b:      sub    eax,r9d
+   0x55555555511e:      imul   eax,eax,0x8ff
+   0x555555555124:      sub    ecx,eax
+   0x555555555126:      mov    eax,ecx
+   0x555555555128:      movzx  ecx,BYTE PTR [rsi-0x1]
+   0x55555555512c:      xor    cl,BYTE PTR [rdi-0x1]
+   0x55555555512f:      xor    ecx,eax
+   0x555555555131:      mov    BYTE PTR [rsi-0x1],cl
+   0x555555555134:      cmp    r8,rsi
+   0x555555555137:      jne    0x5555555550f0
+   0x555555555139:      imul   eax,eax,0x14a
+   0x55555555513f:      movzx  r13d,BYTE PTR [rip+0x2f19]        # 0x555555558060
+   0x555555555147:      movzx  r12d,BYTE PTR [rip+0x2f12]        # 0x555555558061
+   0x55555555514f:      movzx  ebp,BYTE PTR [rip+0x2f0c]        # 0x555555558062
+   0x555555555156:      movzx  ebx,BYTE PTR [rip+0x2f06]        # 0x555555558063
+   0x55555555515d:      movzx  r11d,BYTE PTR [rip+0x2eff]        # 0x555555558064
+   0x555555555165:      movzx  r10d,BYTE PTR [rip+0x2ef8]        # 0x555555558065
+   0x55555555516d:      add    eax,0x64
+   0x555555555170:      movzx  r9d,BYTE PTR [rip+0x2eee]        # 0x555555558066
+   0x555555555178:      movzx  r8d,BYTE PTR [rip+0x2ee7]        # 0x555555558067
+   0x555555555180:      movsxd rcx,eax
+   0x555555555183:      mov    esi,eax
+   0x555555555185:      movzx  edi,BYTE PTR [rip+0x2edc]        # 0x555555558068
+   0x55555555518c:      imul   rcx,rcx,0xffffffffe3a78465
+   0x555555555193:      sar    esi,0x1f
+   0x555555555196:      shr    rcx,0x20
+   0x55555555519a:      add    ecx,eax
+   0x55555555519c:      sar    ecx,0xb
+   0x55555555519f:      sub    ecx,esi
+   0x5555555551a1:      imul   ecx,ecx,0x8ff
+   0x5555555551a7:      sub    eax,ecx
+   0x5555555551a9:      mov    ecx,eax
+   0x5555555551ab:      movzx  eax,BYTE PTR [rip+0x2e7e]        # 0x555555558030
+   0x5555555551b2:      xor    eax,r13d
+   0x5555555551b5:      xor    eax,ecx
+   0x5555555551b7:      imul   ecx,ecx,0x14a
+   0x5555555551bd:      mov    BYTE PTR [rip+0x2e6d],al        # 0x555555558030
+   0x5555555551c3:      add    ecx,0x64
+   0x5555555551c6:      movsxd rax,ecx
+   0x5555555551c9:      mov    esi,ecx
+   0x5555555551cb:      imul   rax,rax,0xffffffffe3a78465
+   0x5555555551d2:      sar    esi,0x1f
+   0x5555555551d5:      shr    rax,0x20
+   0x5555555551d9:      add    eax,ecx
+   0x5555555551db:      sar    eax,0xb
+   0x5555555551de:      sub    eax,esi
+   0x5555555551e0:      imul   eax,eax,0x8ff
+   0x5555555551e6:      sub    ecx,eax
+   0x5555555551e8:      mov    eax,ecx
+   0x5555555551ea:      movzx  ecx,BYTE PTR [rip+0x2e40]        # 0x555555558031
+   0x5555555551f1:      xor    ecx,r12d
+   0x5555555551f4:      xor    ecx,eax
+   0x5555555551f6:      imul   eax,eax,0x14a
+   0x5555555551fc:      mov    BYTE PTR [rip+0x2e2f],cl        # 0x555555558031
+   0x555555555202:      add    eax,0x64
+   0x555555555205:      movsxd rcx,eax
+   0x555555555208:      mov    esi,eax
+   0x55555555520a:      imul   rcx,rcx,0xffffffffe3a78465
+   0x555555555211:      sar    esi,0x1f
+   0x555555555214:      shr    rcx,0x20
+   0x555555555218:      add    ecx,eax
+   0x55555555521a:      sar    ecx,0xb
+   0x55555555521d:      sub    ecx,esi
+   0x55555555521f:      imul   ecx,ecx,0x8ff
+   0x555555555225:      sub    eax,ecx
+   0x555555555227:      mov    ecx,eax
+   0x555555555229:      movzx  eax,BYTE PTR [rip+0x2e02]        # 0x555555558032
+   0x555555555230:      xor    eax,ebp
+   0x555555555232:      xor    eax,ecx
+   0x555555555234:      imul   ecx,ecx,0x14a
+   0x55555555523a:      mov    BYTE PTR [rip+0x2df2],al        # 0x555555558032
+   0x555555555240:      add    ecx,0x64
+   0x555555555243:      movsxd rax,ecx
+   0x555555555246:      mov    esi,ecx
+   0x555555555248:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555524f:      sar    esi,0x1f
+   0x555555555252:      shr    rax,0x20
+   0x555555555256:      add    eax,ecx
+   0x555555555258:      sar    eax,0xb
+   0x55555555525b:      sub    eax,esi
+   0x55555555525d:      imul   eax,eax,0x8ff
+   0x555555555263:      sub    ecx,eax
+   0x555555555265:      mov    eax,ecx
+   0x555555555267:      movzx  ecx,BYTE PTR [rip+0x2dc5]        # 0x555555558033
+   0x55555555526e:      xor    ecx,ebx
+   0x555555555270:      xor    ecx,eax
+   0x555555555272:      imul   eax,eax,0x14a
+   0x555555555278:      mov    BYTE PTR [rip+0x2db5],cl        # 0x555555558033
+   0x55555555527e:      add    eax,0x64
+   0x555555555281:      movsxd rcx,eax
+   0x555555555284:      mov    esi,eax
+   0x555555555286:      imul   rcx,rcx,0xffffffffe3a78465
+   0x55555555528d:      sar    esi,0x1f
+   0x555555555290:      shr    rcx,0x20
+   0x555555555294:      add    ecx,eax
+   0x555555555296:      sar    ecx,0xb
+   0x555555555299:      sub    ecx,esi
+   0x55555555529b:      imul   ecx,ecx,0x8ff
+   0x5555555552a1:      sub    eax,ecx
+   0x5555555552a3:      mov    ecx,eax
+   0x5555555552a5:      movzx  eax,BYTE PTR [rip+0x2d88]        # 0x555555558034
+   0x5555555552ac:      xor    eax,r11d
+   0x5555555552af:      xor    eax,ecx
+   0x5555555552b1:      imul   ecx,ecx,0x14a
+   0x5555555552b7:      mov    BYTE PTR [rip+0x2d77],al        # 0x555555558034
+   0x5555555552bd:      add    ecx,0x64
+   0x5555555552c0:      movsxd rax,ecx
+   0x5555555552c3:      mov    esi,ecx
+   0x5555555552c5:      imul   rax,rax,0xffffffffe3a78465
+   0x5555555552cc:      shr    rax,0x20
+   0x5555555552d0:      add    eax,ecx
+   0x5555555552d2:      sar    esi,0x1f
+   0x5555555552d5:      sar    eax,0xb
+   0x5555555552d8:      sub    eax,esi
+   0x5555555552da:      imul   eax,eax,0x8ff
+   0x5555555552e0:      sub    ecx,eax
+   0x5555555552e2:      mov    eax,ecx
+   0x5555555552e4:      movzx  ecx,BYTE PTR [rip+0x2d4a]        # 0x555555558035
+   0x5555555552eb:      xor    ecx,r10d
+   0x5555555552ee:      xor    ecx,eax
+   0x5555555552f0:      imul   eax,eax,0x14a
+   0x5555555552f6:      mov    BYTE PTR [rip+0x2d39],cl        # 0x555555558035
+   0x5555555552fc:      add    eax,0x64
+   0x5555555552ff:      movsxd rcx,eax
+   0x555555555302:      mov    esi,eax
+   0x555555555304:      imul   rcx,rcx,0xffffffffe3a78465
+   0x55555555530b:      sar    esi,0x1f
+   0x55555555530e:      shr    rcx,0x20
+   0x555555555312:      add    ecx,eax
+   0x555555555314:      sar    ecx,0xb
+   0x555555555317:      sub    ecx,esi
+   0x555555555319:      imul   ecx,ecx,0x8ff
+   0x55555555531f:      sub    eax,ecx
+   0x555555555321:      mov    ecx,eax
+   0x555555555323:      movzx  eax,BYTE PTR [rip+0x2d0c]        # 0x555555558036
+   0x55555555532a:      xor    eax,r9d
+   0x55555555532d:      xor    eax,ecx
+   0x55555555532f:      mov    BYTE PTR [rip+0x2d01],al        # 0x555555558036
+   0x555555555335:      imul   eax,ecx,0x14a
+   0x55555555533b:      add    eax,0x64
+   0x55555555533e:      movsxd rcx,eax
+   0x555555555341:      mov    esi,eax
+   0x555555555343:      imul   rcx,rcx,0xffffffffe3a78465
+   0x55555555534a:      sar    esi,0x1f
+   0x55555555534d:      shr    rcx,0x20
+   0x555555555351:      add    ecx,eax
+   0x555555555353:      sar    ecx,0xb
+   0x555555555356:      sub    ecx,esi
+   0x555555555358:      imul   ecx,ecx,0x8ff
+   0x55555555535e:      sub    eax,ecx
+   0x555555555360:      mov    ecx,eax
+   0x555555555362:      movzx  eax,BYTE PTR [rip+0x2cce]        # 0x555555558037
+   0x555555555369:      xor    eax,r8d
+   0x55555555536c:      xor    eax,ecx
+   0x55555555536e:      imul   ecx,ecx,0x14a
+   0x555555555374:      mov    BYTE PTR [rip+0x2cbd],al        # 0x555555558037
+   0x55555555537a:      add    ecx,0x64
+   0x55555555537d:      movsxd rax,ecx
+   0x555555555380:      mov    esi,ecx
+   0x555555555382:      imul   rax,rax,0xffffffffe3a78465
+   0x555555555389:      sar    esi,0x1f
+   0x55555555538c:      shr    rax,0x20
+   0x555555555390:      add    eax,ecx
+   0x555555555392:      sar    eax,0xb
+   0x555555555395:      sub    eax,esi
+   0x555555555397:      imul   eax,eax,0x8ff
+   0x55555555539d:      sub    ecx,eax
+   0x55555555539f:      mov    eax,ecx
+   0x5555555553a1:      movzx  ecx,BYTE PTR [rip+0x2c90]        # 0x555555558038
+   0x5555555553a8:      xor    ecx,edi
+   0x5555555553aa:      xor    ecx,eax
+   0x5555555553ac:      imul   eax,eax,0x14a
+   0x5555555553b2:      mov    BYTE PTR [rip+0x2c80],cl        # 0x555555558038
+   0x5555555553b8:      add    eax,0x64
+   0x5555555553bb:      movsxd rcx,eax
+   0x5555555553be:      mov    esi,eax
+   0x5555555553c0:      imul   rcx,rcx,0xffffffffe3a78465
+   0x5555555553c7:      sar    esi,0x1f
+   0x5555555553ca:      shr    rcx,0x20
+   0x5555555553ce:      add    ecx,eax
+   0x5555555553d0:      sar    ecx,0xb
+   0x5555555553d3:      sub    ecx,esi
+   0x5555555553d5:      movzx  esi,BYTE PTR [rip+0x2c8d]        # 0x555555558069
+   0x5555555553dc:      imul   ecx,ecx,0x8ff
+   0x5555555553e2:      sub    eax,ecx
+   0x5555555553e4:      mov    ecx,eax
+   0x5555555553e6:      movzx  eax,BYTE PTR [rip+0x2c4c]        # 0x555555558039
+   0x5555555553ed:      xor    eax,esi
+   0x5555555553ef:      xor    eax,ecx
+   0x5555555553f1:      imul   ecx,ecx,0x14a
+   0x5555555553f7:      mov    BYTE PTR [rip+0x2c3c],al        # 0x555555558039
+   0x5555555553fd:      add    ecx,0x64
+   0x555555555400:      movsxd rax,ecx
+   0x555555555403:      mov    r14d,ecx
+   0x555555555406:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555540d:      sar    r14d,0x1f
+   0x555555555411:      shr    rax,0x20
+   0x555555555415:      add    eax,ecx
+   0x555555555417:      sar    eax,0xb
+   0x55555555541a:      sub    eax,r14d
+   0x55555555541d:      imul   eax,eax,0x8ff
+   0x555555555423:      xor    r13b,BYTE PTR [rip+0x2bf6]        # 0x555555558020
+   0x55555555542a:      sub    ecx,eax
+   0x55555555542c:      imul   eax,ecx,0x14a
+   0x555555555432:      xor    r13d,ecx
+   0x555555555435:      mov    BYTE PTR [rip+0x2be4],r13b        # 0x555555558020
+   0x55555555543c:      xor    r12b,BYTE PTR [rip+0x2bde]        # 0x555555558021
+   0x555555555443:      xor    bpl,BYTE PTR [rip+0x2bd8]        # 0x555555558022
+   0x55555555544a:      add    eax,0x64
+   0x55555555544d:      movsxd rcx,eax
+   0x555555555450:      mov    r13d,eax
+   0x555555555453:      imul   rcx,rcx,0xffffffffe3a78465
+   0x55555555545a:      sar    r13d,0x1f
+   0x55555555545e:      shr    rcx,0x20
+   0x555555555462:      add    ecx,eax
+   0x555555555464:      sar    ecx,0xb
+   0x555555555467:      sub    ecx,r13d
+   0x55555555546a:      imul   ecx,ecx,0x8ff
+   0x555555555470:      sub    eax,ecx
+   0x555555555472:      imul   ecx,eax,0x14a
+   0x555555555478:      xor    r12d,eax
+   0x55555555547b:      mov    BYTE PTR [rip+0x2b9f],r12b        # 0x555555558021
+   0x555555555482:      add    ecx,0x64
+   0x555555555485:      movsxd rax,ecx
+   0x555555555488:      mov    r12d,ecx
+   0x55555555548b:      imul   rax,rax,0xffffffffe3a78465
+   0x555555555492:      sar    r12d,0x1f
+   0x555555555496:      shr    rax,0x20
+   0x55555555549a:      add    eax,ecx
+   0x55555555549c:      sar    eax,0xb
+   0x55555555549f:      sub    eax,r12d
+   0x5555555554a2:      imul   eax,eax,0x8ff
+   0x5555555554a8:      sub    ecx,eax
+   0x5555555554aa:      imul   eax,ecx,0x14a
+   0x5555555554b0:      xor    ebp,ecx
+   0x5555555554b2:      mov    BYTE PTR [rip+0x2b69],bpl        # 0x555555558022
+   0x5555555554b9:      add    eax,0x64
+   0x5555555554bc:      movsxd rcx,eax
+   0x5555555554bf:      mov    ebp,eax
+   0x5555555554c1:      imul   rcx,rcx,0xffffffffe3a78465
+   0x5555555554c8:      shr    rcx,0x20
+   0x5555555554cc:      add    ecx,eax
+   0x5555555554ce:      sar    ebp,0x1f
+   0x5555555554d1:      xor    bl,BYTE PTR [rip+0x2b4c]        # 0x555555558023
+   0x5555555554d7:      xor    r11b,BYTE PTR [rip+0x2b46]        # 0x555555558024
+   0x5555555554de:      sar    ecx,0xb
+   0x5555555554e1:      xor    r10b,BYTE PTR [rip+0x2b3d]        # 0x555555558025
+   0x5555555554e8:      sub    ecx,ebp
+   0x5555555554ea:      imul   ecx,ecx,0x8ff
+   0x5555555554f0:      sub    eax,ecx
+   0x5555555554f2:      imul   ecx,eax,0x14a
+   0x5555555554f8:      xor    ebx,eax
+   0x5555555554fa:      mov    BYTE PTR [rip+0x2b23],bl        # 0x555555558023
+   0x555555555500:      add    ecx,0x64
+   0x555555555503:      movsxd rax,ecx
+   0x555555555506:      mov    ebx,ecx
+   0x555555555508:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555550f:      sar    ebx,0x1f
+   0x555555555512:      shr    rax,0x20
+   0x555555555516:      add    eax,ecx
+   0x555555555518:      sar    eax,0xb
+   0x55555555551b:      sub    eax,ebx
+   0x55555555551d:      imul   eax,eax,0x8ff
+   0x555555555523:      sub    ecx,eax
+   0x555555555525:      imul   eax,ecx,0x14a
+   0x55555555552b:      xor    r11d,ecx
+   0x55555555552e:      mov    BYTE PTR [rip+0x2aef],r11b        # 0x555555558024
+   0x555555555535:      add    eax,0x64
+   0x555555555538:      movsxd rcx,eax
+   0x55555555553b:      mov    r11d,eax
+   0x55555555553e:      imul   rcx,rcx,0xffffffffe3a78465
+   0x555555555545:      sar    r11d,0x1f
+   0x555555555549:      shr    rcx,0x20
+   0x55555555554d:      add    ecx,eax
+   0x55555555554f:      sar    ecx,0xb
+   0x555555555552:      sub    ecx,r11d
+   0x555555555555:      imul   ecx,ecx,0x8ff
+   0x55555555555b:      sub    eax,ecx
+   0x55555555555d:      xor    r10d,eax
+   0x555555555560:      imul   ecx,eax,0x14a
+   0x555555555566:      xor    r9b,BYTE PTR [rip+0x2ab9]        # 0x555555558026
+   0x55555555556d:      xor    r8b,BYTE PTR [rip+0x2ab3]        # 0x555555558027
+   0x555555555574:      mov    BYTE PTR [rip+0x2aaa],r10b        # 0x555555558025
+   0x55555555557b:      add    ecx,0x64
+   0x55555555557e:      movsxd rax,ecx
+   0x555555555581:      mov    r10d,ecx
+   0x555555555584:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555558b:      sar    r10d,0x1f
+   0x55555555558f:      shr    rax,0x20
+   0x555555555593:      add    eax,ecx
+   0x555555555595:      sar    eax,0xb
+   0x555555555598:      sub    eax,r10d
+   0x55555555559b:      imul   eax,eax,0x8ff
+   0x5555555555a1:      sub    ecx,eax
+   0x5555555555a3:      imul   eax,ecx,0x14a
+   0x5555555555a9:      xor    r9d,ecx
+   0x5555555555ac:      mov    BYTE PTR [rip+0x2a73],r9b        # 0x555555558026
+   0x5555555555b3:      add    eax,0x64
+   0x5555555555b6:      movsxd rcx,eax
+   0x5555555555b9:      mov    r9d,eax
+   0x5555555555bc:      imul   rcx,rcx,0xffffffffe3a78465
+   0x5555555555c3:      sar    r9d,0x1f
+   0x5555555555c7:      shr    rcx,0x20
+   0x5555555555cb:      add    ecx,eax
+   0x5555555555cd:      sar    ecx,0xb
+   0x5555555555d0:      sub    ecx,r9d
+   0x5555555555d3:      imul   ecx,ecx,0x8ff
+   0x5555555555d9:      sub    eax,ecx
+   0x5555555555db:      imul   ecx,eax,0x14a
+   0x5555555555e1:      xor    r8d,eax
+   0x5555555555e4:      mov    BYTE PTR [rip+0x2a3c],r8b        # 0x555555558027
+   0x5555555555eb:      add    ecx,0x64
+   0x5555555555ee:      movsxd rax,ecx
+   0x5555555555f1:      mov    r8d,ecx
+   0x5555555555f4:      imul   rax,rax,0xffffffffe3a78465
+   0x5555555555fb:      sar    r8d,0x1f
+   0x5555555555ff:      shr    rax,0x20
+   0x555555555603:      add    eax,ecx
+   0x555555555605:      sar    eax,0xb
+   0x555555555608:      sub    eax,r8d
+   0x55555555560b:      imul   eax,eax,0x8ff
+   0x555555555611:      xor    dil,BYTE PTR [rip+0x2a10]        # 0x555555558028
+   0x555555555618:      xor    sil,BYTE PTR [rip+0x2a0a]        # 0x555555558029
+   0x55555555561f:      sub    ecx,eax
+   0x555555555621:      imul   eax,ecx,0x14a
+   0x555555555627:      xor    edi,ecx
+   0x555555555629:      mov    BYTE PTR [rip+0x29f8],dil        # 0x555555558028
+   0x555555555630:      add    eax,0x64
+   0x555555555633:      movsxd rcx,eax
+   0x555555555636:      mov    edi,eax
+   0x555555555638:      imul   rcx,rcx,0xffffffffe3a78465
+   0x55555555563f:      sar    edi,0x1f
+   0x555555555642:      shr    rcx,0x20
+   0x555555555646:      add    ecx,eax
+   0x555555555648:      sar    ecx,0xb
+   0x55555555564b:      sub    ecx,edi
+   0x55555555564d:      imul   ecx,ecx,0x8ff
+   0x555555555653:      sub    eax,ecx
+   0x555555555655:      xor    esi,eax
+   0x555555555657:      mov    DWORD PTR [rip+0x2ac3],eax        # 0x555555558120
+   0x55555555565d:      mov    eax,DWORD PTR [rip+0x2ac1]        # 0x555555558124
+   0x555555555663:      mov    BYTE PTR [rip+0x29bf],sil        # 0x555555558029
+   0x55555555566a:      lea    rsi,[rip+0x2b0f]        # 0x555555558180
+   0x555555555671:      lea    rdi,[rsi+0xbd]
+   0x555555555678:      nop    DWORD PTR [rax+rax*1+0x0]
+   0x555555555680:      imul   eax,eax,0x14a
+   0x555555555686:      add    rsi,0x1
+   0x55555555568a:      add    rdx,0x1
+   0x55555555568e:      lea    ecx,[rax+0x64]
+   0x555555555691:      movsxd rax,ecx
+   0x555555555694:      mov    r8d,ecx
+   0x555555555697:      imul   rax,rax,0xffffffffe3a78465
+   0x55555555569e:      sar    r8d,0x1f
+   0x5555555556a2:      shr    rax,0x20
+   0x5555555556a6:      add    eax,ecx
+   0x5555555556a8:      sar    eax,0xb
+   0x5555555556ab:      sub    eax,r8d
+   0x5555555556ae:      imul   eax,eax,0x8ff
+   0x5555555556b4:      sub    ecx,eax
+   0x5555555556b6:      mov    eax,ecx
+   0x5555555556b8:      movzx  ecx,BYTE PTR [rsi-0x1]
+   0x5555555556bc:      xor    cl,BYTE PTR [rdx-0x1]
+   0x5555555556bf:      xor    ecx,eax
+   0x5555555556c1:      mov    BYTE PTR [rsi-0x1],cl
+   0x5555555556c4:      cmp    rdi,rsi
+   0x5555555556c7:      jne    0x555555555680
+   0x5555555556c9:      mov    DWORD PTR [rip+0x2a55],eax        # 0x555555558124
+   0x5555555556cf:      xor    eax,eax
+   0x5555555556d1:      call   0x5555555557e0
+   0x5555555556d6:      pop    rbx
+   0x5555555556d7:      xor    eax,eax
+   0x5555555556d9:      pop    rbp
+   0x5555555556da:      pop    r12
+   0x5555555556dc:      pop    r13
+   0x5555555556de:      pop    r14
+   0x5555555556e0:      ret

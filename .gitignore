@@ -8,13 +8,14 @@
 app-release.apk
 
 # Ignore specific files and folders
-nahamcon/pwn/theJumps/
-tamuctf/rev/05backdoored.tar
-airtech_finals/
-AirRange/Wave1
-AirRange/Wave2/mobile/app-release/
-AirRange/Wave2/mobile/app-release.apk
-AirRange/Wave2/rev/Donnow/
+2025/nahamcon/pwn/theJumps/
+2025/tamuctf/rev/05backdoored.tar
+2025/airtech_finals/
+2025/AirRange/Wave1
+2025/AirRange/Wave2/mobile/app-release/
+2025/AirRange/Wave2/mobile/app-release.apk
+2025/AirRange/Wave2/rev/Donnow/
+2025/07CTF/StackOfFish/linux-rootfs.img
 
 # Optional: Ignore Python venvs if ever created inside this folder
 venv/

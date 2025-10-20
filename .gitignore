@@ -5,6 +5,7 @@
 *.7z
 *.i64
 *.apk
+
 app-release.apk
 
 # Ignore specific files and folders

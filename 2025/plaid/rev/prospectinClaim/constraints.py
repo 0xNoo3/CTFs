@@ -1,806 +1,808 @@
 from z3 import *
 
-bitvecs = {offset: BitVec(f"input[{offset}]", 8) for offset in range(0, 64)}
+# input = {offset: BitVec(f"input[{offset}]", 8) for offset in range(0, 64)}
+input = [BitVec(f"input[{index}]", 8) for index in range(0, 64)]
 
-conds = []
 
-conds.append( bitvecs[27] == 50 )
+Constraints = []
+
+Constraints.append( input[27] == 50 )
  
-conds.append( (bitvecs[31] ^ bitvecs[24]) == 0xAA )
+Constraints.append( (input[31] ^ input[24]) == 0xAA )
  
-conds.append( (bitvecs[31] + bitvecs[46]) == 144 )
+Constraints.append( (input[31] + input[46]) == 144 )
  
-conds.append( (bitvecs[59] + bitvecs[36]) == 129 )
+Constraints.append( (input[59] + input[36]) == 129 )
  
-conds.append( bitvecs[13] == 190 )
+Constraints.append( input[13] == 190 )
  
-conds.append( bitvecs[32] == 100 )
+Constraints.append( input[32] == 100 )
  
-conds.append( bitvecs[26] == 49 )
+Constraints.append( input[26] == 49 )
  
-conds.append( bitvecs[42] == 57 )
+Constraints.append( input[42] == 57 )
  
-conds.append( (bitvecs[45] + bitvecs[63]) == 147 )
+Constraints.append( (input[45] + input[63]) == 147 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( (bitvecs[1] + bitvecs[15]) == 56 )
+Constraints.append( (input[1] + input[15]) == 56 )
  
-conds.append( (bitvecs[13] ^ bitvecs[35]) == 0x8E )
+Constraints.append( (input[13] ^ input[35]) == 0x8E )
  
-conds.append( (bitvecs[1] ^ bitvecs[46]) == 0x71 )
+Constraints.append( (input[1] ^ input[46]) == 0x71 )
  
-conds.append( bitvecs[42] == 180 )
+Constraints.append( input[42] == 180 )
  
-conds.append( bitvecs[19] == 54 )
+Constraints.append( input[19] == 54 )
  
-conds.append( bitvecs[28] == bitvecs[48] )
+Constraints.append( input[28] == input[48] )
  
-conds.append( (bitvecs[10] ^ bitvecs[33]) == 3 )
+Constraints.append( (input[10] ^ input[33]) == 3 )
  
-conds.append( bitvecs[30] == 118 )
+Constraints.append( input[30] == 118 )
  
-conds.append( bitvecs[5] == 50 )
+Constraints.append( input[5] == 50 )
  
-conds.append( (bitvecs[1] ^ bitvecs[48]) == 0x85 )
+Constraints.append( (input[1] ^ input[48]) == 0x85 )
  
-conds.append( bitvecs[2] == 84 )
+Constraints.append( input[2] == 84 )
  
-conds.append( bitvecs[23] == 225 )
+Constraints.append( input[23] == 225 )
  
-conds.append( (bitvecs[9] ^ bitvecs[54]) == 0x81 )
+Constraints.append( (input[9] ^ input[54]) == 0x81 )
  
-conds.append( (bitvecs[53] + bitvecs[26]) == 97 )
+Constraints.append( (input[53] + input[26]) == 97 )
  
-conds.append( (bitvecs[18] ^ bitvecs[57]) == 7 )
+Constraints.append( (input[18] ^ input[57]) == 7 )
  
-conds.append( (bitvecs[18] ^ bitvecs[5]) == 0x56 )
+Constraints.append( (input[18] ^ input[5]) == 0x56 )
  
-conds.append( (bitvecs[14] + bitvecs[53]) == 102 )
+Constraints.append( (input[14] + input[53]) == 102 )
  
-conds.append( (bitvecs[48] ^ bitvecs[56]) == 0x54 )
+Constraints.append( (input[48] ^ input[56]) == 0x54 )
  
-conds.append( bitvecs[52] == 229 )
+Constraints.append( input[52] == 229 )
  
-conds.append( bitvecs[36] == 111 )
+Constraints.append( input[36] == 111 )
  
-conds.append( (bitvecs[37] + bitvecs[30]) == 102 )
+Constraints.append( (input[37] + input[30]) == 102 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( bitvecs[23] == 56 )
+Constraints.append( input[23] == 56 )
  
-conds.append( bitvecs[39] == 52 )
+Constraints.append( input[39] == 52 )
  
-conds.append( (bitvecs[56] + bitvecs[19]) == 151 )
+Constraints.append( (input[56] + input[19]) == 151 )
  
-conds.append( (bitvecs[19] ^ bitvecs[50]) == 0x2D )
+Constraints.append( (input[19] ^ input[50]) == 0x2D )
  
-conds.append( (bitvecs[34] + bitvecs[1]) == 164 )
+Constraints.append( (input[34] + input[1]) == 164 )
  
-conds.append( (bitvecs[47] + bitvecs[38]) == 244 )
+Constraints.append( (input[47] + input[38]) == 244 )
  
-conds.append( (bitvecs[27] + bitvecs[47]) == 151 )
+Constraints.append( (input[27] + input[47]) == 151 )
  
-conds.append( (bitvecs[47] + bitvecs[10]) == 150 )
+Constraints.append( (input[47] + input[10]) == 150 )
  
-conds.append( bitvecs[2] == 114 )
+Constraints.append( input[2] == 114 )
  
-conds.append( bitvecs[59] == 54 )
+Constraints.append( input[59] == 54 )
  
-conds.append( bitvecs[28] == 177 )
+Constraints.append( input[28] == 177 )
  
-conds.append( (bitvecs[8] ^ bitvecs[58]) == 8 )
+Constraints.append( (input[8] ^ input[58]) == 8 )
  
-conds.append( (bitvecs[2] ^ bitvecs[46]) == 0x3A )
+Constraints.append( (input[2] ^ input[46]) == 0x3A )
  
-conds.append( bitvecs[59] == 68 )
+Constraints.append( input[59] == 68 )
  
-conds.append( bitvecs[57] == 18 )
+Constraints.append( input[57] == 18 )
  
-conds.append( (bitvecs[17] ^ bitvecs[40]) == 0x5B )
+Constraints.append( (input[17] ^ input[40]) == 0x5B )
  
-conds.append( bitvecs[41] == 42 )
+Constraints.append( input[41] == 42 )
  
-conds.append( bitvecs[41] == 51 )
+Constraints.append( input[41] == 51 )
  
-conds.append( (bitvecs[26] + bitvecs[38]) == 63 )
+Constraints.append( (input[26] + input[38]) == 63 )
  
-conds.append( (bitvecs[61] ^ bitvecs[0]) == 0x60 )
+Constraints.append( (input[61] ^ input[0]) == 0x60 )
  
-conds.append( bitvecs[21] == 36 )
+Constraints.append( input[21] == 36 )
  
-conds.append( (bitvecs[5] + bitvecs[43]) == 45 )
+Constraints.append( (input[5] + input[43]) == 45 )
  
-conds.append( bitvecs[57] == 99 )
+Constraints.append( input[57] == 99 )
  
-conds.append( (bitvecs[55] ^ bitvecs[52]) == 5 )
+Constraints.append( (input[55] ^ input[52]) == 5 )
  
-conds.append( bitvecs[4] == 123 )
+Constraints.append( input[4] == 123 )
  
-conds.append( (bitvecs[16] + bitvecs[9]) == 173 )
+Constraints.append( (input[16] + input[9]) == 173 )
  
-conds.append( (bitvecs[22] + bitvecs[45]) == 152 )
+Constraints.append( (input[22] + input[45]) == 152 )
  
-conds.append( bitvecs[24] == 50 )
+Constraints.append( input[24] == 50 )
  
-conds.append( bitvecs[48] == 53 )
+Constraints.append( input[48] == 53 )
  
-conds.append( (bitvecs[54] ^ bitvecs[19]) == 0x5B )
+Constraints.append( (input[54] ^ input[19]) == 0x5B )
  
-conds.append( (bitvecs[54] + bitvecs[14]) == 153 )
+Constraints.append( (input[54] + input[14]) == 153 )
  
-conds.append( bitvecs[53] == 210 )
+Constraints.append( input[53] == 210 )
  
-conds.append( (bitvecs[0] ^ bitvecs[48]) == 0x65 )
+Constraints.append( (input[0] ^ input[48]) == 0x65 )
  
-conds.append( (bitvecs[42] + bitvecs[49]) == 154 )
+Constraints.append( (input[42] + input[49]) == 154 )
  
-conds.append( (bitvecs[20] + bitvecs[29]) == 150 )
+Constraints.append( (input[20] + input[29]) == 150 )
  
-conds.append( (bitvecs[40] ^ bitvecs[50]) == 0xDA )
+Constraints.append( (input[40] ^ input[50]) == 0xDA )
  
-conds.append( (bitvecs[60] + bitvecs[32]) == 150 )
+Constraints.append( (input[60] + input[32]) == 150 )
  
-conds.append( (bitvecs[39] + bitvecs[7]) == 152 )
+Constraints.append( (input[39] + input[7]) == 152 )
  
-conds.append( bitvecs[50] == bitvecs[10] )
+Constraints.append( input[50] == input[10] )
  
-conds.append( (bitvecs[57] ^ bitvecs[10]) == 0x52 )
+Constraints.append( (input[57] ^ input[10]) == 0x52 )
  
-conds.append( bitvecs[56] == 97 )
+Constraints.append( input[56] == 97 )
  
-conds.append( bitvecs[20] == 97 )
+Constraints.append( input[20] == 97 )
  
-conds.append( (bitvecs[62] ^ bitvecs[8]) == 1 )
+Constraints.append( (input[62] ^ input[8]) == 1 )
  
-conds.append( (bitvecs[44] ^ bitvecs[34]) == 0x30 )
+Constraints.append( (input[44] ^ input[34]) == 0x30 )
  
-conds.append( bitvecs[33] == 50 )
+Constraints.append( input[33] == 50 )
  
-conds.append( (bitvecs[47] ^ bitvecs[49]) == 4 )
+Constraints.append( (input[47] ^ input[49]) == 4 )
  
-conds.append( (bitvecs[27] ^ bitvecs[22]) == 0x53 )
+Constraints.append( (input[27] ^ input[22]) == 0x53 )
  
-conds.append( (bitvecs[0] + bitvecs[41]) == 131 )
+Constraints.append( (input[0] + input[41]) == 131 )
  
-conds.append( bitvecs[18] == 241 )
+Constraints.append( input[18] == 241 )
  
-conds.append( bitvecs[28] == 53 )
+Constraints.append( input[28] == 53 )
  
-conds.append( bitvecs[16] == 211 )
+Constraints.append( input[16] == 211 )
  
-conds.append( (bitvecs[6] + bitvecs[47]) == 153 )
+Constraints.append( (input[6] + input[47]) == 153 )
  
-conds.append( (bitvecs[28] + bitvecs[25]) == 175 )
+Constraints.append( (input[28] + input[25]) == 175 )
  
-conds.append( (bitvecs[63] + bitvecs[19]) == 179 )
+Constraints.append( (input[63] + input[19]) == 179 )
  
-conds.append( bitvecs[29] == 53 )
+Constraints.append( input[29] == 53 )
  
-conds.append( bitvecs[61] == 48 )
+Constraints.append( input[61] == 48 )
  
-conds.append( (bitvecs[15] + bitvecs[25]) == 133 )
+Constraints.append( (input[15] + input[25]) == 133 )
  
-conds.append( (bitvecs[20] ^ bitvecs[61]) == 0x4F )
+Constraints.append( (input[20] ^ input[61]) == 0x4F )
  
-conds.append( (bitvecs[27] ^ bitvecs[50]) == 3 )
+Constraints.append( (input[27] ^ input[50]) == 3 )
  
-conds.append( (bitvecs[62] + bitvecs[51]) == 98 )
+Constraints.append( (input[62] + input[51]) == 98 )
  
-conds.append( (bitvecs[20] + bitvecs[44]) == 197 )
+Constraints.append( (input[20] + input[44]) == 197 )
  
-conds.append( (bitvecs[43] + bitvecs[18]) == 201 )
+Constraints.append( (input[43] + input[18]) == 201 )
  
-conds.append( (bitvecs[9] + bitvecs[36]) == 104 )
+Constraints.append( (input[9] + input[36]) == 104 )
  
-conds.append( bitvecs[9] == bitvecs[19] )
+Constraints.append( input[9] == input[19] )
  
-conds.append( (bitvecs[19] ^ bitvecs[33]) == 4 )
+Constraints.append( (input[19] ^ input[33]) == 4 )
  
-conds.append( (bitvecs[55] + bitvecs[0]) == 133 )
+Constraints.append( (input[55] + input[0]) == 133 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( bitvecs[17] == 57 )
+Constraints.append( input[17] == 57 )
  
-conds.append( bitvecs[10] == 49 )
+Constraints.append( input[10] == 49 )
  
-conds.append( bitvecs[53] == 48 )
+Constraints.append( input[53] == 48 )
  
-conds.append( (bitvecs[49] + bitvecs[61]) == 233 )
+Constraints.append( (input[49] + input[61]) == 233 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( (bitvecs[55] + bitvecs[3]) == 191 )
+Constraints.append( (input[55] + input[3]) == 191 )
  
-conds.append( (bitvecs[45] + bitvecs[25]) == 153 )
+Constraints.append( (input[45] + input[25]) == 153 )
  
-conds.append( bitvecs[46] == 50 )
+Constraints.append( input[46] == 50 )
  
-conds.append( (bitvecs[24] + bitvecs[43]) == 151 )
+Constraints.append( (input[24] + input[43]) == 151 )
  
-conds.append( bitvecs[26] == 49 )
+Constraints.append( input[26] == 49 )
  
-conds.append( bitvecs[14] == 54 )
+Constraints.append( input[14] == 54 )
  
-conds.append( (bitvecs[3] + bitvecs[62]) == 118 )
+Constraints.append( (input[3] + input[62]) == 118 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( (bitvecs[63] ^ bitvecs[45]) == 0x4A )
+Constraints.append( (input[63] ^ input[45]) == 0x4A )
  
-conds.append( (bitvecs[44] + bitvecs[14]) == 240 )
+Constraints.append( (input[44] + input[14]) == 240 )
  
-conds.append( bitvecs[9] == 216 )
+Constraints.append( input[9] == 216 )
  
-conds.append( (bitvecs[58] + bitvecs[62]) == 98 )
+Constraints.append( (input[58] + input[62]) == 98 )
  
-conds.append( (bitvecs[61] + bitvecs[22]) == 147 )
+Constraints.append( (input[61] + input[22]) == 147 )
  
-conds.append( (bitvecs[51] ^ bitvecs[53]) == 2 )
+Constraints.append( (input[51] ^ input[53]) == 2 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( (bitvecs[50] ^ bitvecs[59]) == 7 )
+Constraints.append( (input[50] ^ input[59]) == 7 )
  
-conds.append( bitvecs[52] == 48 )
+Constraints.append( input[52] == 48 )
  
-conds.append( bitvecs[33] == 121 )
+Constraints.append( input[33] == 121 )
  
-conds.append( bitvecs[61] == 51 )
+Constraints.append( input[61] == 51 )
  
-conds.append( (bitvecs[21] + bitvecs[49]) == 197 )
+Constraints.append( (input[21] + input[49]) == 197 )
  
-conds.append( bitvecs[36] == 83 )
+Constraints.append( input[36] == 83 )
  
-conds.append( bitvecs[15] == 9 )
+Constraints.append( input[15] == 9 )
  
-conds.append( (bitvecs[0] + bitvecs[32]) == 180 )
+Constraints.append( (input[0] + input[32]) == 180 )
  
-conds.append( (bitvecs[14] + bitvecs[51]) == 104 )
+Constraints.append( (input[14] + input[51]) == 104 )
  
-conds.append( (bitvecs[43] ^ bitvecs[14]) == 0xFB )
+Constraints.append( (input[43] ^ input[14]) == 0xFB )
  
-conds.append( bitvecs[58] == 79 )
+Constraints.append( input[58] == 79 )
  
-conds.append( bitvecs[10] == 62 )
+Constraints.append( input[10] == 62 )
  
-conds.append( bitvecs[47] == 236 )
+Constraints.append( input[47] == 236 )
  
-conds.append( bitvecs[45] == 55 )
+Constraints.append( input[45] == 55 )
  
-conds.append( (bitvecs[22] + bitvecs[59]) == 255 )
+Constraints.append( (input[22] + input[59]) == 255 )
  
-conds.append( (bitvecs[24] ^ bitvecs[2]) == 0x28 )
+Constraints.append( (input[24] ^ input[2]) == 0x28 )
  
-conds.append( bitvecs[48] == 209 )
+Constraints.append( input[48] == 209 )
  
-conds.append( (bitvecs[55] ^ bitvecs[7]) == 0xE8 )
+Constraints.append( (input[55] ^ input[7]) == 0xE8 )
  
-conds.append( bitvecs[47] == 101 )
+Constraints.append( input[47] == 101 )
  
-conds.append( (bitvecs[5] + bitvecs[57]) == 252 )
+Constraints.append( (input[5] + input[57]) == 252 )
  
-conds.append( (bitvecs[24] + bitvecs[5]) == 100 )
+Constraints.append( (input[24] + input[5]) == 100 )
  
-conds.append( (bitvecs[34] ^ bitvecs[54]) == 2 )
+Constraints.append( (input[34] ^ input[54]) == 2 )
  
-conds.append( bitvecs[9] == 54 )
+Constraints.append( input[9] == 54 )
  
-conds.append( bitvecs[5] == 50 )
+Constraints.append( input[5] == 50 )
  
-conds.append( bitvecs[26] == 49 )
+Constraints.append( input[26] == 49 )
  
-conds.append( bitvecs[60] == 50 )
+Constraints.append( input[60] == 50 )
  
-conds.append( (bitvecs[4] + bitvecs[7]) == 223 )
+Constraints.append( (input[4] + input[7]) == 223 )
  
-conds.append( bitvecs[31] == 52 )
+Constraints.append( input[31] == 52 )
  
-conds.append( (bitvecs[50] ^ bitvecs[52]) == 0x59 )
+Constraints.append( (input[50] ^ input[52]) == 0x59 )
  
-conds.append( bitvecs[58] == 57 )
+Constraints.append( input[58] == 57 )
  
-conds.append( (bitvecs[12] ^ bitvecs[43]) == 0x53 )
+Constraints.append( (input[12] ^ input[43]) == 0x53 )
  
-conds.append( bitvecs[7] == 97 )
+Constraints.append( input[7] == 97 )
  
-conds.append( (bitvecs[53] ^ bitvecs[7]) == 0x54 )
+Constraints.append( (input[53] ^ input[7]) == 0x54 )
  
-conds.append( (bitvecs[59] + bitvecs[6]) == 106 )
+Constraints.append( (input[59] + input[6]) == 106 )
  
-conds.append( (bitvecs[17] + bitvecs[28]) == 110 )
+Constraints.append( (input[17] + input[28]) == 110 )
  
-conds.append( bitvecs[4] == 123 )
+Constraints.append( input[4] == 123 )
  
-conds.append( bitvecs[35] == 101 )
+Constraints.append( input[35] == 101 )
  
-conds.append( (bitvecs[36] + bitvecs[44]) == 150 )
+Constraints.append( (input[36] + input[44]) == 150 )
  
-conds.append( bitvecs[63] == 125 )
+Constraints.append( input[63] == 125 )
  
-conds.append( (bitvecs[27] ^ bitvecs[41]) == 0x5D )
+Constraints.append( (input[27] ^ input[41]) == 0x5D )
  
-conds.append( bitvecs[40] == 98 )
+Constraints.append( input[40] == 98 )
  
-conds.append( (bitvecs[24] ^ bitvecs[21]) == 0x63 )
+Constraints.append( (input[24] ^ input[21]) == 0x63 )
  
-conds.append( (bitvecs[21] ^ bitvecs[19]) == 0x52 )
+Constraints.append( (input[21] ^ input[19]) == 0x52 )
  
-conds.append( bitvecs[10] == 49 )
+Constraints.append( input[10] == 49 )
  
-conds.append( (bitvecs[37] + bitvecs[6]) == 103 )
+Constraints.append( (input[37] + input[6]) == 103 )
  
-conds.append( bitvecs[6] == 123 )
+Constraints.append( input[6] == 123 )
  
-conds.append( bitvecs[56] == 147 )
+Constraints.append( input[56] == 147 )
  
-conds.append( (bitvecs[9] ^ bitvecs[29]) == 3 )
+Constraints.append( (input[9] ^ input[29]) == 3 )
  
-conds.append( bitvecs[47] == 199 )
+Constraints.append( input[47] == 199 )
  
-conds.append( bitvecs[29] == 53 )
+Constraints.append( input[29] == 53 )
  
-conds.append( bitvecs[63] == 125 )
+Constraints.append( input[63] == 125 )
  
-conds.append( (bitvecs[51] + bitvecs[38]) == 71 )
+Constraints.append( (input[51] + input[38]) == 71 )
  
-conds.append( (bitvecs[60] + bitvecs[20]) == 147 )
+Constraints.append( (input[60] + input[20]) == 147 )
  
-conds.append( (bitvecs[1] ^ bitvecs[15]) == 0x74 )
+Constraints.append( (input[1] ^ input[15]) == 0x74 )
  
-conds.append( (bitvecs[11] ^ bitvecs[58]) == 0x16 )
+Constraints.append( (input[11] ^ input[58]) == 0x16 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( (bitvecs[0] + bitvecs[63]) == 205 )
+Constraints.append( (input[0] + input[63]) == 205 )
  
-conds.append( bitvecs[60] == 50 )
+Constraints.append( input[60] == 50 )
  
-conds.append( bitvecs[54] == 99 )
+Constraints.append( input[54] == 99 )
  
-conds.append( bitvecs[7] == 75 )
+Constraints.append( input[7] == 75 )
  
-conds.append( (bitvecs[29] ^ bitvecs[40]) == 0x57 )
+Constraints.append( (input[29] ^ input[40]) == 0x57 )
  
-conds.append( bitvecs[58] == 57 )
+Constraints.append( input[58] == 57 )
  
-conds.append( (bitvecs[33] ^ bitvecs[44]) == 0x56 )
+Constraints.append( (input[33] ^ input[44]) == 0x56 )
  
-conds.append( bitvecs[17] == 150 )
+Constraints.append( input[17] == 150 )
  
-conds.append( bitvecs[19] == 171 )
+Constraints.append( input[19] == 171 )
  
-conds.append( (bitvecs[59] + bitvecs[51]) == 175 )
+Constraints.append( (input[59] + input[51]) == 175 )
  
-conds.append( bitvecs[21] == 127 )
+Constraints.append( input[21] == 127 )
  
-conds.append( (bitvecs[35] ^ bitvecs[11]) == 0xD1 )
+Constraints.append( (input[35] ^ input[11]) == 0xD1 )
  
-conds.append( bitvecs[40] == 98 )
+Constraints.append( input[40] == 98 )
  
-conds.append( (bitvecs[18] ^ bitvecs[13]) == 0x5E )
+Constraints.append( (input[18] ^ input[13]) == 0x5E )
  
-conds.append( bitvecs[7] == 22 )
+Constraints.append( input[7] == 22 )
  
-conds.append( (bitvecs[54] + bitvecs[6]) == 151 )
+Constraints.append( (input[54] + input[6]) == 151 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( bitvecs[45] == 55 )
+Constraints.append( input[45] == 55 )
  
-conds.append( (bitvecs[19] + bitvecs[5]) == 104 )
+Constraints.append( (input[19] + input[5]) == 104 )
  
-conds.append( bitvecs[4] == 26 )
+Constraints.append( input[4] == 26 )
  
-conds.append( bitvecs[62] == 48 )
+Constraints.append( input[62] == 48 )
  
-conds.append( (bitvecs[12] ^ bitvecs[24]) == 4 )
+Constraints.append( (input[12] ^ input[24]) == 4 )
  
-conds.append( (bitvecs[46] + bitvecs[32]) == 150 )
+Constraints.append( (input[46] + input[32]) == 150 )
  
-conds.append( bitvecs[34] == 97 )
+Constraints.append( input[34] == 97 )
  
-conds.append( bitvecs[3] == 70 )
+Constraints.append( input[3] == 70 )
  
-conds.append( (bitvecs[11] + bitvecs[47]) == 151 )
+Constraints.append( (input[11] + input[47]) == 151 )
  
-conds.append( bitvecs[46] == 50 )
+Constraints.append( input[46] == 50 )
  
-conds.append( bitvecs[25] == 96 )
+Constraints.append( input[25] == 96 )
  
-conds.append( bitvecs[9] == 54 )
+Constraints.append( input[9] == 54 )
  
-conds.append( bitvecs[26] == 58 )
+Constraints.append( input[26] == 58 )
  
-conds.append( (bitvecs[55] ^ bitvecs[42]) == 0xC )
+Constraints.append( (input[55] ^ input[42]) == 0xC )
  
-conds.append( (bitvecs[34] ^ bitvecs[19]) == 0x57 )
+Constraints.append( (input[34] ^ input[19]) == 0x57 )
  
-conds.append( bitvecs[56] == 97 )
+Constraints.append( input[56] == 97 )
  
-conds.append( (bitvecs[43] ^ bitvecs[31]) == 0x51 )
+Constraints.append( (input[43] ^ input[31]) == 0x51 )
  
-conds.append( bitvecs[55] == 53 )
+Constraints.append( input[55] == 53 )
  
-conds.append( bitvecs[9] == 169 )
+Constraints.append( input[9] == 169 )
  
-conds.append( (bitvecs[46] + bitvecs[3]) == 120 )
+Constraints.append( (input[46] + input[3]) == 120 )
  
-conds.append( bitvecs[48] == 31 )
+Constraints.append( input[48] == 31 )
  
-conds.append( (bitvecs[35] + bitvecs[23]) == 157 )
+Constraints.append( (input[35] + input[23]) == 157 )
  
-conds.append( bitvecs[36] == 109 )
+Constraints.append( input[36] == 109 )
  
-conds.append( (bitvecs[30] ^ bitvecs[28]) == 6 )
+Constraints.append( (input[30] ^ input[28]) == 6 )
  
-conds.append( bitvecs[53] == 48 )
+Constraints.append( input[53] == 48 )
  
-conds.append( bitvecs[20] == 247 )
+Constraints.append( input[20] == 247 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( (bitvecs[60] + bitvecs[45]) == 105 )
+Constraints.append( (input[60] + input[45]) == 105 )
  
-conds.append( (bitvecs[41] ^ bitvecs[12]) == 5 )
+Constraints.append( (input[41] ^ input[12]) == 5 )
  
-conds.append( (bitvecs[9] ^ bitvecs[42]) == 0x85 )
+Constraints.append( (input[9] ^ input[42]) == 0x85 )
  
-conds.append( bitvecs[32] == 100 )
+Constraints.append( input[32] == 100 )
  
-conds.append( bitvecs[53] == 48 )
+Constraints.append( input[53] == 48 )
  
-conds.append( (bitvecs[38] + bitvecs[55]) == 103 )
+Constraints.append( (input[38] + input[55]) == 103 )
  
-conds.append( bitvecs[32] == bitvecs[13] )
+Constraints.append( input[32] == input[13] )
  
-conds.append( bitvecs[36] == 50 )
+Constraints.append( input[36] == 50 )
  
-conds.append( bitvecs[23] == 155 )
+Constraints.append( input[23] == 155 )
  
-conds.append( bitvecs[13] == 100 )
+Constraints.append( input[13] == 100 )
  
-conds.append( bitvecs[8] == 49 )
+Constraints.append( input[8] == 49 )
  
-conds.append( bitvecs[36] == 50 )
+Constraints.append( input[36] == 50 )
  
-conds.append( bitvecs[14] == 195 )
+Constraints.append( input[14] == 195 )
  
-conds.append( (bitvecs[41] + bitvecs[21]) == 151 )
+Constraints.append( (input[41] + input[21]) == 151 )
  
-conds.append( (bitvecs[45] + bitvecs[37]) == 106 )
+Constraints.append( (input[45] + input[37]) == 106 )
  
-conds.append( bitvecs[32] == 50 )
+Constraints.append( input[32] == 50 )
  
-conds.append( bitvecs[44] == 100 )
+Constraints.append( input[44] == 100 )
  
-conds.append( bitvecs[2] == 84 )
+Constraints.append( input[2] == 84 )
  
-conds.append( (bitvecs[35] ^ bitvecs[50]) == 0x54 )
+Constraints.append( (input[35] ^ input[50]) == 0x54 )
  
-conds.append( bitvecs[51] == 50 )
+Constraints.append( input[51] == 50 )
  
-conds.append( bitvecs[48] == 53 )
+Constraints.append( input[48] == 53 )
  
-conds.append( bitvecs[41] == 51 )
+Constraints.append( input[41] == 51 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( (bitvecs[49] + bitvecs[59]) == 151 )
+Constraints.append( (input[49] + input[59]) == 151 )
  
-conds.append( bitvecs[36] == 50 )
+Constraints.append( input[36] == 50 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( (bitvecs[55] + bitvecs[4]) == 18 )
+Constraints.append( (input[55] + input[4]) == 18 )
  
-conds.append( bitvecs[46] == 158 )
+Constraints.append( input[46] == 158 )
  
-conds.append( (bitvecs[22] ^ bitvecs[31]) == 0x55 )
+Constraints.append( (input[22] ^ input[31]) == 0x55 )
  
-conds.append( bitvecs[50] == 67 )
+Constraints.append( input[50] == 67 )
  
-conds.append( bitvecs[23] == 56 )
+Constraints.append( input[23] == 56 )
  
-conds.append( bitvecs[52] == 12 )
+Constraints.append( input[52] == 12 )
  
-conds.append( bitvecs[52] == 48 )
+Constraints.append( input[52] == 48 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( bitvecs[14] == 54 )
+Constraints.append( input[14] == 54 )
  
-conds.append( bitvecs[2] == 84 )
+Constraints.append( input[2] == 84 )
  
-conds.append( (bitvecs[8] ^ bitvecs[22]) == 0x50 )
+Constraints.append( (input[8] ^ input[22]) == 0x50 )
  
-conds.append( (bitvecs[35] + bitvecs[0]) == 167 )
+Constraints.append( (input[35] + input[0]) == 167 )
  
-conds.append( (bitvecs[39] + bitvecs[2]) == 199 )
+Constraints.append( (input[39] + input[2]) == 199 )
  
-conds.append( (bitvecs[41] ^ bitvecs[6]) == 7 )
+Constraints.append( (input[41] ^ input[6]) == 7 )
  
-conds.append( (bitvecs[33] + bitvecs[11]) == 165 )
+Constraints.append( (input[33] + input[11]) == 165 )
  
-conds.append( bitvecs[25] == 98 )
+Constraints.append( input[25] == 98 )
  
-conds.append( bitvecs[26] == 49 )
+Constraints.append( input[26] == 49 )
  
-conds.append( (bitvecs[20] + bitvecs[27]) == 35 )
+Constraints.append( (input[20] + input[27]) == 35 )
  
-conds.append( (bitvecs[6] ^ bitvecs[35]) == 0x9C )
+Constraints.append( (input[6] ^ input[35]) == 0x9C )
  
-conds.append( (bitvecs[14] ^ bitvecs[11]) == 4 )
+Constraints.append( (input[14] ^ input[11]) == 4 )
  
-conds.append( bitvecs[39] == 52 )
+Constraints.append( input[39] == 52 )
  
-conds.append( (bitvecs[40] + bitvecs[31]) == 150 )
+Constraints.append( (input[40] + input[31]) == 150 )
  
-conds.append( bitvecs[57] == 99 )
+Constraints.append( input[57] == 99 )
  
-conds.append( bitvecs[7] == 100 )
+Constraints.append( input[7] == 100 )
  
-conds.append( bitvecs[14] == 54 )
+Constraints.append( input[14] == 54 )
  
-conds.append( bitvecs[5] == 67 )
+Constraints.append( input[5] == 67 )
  
-conds.append( (bitvecs[23] ^ bitvecs[22]) == 0x59 )
+Constraints.append( (input[23] ^ input[22]) == 0x59 )
  
-conds.append( bitvecs[21] == 100 )
+Constraints.append( input[21] == 100 )
  
-conds.append( (bitvecs[22] ^ bitvecs[44]) == 5 )
+Constraints.append( (input[22] ^ input[44]) == 5 )
  
-conds.append( bitvecs[53] == 48 )
+Constraints.append( input[53] == 48 )
  
-conds.append( bitvecs[31] == 52 )
+Constraints.append( input[31] == 52 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( (bitvecs[46] + bitvecs[8]) == 122 )
+Constraints.append( (input[46] + input[8]) == 122 )
  
-conds.append( (bitvecs[25] ^ bitvecs[3]) == 0x24 )
+Constraints.append( (input[25] ^ input[3]) == 0x24 )
  
-conds.append( bitvecs[43] == 101 )
+Constraints.append( input[43] == 101 )
  
-conds.append( bitvecs[44] == 15 )
+Constraints.append( input[44] == 15 )
  
-conds.append( (bitvecs[16] ^ bitvecs[21]) == 0x57 )
+Constraints.append( (input[16] ^ input[21]) == 0x57 )
  
-conds.append( (bitvecs[9] ^ bitvecs[62]) == 6 )
+Constraints.append( (input[9] ^ input[62]) == 6 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( (bitvecs[18] + bitvecs[54]) == 209 )
+Constraints.append( (input[18] + input[54]) == 209 )
  
-conds.append( bitvecs[32] == 100 )
+Constraints.append( input[32] == 100 )
  
-conds.append( (bitvecs[57] + bitvecs[18]) == 199 )
+Constraints.append( (input[57] + input[18]) == 199 )
  
-conds.append( (bitvecs[43] ^ bitvecs[32]) == 1 )
+Constraints.append( (input[43] ^ input[32]) == 1 )
  
-conds.append( bitvecs[17] == 164 )
+Constraints.append( input[17] == 164 )
  
-conds.append( (bitvecs[8] ^ bitvecs[9]) == 7 )
+Constraints.append( (input[8] ^ input[9]) == 7 )
  
-conds.append( bitvecs[40] == 98 )
+Constraints.append( input[40] == 98 )
  
-conds.append( (bitvecs[56] + bitvecs[4]) == 10 )
+Constraints.append( (input[56] + input[4]) == 10 )
  
-conds.append( (bitvecs[21] + bitvecs[28]) == 153 )
+Constraints.append( (input[21] + input[28]) == 153 )
  
-conds.append( bitvecs[12] == 124 )
+Constraints.append( input[12] == 124 )
  
-conds.append( (bitvecs[63] + bitvecs[18]) == 225 )
+Constraints.append( (input[63] + input[18]) == 225 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( bitvecs[23] == 56 )
+Constraints.append( input[23] == 56 )
  
-conds.append( (bitvecs[44] + bitvecs[18]) == 200 )
+Constraints.append( (input[44] + input[18]) == 200 )
  
-conds.append( (bitvecs[9] + bitvecs[19]) == 108 )
+Constraints.append( (input[9] + input[19]) == 108 )
  
-conds.append( (bitvecs[61] + bitvecs[11]) == 231 )
+Constraints.append( (input[61] + input[11]) == 231 )
  
-conds.append( bitvecs[21] == 100 )
+Constraints.append( input[21] == 100 )
  
-conds.append( (bitvecs[57] + bitvecs[31]) == 151 )
+Constraints.append( (input[57] + input[31]) == 151 )
  
-conds.append( (bitvecs[28] ^ bitvecs[40]) == 0x57 )
+Constraints.append( (input[28] ^ input[40]) == 0x57 )
  
-conds.append( bitvecs[45] == 55 )
+Constraints.append( input[45] == 55 )
  
-conds.append( (bitvecs[13] + bitvecs[47]) == 201 )
+Constraints.append( (input[13] + input[47]) == 201 )
  
-conds.append( bitvecs[18] == 100 )
+Constraints.append( input[18] == 100 )
  
-conds.append( bitvecs[15] == 55 )
+Constraints.append( input[15] == 55 )
  
-conds.append( (bitvecs[58] ^ bitvecs[16]) == 0xA )
+Constraints.append( (input[58] ^ input[16]) == 0xA )
  
-conds.append( (bitvecs[0] ^ bitvecs[21]) == 0x34 )
+Constraints.append( (input[0] ^ input[21]) == 0x34 )
  
-conds.append( (bitvecs[62] + bitvecs[49]) == 145 )
+Constraints.append( (input[62] + input[49]) == 145 )
  
-conds.append( bitvecs[46] == 50 )
+Constraints.append( input[46] == 50 )
  
-conds.append( (bitvecs[57] + bitvecs[0]) == 168 )
+Constraints.append( (input[57] + input[0]) == 168 )
  
-conds.append( bitvecs[36] == 50 )
+Constraints.append( input[36] == 50 )
  
-conds.append( bitvecs[50] == 49 )
+Constraints.append( input[50] == 49 )
  
-conds.append( bitvecs[48] == 53 )
+Constraints.append( input[48] == 53 )
  
-conds.append( bitvecs[42] == 57 )
+Constraints.append( input[42] == 57 )
  
-conds.append( (bitvecs[61] + bitvecs[35]) == 149 )
+Constraints.append( (input[61] + input[35]) == 149 )
  
-conds.append( (bitvecs[27] + bitvecs[1]) == 117 )
+Constraints.append( (input[27] + input[1]) == 117 )
  
-conds.append( bitvecs[48] == 53 )
+Constraints.append( input[48] == 53 )
  
-conds.append( (bitvecs[35] ^ bitvecs[33]) == 0x51 )
+Constraints.append( (input[35] ^ input[33]) == 0x51 )
  
-conds.append( (bitvecs[29] ^ bitvecs[57]) == 0x56 )
+Constraints.append( (input[29] ^ input[57]) == 0x56 )
  
-conds.append( bitvecs[23] == 75 )
+Constraints.append( input[23] == 75 )
  
-conds.append( (bitvecs[31] + bitvecs[13]) == 172 )
+Constraints.append( (input[31] + input[13]) == 172 )
  
-conds.append( bitvecs[39] == 74 )
+Constraints.append( input[39] == 74 )
  
-conds.append( bitvecs[39] == 52 )
+Constraints.append( input[39] == 52 )
  
-conds.append( bitvecs[33] == 115 )
+Constraints.append( input[33] == 115 )
  
-conds.append( bitvecs[7] == 100 )
+Constraints.append( input[7] == 100 )
  
-conds.append( bitvecs[0] == 80 )
+Constraints.append( input[0] == 80 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( (bitvecs[62] + bitvecs[55]) == 101 )
+Constraints.append( (input[62] + input[55]) == 101 )
  
-conds.append( bitvecs[52] == 48 )
+Constraints.append( input[52] == 48 )
  
-conds.append( (bitvecs[7] + bitvecs[22]) == 204 )
+Constraints.append( (input[7] + input[22]) == 204 )
  
-conds.append( (bitvecs[26] ^ bitvecs[14]) == 7 )
+Constraints.append( (input[26] ^ input[14]) == 7 )
  
-conds.append( bitvecs[2] == 84 )
+Constraints.append( input[2] == 84 )
  
-conds.append( bitvecs[46] == 50 )
+Constraints.append( input[46] == 50 )
  
-conds.append( bitvecs[52] == 48 )
+Constraints.append( input[52] == 48 )
  
-conds.append( (bitvecs[54] ^ bitvecs[35]) == 6 )
+Constraints.append( (input[54] ^ input[35]) == 6 )
  
-conds.append( (bitvecs[31] ^ bitvecs[34]) == 0x55 )
+Constraints.append( (input[31] ^ input[34]) == 0x55 )
  
-conds.append( bitvecs[33] == 50 )
+Constraints.append( input[33] == 50 )
  
-conds.append( (bitvecs[40] + bitvecs[33]) == 148 )
+Constraints.append( (input[40] + input[33]) == 148 )
  
-conds.append( bitvecs[7] == 100 )
+Constraints.append( input[7] == 100 )
  
-conds.append( bitvecs[15] == 55 )
+Constraints.append( input[15] == 55 )
  
-conds.append( (bitvecs[10] ^ bitvecs[43]) == 0x54 )
+Constraints.append( (input[10] ^ input[43]) == 0x54 )
  
-conds.append( bitvecs[15] == 55 )
+Constraints.append( input[15] == 55 )
  
-conds.append( (bitvecs[29] + bitvecs[30]) == 104 )
+Constraints.append( (input[29] + input[30]) == 104 )
  
-conds.append( (bitvecs[43] ^ bitvecs[13]) == 1 )
+Constraints.append( (input[43] ^ input[13]) == 1 )
  
-conds.append( (bitvecs[58] + bitvecs[24]) == 217 )
+Constraints.append( (input[58] + input[24]) == 217 )
  
-conds.append( (bitvecs[17] + bitvecs[61]) == 105 )
+Constraints.append( (input[17] + input[61]) == 105 )
  
-conds.append( bitvecs[41] == 166 )
+Constraints.append( input[41] == 166 )
  
-conds.append( (bitvecs[54] ^ bitvecs[24]) == 0x51 )
+Constraints.append( (input[54] ^ input[24]) == 0x51 )
  
-conds.append( bitvecs[62] == 48 )
+Constraints.append( input[62] == 48 )
  
-conds.append( (bitvecs[57] + bitvecs[37]) == 150 )
+Constraints.append( (input[57] + input[37]) == 150 )
  
-conds.append( (bitvecs[61] ^ bitvecs[4]) == 0x4B )
+Constraints.append( (input[61] ^ input[4]) == 0x4B )
  
-conds.append( (bitvecs[37] + bitvecs[52]) == 99 )
+Constraints.append( (input[37] + input[52]) == 99 )
  
-conds.append( (bitvecs[21] ^ bitvecs[26]) == 0x3D )
+Constraints.append( (input[21] ^ input[26]) == 0x3D )
  
-conds.append( bitvecs[50] == 233 )
+Constraints.append( input[50] == 233 )
  
-conds.append( (bitvecs[5] ^ bitvecs[29]) == 7 )
+Constraints.append( (input[5] ^ input[29]) == 7 )
  
-conds.append( bitvecs[31] == 52 )
+Constraints.append( input[31] == 52 )
  
-conds.append( bitvecs[53] == 1 )
+Constraints.append( input[53] == 1 )
  
-conds.append( (bitvecs[15] + bitvecs[7]) == 155 )
+Constraints.append( (input[15] + input[7]) == 155 )
  
-conds.append( bitvecs[41] == 51 )
+Constraints.append( input[41] == 51 )
  
-conds.append( (bitvecs[35] + bitvecs[27]) == 151 )
+Constraints.append( (input[35] + input[27]) == 151 )
  
-conds.append( bitvecs[42] == 57 )
+Constraints.append( input[42] == 57 )
  
-conds.append( bitvecs[27] == 50 )
+Constraints.append( input[27] == 50 )
  
-conds.append( bitvecs[47] == 101 )
+Constraints.append( input[47] == 101 )
  
-conds.append( (bitvecs[45] ^ bitvecs[30]) == 4 )
+Constraints.append( (input[45] ^ input[30]) == 4 )
  
-conds.append( bitvecs[30] == 51 )
+Constraints.append( input[30] == 51 )
  
-conds.append( bitvecs[22] == 97 )
+Constraints.append( input[22] == 97 )
  
-conds.append( bitvecs[49] == 97 )
+Constraints.append( input[49] == 97 )
  
-conds.append( (bitvecs[31] + bitvecs[21]) == 152 )
+Constraints.append( (input[31] + input[21]) == 152 )
  
-conds.append( bitvecs[24] == 50 )
+Constraints.append( input[24] == 50 )
  
-conds.append( bitvecs[15] == 55 )
+Constraints.append( input[15] == 55 )
  
-conds.append( bitvecs[35] == 203 )
+Constraints.append( input[35] == 203 )
  
-conds.append( (bitvecs[4] + bitvecs[37]) == 174 )
+Constraints.append( (input[4] + input[37]) == 174 )
  
-conds.append( bitvecs[49] == 97 )
+Constraints.append( input[49] == 97 )
  
-conds.append( (bitvecs[7] ^ bitvecs[31]) == 0x50 )
+Constraints.append( (input[7] ^ input[31]) == 0x50 )
  
-conds.append( (bitvecs[15] + bitvecs[19]) == 109 )
+Constraints.append( (input[15] + input[19]) == 109 )
  
-conds.append( (bitvecs[30] ^ bitvecs[22]) == 0xC7 )
+Constraints.append( (input[30] ^ input[22]) == 0xC7 )
  
-conds.append( (bitvecs[16] ^ bitvecs[60]) == 1 )
+Constraints.append( (input[16] ^ input[60]) == 1 )
  
-conds.append( bitvecs[12] == 54 )
+Constraints.append( input[12] == 54 )
  
-conds.append( bitvecs[28] == 1 )
+Constraints.append( input[28] == 1 )
  
-conds.append( (bitvecs[44] + bitvecs[58]) == 157 )
+Constraints.append( (input[44] + input[58]) == 157 )
  
-conds.append( (bitvecs[49] ^ bitvecs[37]) == 0x52 )
+Constraints.append( (input[49] ^ input[37]) == 0x52 )
  
-conds.append( bitvecs[6] == 52 )
+Constraints.append( input[6] == 52 )
  
-conds.append( bitvecs[38] == 50 )
+Constraints.append( input[38] == 50 )
  
-conds.append( bitvecs[62] == 48 )
+Constraints.append( input[62] == 48 )
  
-conds.append( (bitvecs[37] ^ bitvecs[21]) == 0x57 )
+Constraints.append( (input[37] ^ input[21]) == 0x57 )
  
-conds.append( (bitvecs[40] + bitvecs[5]) == 148 )
+Constraints.append( (input[40] + input[5]) == 148 )
  
-conds.append( (bitvecs[11] + bitvecs[34]) == 147 )
+Constraints.append( (input[11] + input[34]) == 147 )
  
-conds.append( bitvecs[43] == 153 )
+Constraints.append( input[43] == 153 )
  
-conds.append( (bitvecs[22] + bitvecs[27]) == 136 )
+Constraints.append( (input[22] + input[27]) == 136 )
  
-conds.append( bitvecs[46] == bitvecs[38] )
+Constraints.append( input[46] == input[38] )
  
-conds.append( (bitvecs[48] ^ bitvecs[61]) == 5 )
+Constraints.append( (input[48] ^ input[61]) == 5 )
  
-conds.append( bitvecs[12] == 86 )
+Constraints.append( input[12] == 86 )
  
-conds.append( (bitvecs[44] ^ bitvecs[28]) == 0x51 )
+Constraints.append( (input[44] ^ input[28]) == 0x51 )
  
-conds.append( bitvecs[45] == 55 )
+Constraints.append( input[45] == 55 )
  
-conds.append( (bitvecs[37] ^ bitvecs[2]) == 0x67 )
+Constraints.append( (input[37] ^ input[2]) == 0x67 )
  
-conds.append( (bitvecs[54] ^ bitvecs[16]) == 0x7B )
+Constraints.append( (input[54] ^ input[16]) == 0x7B )
  
-conds.append( (bitvecs[45] ^ bitvecs[18]) == 0x91 )
+Constraints.append( (input[45] ^ input[18]) == 0x91 )
  
-conds.append( bitvecs[18] == 100 )
+Constraints.append( input[18] == 100 )
  

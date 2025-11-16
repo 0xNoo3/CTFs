@@ -243,6 +243,5 @@ def disassemble(input_hex_path: str, output_asm_path: str) -> None:
 			else:
 				w(f"0x{insn_pc:04X}: INVALID 0x{opcode:04X}")
 
-
 if __name__ == "__main__":
 	disassemble("chal.ashfaq", "asm.txt")
